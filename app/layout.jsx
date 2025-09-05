@@ -3,6 +3,7 @@ import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import { Logo } from '@/components/Logo'
 import 'nextra-theme-docs/style.css'
+import './global.css'
 
 export const metadata = {
   // Define your metadata here
