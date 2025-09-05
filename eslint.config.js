@@ -18,6 +18,14 @@ const eslintConfig = [
     plugins: {
       prettier: eslintPluginPrettier,
     },
+    settings: {
+      'import/resolver': {
+        node: {
+          paths: ['.'],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
+    },
     rules: {
       // Prettier integration
       'prettier/prettier': 'warn',
