@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
-  "dev": "next --turbopack",
-  "build": "next build",
-  "start": "next start"
-},
+  "type": "module",
+  "scripts": {
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+    "dev": "next --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,6 +24,9 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "eslint": "^9.34.0",
+    "eslint-config-next": "^15.5.2",
     "pagefind": "^1.4.0"
   }
 }
