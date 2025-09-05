@@ -1,0 +1,13 @@
+DEPLOYMENT NOTES:
+
+- Update robots.txt sitemap URL from localhost:3000 to production domain
+- Set NEXT_PUBLIC_BASE_URL env var for production
+- Sitemap auto-generates from MDX pages in /content
+
+OTHER NOTES:
+
+- Pre-commit hooks auto-lint on every commit (husky + lint-staged)
+- ESLint config extends next/core-web-vitals
+- .next/ already in .gitignore (don't commit build files)
+- Pagefind search runs on postbuild
+- Dev server: pnpm dev (uses Turbopack)

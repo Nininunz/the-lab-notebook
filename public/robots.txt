@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: http://localhost:3000/sitemap.xml
+
+# Block crawling of build artifacts
+Disallow: /_next/
+Disallow: /api/
+
+# Block crawling of search index
+Disallow: /_pagefind/
