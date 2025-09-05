@@ -1,4 +1,4 @@
-import { withTodos } from '../../../lib/meta-utils.js'
+import { withTodos } from '@/lib/meta-utils.js'
 
 const meta = {
   introduction: 'Introduction',

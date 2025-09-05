@@ -6,7 +6,8 @@
       "@/components/*": ["components/*"],
       "@/app/*": ["app/*"],
       "@/content/*": ["content/*"],
-      "@/public/*": ["public/*"]
+      "@/public/*": ["public/*"],
+      "@/lib/*": ["lib/*"]
     }
   },
   "include": [
