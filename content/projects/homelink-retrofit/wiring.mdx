@@ -1,0 +1,109 @@
+import { Callout } from 'nextra/components'
+import LightboxImage from '@/components/LightboxImage'
+
+## Wiring Overview (No Pre-Existing Harness)
+
+This section applies to **E38, E39, E46, E53, E60, E61, E63, and E83** retrofits where the vehicle did not come pre-wired for an electrochromic mirror.
+
+Your connector layout may look different depending on chassis, but the wiring functions are consistent: **signal, ground, and power.**
+
+---
+
+#### OEM Approach
+
+BMW offers a complete wiring harness kit for this retrofit:
+
+**Part Number:** `61120140175` <br/>
+**Compatible with:** E38 / E39 / E46 / E53 / E60 / E61 / E63 / E83
+
+**Available from:** [FCP](https://www.fcpeuro.com/products/bmw-set-of-retrofit-cablesremote-rv-mirror-61120140175), [Turner](https://www.turnermotorsport.com/p-137565-61120140175-genuine-bmw-part/), [ECS](https://www.ecstuning.com/b-genuine-bmw-parts/rear-view-mirror-retrofit-cable-set/61120140175/)
+
+This kit includes all necessary wiring, connectors, and installation hardware. However, it's quite costly for what is essentially some wire and a connector.
+
+#### Budget-Friendly Alternative
+
+<Callout type='info'>
+  **DIY Solution:** If you don't mind sourcing parts and wrapping harnesses.
+</Callout>
+
+**Required Components:**
+
+- **Connector:**
+  - Available from [Tulay's Wire Werks](https://tulayswirewerks.com/product/bmw-10-pin-teal-unsealed-plug-connector-kit/) (connector + pins kit)
+  - Can be sourced from junkyard components: clockspring, mirror, driver window switch, turn signal stalk, wiper stalk, etc.
+
+    _Note: This connector uses various BMW part numbers depending on color and can't really be found by it._
+
+- **Pins:**
+  - **Female:** `61138722287` (for 0.35mm wire)
+  - **Male:** `61138722314` (for 0.35mm wire) - _Don't actually need, just providing for reference._
+
+- **Wire:** 22 AWG / 0.35mm² wire (various colors)
+- **Tape:** `Tesa 51608` harness tape - _Any harness tape will do but this is what BMW uses._
+
+**Required Tools:**
+
+- **Crimpers:** I have [these IWISS crimpers](https://www.amazon.com/IWISS-Crimping-AWG28-20-Terminals-Connectors/dp/B078WNZ9FW/), but any that handle 0.35 mm² (22 AWG) terminals should work fine.
+- **Scissors:** For cutting wire and tape.
+- **Wire Strippers:** Anything that can strip 0.35 mm² (22 AWG) wire works.
+
+---
+
+### Wiring Diagram
+
+In this diagram, **A22 (mirror)** connects with **X18246 (10-pin connector).**
+
+<LightboxImage
+  src='/images/homelink-retrofit/connector-wiring.webp'
+  largeSrc='/images/homelink-retrofit/original/connector-wiring.jpg'
+  alt='Wiring Diagram'
+  width='600'
+/>
+
+The relevant wires are:
+
+- **Pin 1 — S_RS+**: signal wire for the mirror’s auto-dimming function
+- **Pin 3 — 15&lt;24**: switched power (Terminal 15, Fuse 24)
+- **Pin 10 — 31E**: ground
+
+<LightboxImage
+  src='/images/homelink-retrofit/connector.webp'
+  largeSrc='/images/homelink-retrofit/original/connector.png'
+  alt='Connector Diagram'
+  width='400'
+/>
+
+<Callout type='info'>
+  If you sourced your connector from a mirror at the junkyard you may notice
+  extra wires on pins **4, 5, 6, 7**. These are for outside mirror dimming and
+  can be disregarded or this retrofit.
+</Callout>
+<Callout type='warning'>
+  **Important:** This wiring diagram is specific to my E83. Pin destinations may
+  differ between models, but the wires coming **out of the mirror itself** are
+  consistent. Your fuse will **not** be the same.
+</Callout>
+
+---
+
+### Wiring to Chassis
+
+Now this is the part where you'll have to consult your specific vehicle's wiring diagram, as it will be different for every model.
+
+#### Shortcut Wiring Method
+
+If you want a simpler approach, you can tap into nearby switched power and ground instead of running wires all the way to the fuse panel.
+
+For example:
+
+- **Power (Terminal 15)** → use the sunroof harness
+- **Ground** → nearby ground point
+
+Because the mirror's current draw is very low, this is generally safe.
+
+You will still need to run the **S_RS+ signal wire** to a valid connection point. In many cases, tapping into the existing run is sufficient if the signal is already shared with other systems. If not, route the wire directly to the originating module.
+
+<Callout type='warning'>
+  Always double-check what you tap into. Never splice into safety-critical
+  systems such as airbags.
+</Callout>

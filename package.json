@@ -24,7 +24,8 @@
     "nextra": "^4.4.0",
     "nextra-theme-docs": "^4.4.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "yet-another-react-lightbox": "^3.25.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

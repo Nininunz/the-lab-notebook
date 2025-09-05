@@ -75,3 +75,6 @@ temp/
 # Pagefind search index
 _pagefind/
 public/_pagefind/
+
+# Misc Temp
+.deprecated/
