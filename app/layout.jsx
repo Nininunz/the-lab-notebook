@@ -1,6 +1,7 @@
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
+import { Logo } from '../components/Logo'
 import 'nextra-theme-docs/style.css'
 
 export const metadata = {
@@ -11,7 +12,7 @@ export const metadata = {
 const banner = <Banner storageKey='some-key'>Nextra 4.0 is released 🎉</Banner>
 const navbar = (
   <Navbar
-    logo={<b>Nextra</b>}
+    logo={<Logo />}
     // ... Your additional navbar options
   />
 )
