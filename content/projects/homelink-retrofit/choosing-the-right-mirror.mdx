@@ -4,26 +4,55 @@ import LightboxImage from '@/components/LightboxImage'
 
 # Choosing the Right Mirror
 
-## Mirror Variants
+BMW offered a wide range of rearview mirror configurations during the E83 era
+(and across many other E-chassis vehicles). These spanned from basic,
+non-wired mirrors to advanced versions with features like auto-dimming,
+HomeLink garage integration, digital compass, and even rarer options such as
+high-beam assist or lane-departure warning.
 
-BMW offered a wide range of rearview mirror options during the E83 era (and across many other E-chassis vehicles). Part numbers vary, but the main categories are:
+## Functional Variations
 
-- **Basic** — standard mirror - no wires, no auto-dimming
-- **Electrochromic (EC)** — auto-dimming only
-- **EC + HomeLink (GTO)** — auto-dimming with integrated garage door opener
-- **EC + Compass** — auto-dimming with digital compass
-- **EC + HomeLink + Compass** — auto-dimming with integrated garage door opener and digital compass
+Part numbers vary widely — there are dozens of mirror variants across model
+years and trims. For more information on what exists, consult
+[RealOEM](https://www.realoem.com/bmw/enUS/select) or a similar dealer parts
+catalog.
 
-Additional variations exist, including styling changes and added features such as:
+**The terms you will see in the parts catalog are as follows:**
 
-- **FLA** — High-beam assistant
-- **ETC** — Electronic Toll Collection (not observed in NA market)
-- **TLC** — Lane departure warning (rare on E-chassis, not observed in NA market)
-- **Radio** — Radio-wave remote control (believed to be convertible-exclusive)
+- **EC** = Electrochromic (auto-dimming)
+- **GTO** = HomeLink (garage door opener)
+- **TLC** = Lane departure warning
+- **FLA** = High-beam assistant
+- **ETC** = Electronic Toll Collection
+- **Radio** = Radio-wave remote control (believed to be convertible-exclusive)
+- **Remote** = (same as radio)
+- **LED** = Alarm system LED
+- **Compass** = Digital compass
+
+<Callout>
+  All electrochromic mirrors include the LED for the alarm system.
+</Callout>
+
+<Callout type='info'>
+  There are probably other variations I haven't encountered, but these are the
+  main ones.
+</Callout>
 
 ---
 
-### Styling Variations
+### Common Configurations
+
+**These are typical configurations you will encounter:**
+
+- **EC** — auto-dimming only
+- **EC/GTO** — auto-dimming with integrated garage door opener
+- **EC/Compass** — auto-dimming with digital compass
+- **EC/GTO/Compass** — auto-dimming with opener and compass
+- **Manual** — standard mirror - no wires, no auto-dimming
+
+---
+
+## Styling Variations
 
 <br />
 <LightboxImage
@@ -31,47 +60,88 @@ Additional variations exist, including styling changes and added features such a
   largeSrc='/images/homelink-retrofit/original/mirror-highlight.jpg'
   alt='Mirror highlight'
 />
-<Callout type='info'>
+<Callout>
   These areas will have varied styling differences across different years and
   models.
 </Callout>
 
 <br />
 
-**Compass Mirrors**
+### Compass Styles
 
-<LightboxImage
-  src='/images/homelink-retrofit/compass-cutout.webp'
-  largeSrc='/images/homelink-retrofit/original/compass-cutout.jpg'
-  alt='Compass with cutout'
-  width='500'
-/>
+Compass mirrors came in two versions: early models with a visible cutout, and post-2006 versions with a hidden display.
+
 <br />
-<LightboxImage
-  src='/images/homelink-retrofit/compass-hidden.webp'
-  largeSrc='/images/homelink-retrofit/original/compass-hidden.jpg'
-  alt='Compass with hidden display'
-  width='500'
-/>
+<div
+  style={{
+    display: 'flex',
+    gap: '1.5rem',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  }}
+>
+  <div>
+    <span className='text-lg font-bold'>Compass with cutout:</span>
+    <div className='h-2' />
+    <LightboxImage
+      src='/images/homelink-retrofit/compass-cutout.webp'
+      largeSrc='/images/homelink-retrofit/original/compass-cutout.jpg'
+      alt='Compass with cutout'
+      width='400'
+    />
+  </div>
+  <div>
+    <span className='text-lg font-bold'>Compass with hidden display:</span>
+    <div className='h-2' />
+    <LightboxImage
+      src='/images/homelink-retrofit/compass-hidden.webp'
+      largeSrc='/images/homelink-retrofit/original/compass-hidden.jpg'
+      alt='Compass with hidden display'
+      width='400'
+    />
+  </div>
+</div>
 
-<Callout type='info'>
-  Compass mirrors came in two versions: early models with a visible cutout, and
-  post-2006 versions with a hidden display.
-</Callout>
+### Other Styles
+
 <br />
-
-**Electronic Toll Collection (ETC)**
-
-<LightboxImage
-  src='/images/homelink-retrofit/mirror-toll.webp'
-  largeSrc='/images/homelink-retrofit/original/mirror-toll.jpg'
-  alt='Electronic toll collection'
-  width='500'
-/>
+<div>
+  <span className='text-lg font-bold'>Electronic toll collection:</span>
+  <div className='h-2' />
+  <LightboxImage
+    src='/images/homelink-retrofit/mirror-toll.webp'
+    largeSrc='/images/homelink-retrofit/original/mirror-toll.jpg'
+    alt='Electronic toll collection'
+    width='500'
+  />
+</div>
 
 <Callout type='info'>
   Not observed in North America. Possibly limited to the Japanese market.
 </Callout>
+
+---
+
+## Some Important Things to Note
+
+If your car came with a **basic electrochromic mirror** (auto-dimming only),
+you can swap in essentially any upgraded mirror — even ones with additional
+features you don't plan to use. Extra functions that aren't supported by your
+car's wiring will simply remain inactive, and they won't cause problems.
+
+That said, installing a mirror pulled from a car with **driver-assistance
+features like Lane Departure Warning or High Beam Assistant** won't magically
+add those functions to your vehicle. Those systems require dedicated sensors,
+wiring, and module integration beyond the mirror itself. The only exceptions
+are **HomeLink** and the **digital compass** — and likely **Electronic Toll
+Collection**, though unverified — since these operate independently of the
+car's electronics and will work as standalone features once powered.
+
+Some mirrors also came with an **SOS / BMW Assist button** integrated into the
+housing. Swapping one of these into your car won't magically provide SOS
+functionality — the system relied on separate telematics hardware, an active
+subscription, and a backend service that has **long since been discontinued**.
+Today, those buttons are purely cosmetic — **and an eyesore at that**.
 
 ---
 
@@ -105,7 +175,7 @@ Keep in mind these are only a few examples. BMW offered many variations across d
 <Callout type='info'>
   The mirror I used was pulled out of my blown up donor LCI E90.
 </Callout>
-<Callout type='info'>
+<Callout>
   You don't need to source a mirror from the same chassis. Mirrors from other
   E-chassis vehicles of this era are interchangeable as long as the connector
   matches.
