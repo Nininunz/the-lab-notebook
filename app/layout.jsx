@@ -16,7 +16,7 @@ const navbar = (
     // ... Your additional navbar options
   />
 )
-const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>
+const footer = <Footer>© {new Date().getFullYear()} The Lab Notebook</Footer>
 
 export default async function RootLayout({ children }) {
   return (
