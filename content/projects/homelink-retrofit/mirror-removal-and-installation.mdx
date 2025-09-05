@@ -1,6 +1,7 @@
 import { Callout } from 'nextra/components'
 import { Steps } from 'nextra/components'
 import LightboxImage from '@/components/LightboxImage'
+import { HomelinkImages } from '@/lib/images'
 
 ## Replacing Mirror
 
@@ -9,8 +10,7 @@ This step is straightforward. The trim cover design may vary slightly between mo
 
 <div className='mt-4'>
   <LightboxImage
-    src='/images/homelink-retrofit/mirror-trim-removal.webp'
-    largeSrc='/images/homelink-retrofit/original/mirror-trim-removal.png'
+    {...HomelinkImages.getPaths('mirror-trim-removal')}
     alt='Trim removal instructions'
   />
 </div>
@@ -22,8 +22,7 @@ Locate the main connector block at the top of the mirror. Some vehicles may have
 
 <div className='mt-4'>
   <LightboxImage
-    src='/images/homelink-retrofit/mirror-connection.webp'
-    largeSrc='/images/homelink-retrofit/original/mirror-connection.png'
+    {...HomelinkImages.getPaths('mirror-connection')}
     alt='Unplug connector instructions'
   />
 </div>
@@ -34,8 +33,7 @@ Use caution during this step — the mirror mount is bonded to the glass, and fo
 
 <div className='mt-4'>
   <LightboxImage
-    src='/images/homelink-retrofit/mirror-removal.webp'
-    largeSrc='/images/homelink-retrofit/original/mirror-removal.png'
+    {...HomelinkImages.getPaths('mirror-removal')}
     alt='Mirror removal instructions'
   />
 </div>
@@ -68,8 +66,7 @@ If the new mirror's compass is inaccurate or displays a **“C”**, calibration
 - **Calibration:** Press until **“C”** appears, then drive 2-3 slow circles (~10 mph) until the direction display returns.
   <div className='mt-4'>
     <LightboxImage
-      src='/images/homelink-retrofit/compass-calibration.webp'
-      largeSrc='/images/homelink-retrofit/original/compass-calibration.png'
+      {...HomelinkImages.getPaths('compass-calibration')}
       alt='Compass calibration instructions'
     />
   </div>
