@@ -18,3 +18,9 @@ BUILD & DEV:
 - Lint: pnpm lint / pnpm lint:fix
 - Build artifacts (.next/) ignored by git
 - Pagefind search runs on postbuild
+
+
+SCATTERED:
+
+- Need to update eslint config for _meta.js files and new components
+- Auto-lint potentially not running
