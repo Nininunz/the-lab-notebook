@@ -25,3 +25,4 @@ SCATTERED:
 - Need to update eslint config for _meta.js files and new components
 - Auto-lint potentially not running
 - Explore ignoring todos.md globally for organized in dir notes
+- Todos will still be publicly accessible through public url, but not in sidebar - check sitemap
