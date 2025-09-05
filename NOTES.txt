@@ -4,10 +4,17 @@ DEPLOYMENT NOTES:
 - Set NEXT_PUBLIC_BASE_URL env var for production
 - Sitemap auto-generates from MDX pages in /content
 
-OTHER NOTES:
+DEVELOPMENT SETUP:
 
-- Pre-commit hooks auto-lint on every commit (husky + lint-staged)
-- ESLint config extends next/core-web-vitals
-- .next/ already in .gitignore (don't commit build files)
-- Pagefind search runs on postbuild
+- Pre-commit hooks: Prettier + ESLint run automatically on commit
+- Code formatting: Prettier (single quotes, no semicolons, 2-space tabs)
+- Linting: ESLint with React/Next.js rules + accessibility checks
+- Both flat config (eslint.config.js) and legacy (.eslintrc.js) for IDE support
+- VSCode: Flat config enabled in .vscode/settings.json
+
+BUILD & DEV:
+
 - Dev server: pnpm dev (uses Turbopack)
+- Lint: pnpm lint / pnpm lint:fix
+- Build artifacts (.next/) ignored by git
+- Pagefind search runs on postbuild
