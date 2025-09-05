@@ -1,0 +1,186 @@
+import Masonry from '@/components/Masonry'
+import LightboxImage from '@/components/LightboxImage'
+
+# The Mysterious BMW N52 Engine
+
+This story doesn't really have a point—just thought it was interesting and weird. Never seen anything like it and can't explain it.
+
+## The Discovery
+
+I purchased a scrap LCI E83 a few weeks ago and finally got around to tearing into it. Being an N52 with no compression, I figured it was likely VANOS-related. The engine isn't known for piston ring issues, so I was hopeful.
+
+## Initial Investigation
+
+The engine had the VANOS recall completed about 6 months prior, so I didn't know what to think. I've seen VANOS bolts fail after they were supposedly replaced in the past, so I thought that was a possibility, though unlikely given the recency.
+
+The previous owner brought it in for a no-start condition. I got the paperwork from them and it had some notations about the work done:
+
+- Several VANOS bolts were broken and the oil pan had to be dropped to collect them
+- A broken head bolt was found in the pan (quoted something absurd to replace)
+- The engine "ate a belt" and pulled pieces out of the pickup tube
+
+Honestly, I thought the broken head bolt was BS. How does that even happen?
+
+## The Plot Thickens
+
+I got my borescope and checked the intake cam—all bolts were intact. Unable to see the exhaust cam due to the valve cover design, I had to pull it off. To my surprise, all exhaust cam bolts were intact as well. But yeah, there was a broken head bolt. Wild.
+
+At this point I didn't know what to think. When scanning codes earlier, I noticed the temp gauge was pegged high even with the engine off (just ignition power). The previous owner mentioned it was overheating before it died.
+
+## Theory Formation
+
+Now I'm thinking the head was ridiculously warped — further supported by the fact that the head bolt broke — and that the head gasket had somehow blown across all cylinders. Far-fetched, I know, but I don't have any other explanation.
+
+I tested compression once more for my own sanity—still 0-20 PSI across the board.
+
+## Going Deeper
+
+Now I'm invested. I don't care about fixing it; I just want to know what happened. So I pulled the head (not easy, by the way). The broken bolt being a stud meant I had to bring the head straight up. The configuration of the engine bay makes it impossible to pull the exhaust manifold back enough to clear the head without being able to move the head itself. Yeah, not fun. The engine wasn't designed for this car, so most of its setup was an afterthought.
+
+## The Shocking Discovery
+
+The head came off. **The gasket was intact. No signs of failure.**
+
+Beyond confused, I called it a night—it was dark out and I was tired.
+
+The next day I tore into the head:
+
+- No cracks
+- Poured brake cleaner down the ports to do a basic leak-down test—that shit poured right out
+- Removed the valves from the head
+- The valve seats had **zero exposed metal whatsoever**
+- Same goes for the valves
+
+But holy shit, those valves looked bad.
+
+## The Unexplainable Part
+
+There was easily a **millimeter-thick coating of carbon** on all surfaces, including the seat.
+
+Honestly, I can't explain how that even happens. It doesn't matter the amount of carbon or oil accumulating—that seat should always be shiny. The force of the valves opening and closing should keep it clean.
+
+I'll include pictures of the valves below. For reference, I've also included a valve from my N55 that has tons more buildup but still maintains a shiny ring where it should.
+
+<Masonry columns={2}>
+  <div>
+    <LightboxImage
+      src='/images/mysterious-n52-carbon-valves/n52-valve-carbon.jpg'
+      alt='N52 valve with extreme carbon buildup'
+    />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      N52 valve showing impossible carbon buildup on sealing surface
+    </div>
+  </div>
+
+  <div>
+    <LightboxImage
+      src='/images/mysterious-n52-carbon-valves/n55-valve-carbon.jpg'
+      alt='N55 valve for comparison'
+    />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      N55 valve for comparison - notice the shiny sealing ring despite heavy
+      carbon buildup
+    </div>
+  </div>
+</Masonry>
+
+## The Mystery Continues
+
+This remains one of the most bizarre engine failures I've encountered. The complete loss of compression across all cylinders with an intact head gasket and no visible damage is perplexing enough, but the carbon buildup on the valve seats defies explanation.
+
+## Teardown Gallery
+
+Here's a comprehensive look at the teardown process and findings. The photos tell the story of one of the most unusual engine failures I've documented.
+
+<Masonry columns={3} gap='1.5rem'>
+  <div>
+    <LightboxImage
+      src='/images/mysterious-n52-carbon-valves/n52-head-1.jpg'
+      alt='BMW E83 N52 engine bay'
+    />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      The E83 engine bay - tight quarters for major work
+    </div>
+  </div>
+
+<div>
+  <LightboxImage
+    src='/images/mysterious-n52-carbon-valves/n52-head-2.jpg'
+    alt='Cylinder head removal process'
+  />
+  <div
+    style={{
+      marginTop: '0.5rem',
+      fontSize: '0.875rem',
+      color: '#6b7280',
+      textAlign: 'center',
+      fontStyle: 'italic',
+    }}
+  >
+    Head removal - note the broken bolt complicating the process
+  </div>
+</div>
+
+<div>
+  <LightboxImage
+    src='/images/mysterious-n52-carbon-valves/n52-deck-cylinder-1.jpg'
+    alt='Intact head gasket'
+  />
+  <div
+    style={{
+      marginTop: '0.5rem',
+      fontSize: '0.875rem',
+      color: '#6b7280',
+      textAlign: 'center',
+      fontStyle: 'italic',
+    }}
+  >
+    The shocking discovery - completely intact head gasket
+  </div>
+</div>
+
+<div>
+  <LightboxImage
+    src='/images/mysterious-n52-carbon-valves/n52-deck-1.jpg'
+    alt='Carbon buildup on valve seat #1'
+  />
+  <div
+    style={{
+      marginTop: '0.5rem',
+      fontSize: '0.875rem',
+      color: '#6b7280',
+      textAlign: 'center',
+      fontStyle: 'italic',
+    }}
+  >
+    Top view of deck - note the starter in the top right I keep thinking is a
+    coke bottle
+  </div>
+</div>
+</Masonry>
+
+**Still can't explain it.** If you've seen anything like this before or have theories about how valve seats can completely seal themselves with carbon while maintaining zero compression, I'd love to hear from you.
