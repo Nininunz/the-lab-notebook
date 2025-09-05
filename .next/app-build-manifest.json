@@ -1,0 +1,24 @@
+{
+  "pages": {
+    "/[[...mdxPath]]/page": [
+      "static/chunks/b5d7d_next_ca2dcdb0._.js",
+      "static/chunks/8eed1_@headlessui_react_dist_a7cbd5c0._.js",
+      "static/chunks/90b4c_@floating-ui_react_dist_4f670a0a._.js",
+      "static/chunks/10844_nextra_dist_766ba13e._.js",
+      "static/chunks/c5634_nextra-theme-docs_dist_f32f4499._.js",
+      "static/chunks/node_modules__pnpm_2497e977._.js",
+      "static/chunks/c5634_nextra-theme-docs_dist_style_16a16100.css",
+      "static/chunks/Documents_GitHub_nextra_app_layout_jsx_f71d416f._.js",
+      "static/chunks/b5d7d_next_dist_client_components_builtin_global-error_5a6a3ba0.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_265c9a2e._.js",
+      "static/chunks/b5d7d_next_dist_compiled_react-dom_e2c4ff07._.js",
+      "static/chunks/b5d7d_next_dist_compiled_next-devtools_index_9693f825.js",
+      "static/chunks/b5d7d_next_dist_compiled_2edf9df4._.js",
+      "static/chunks/b5d7d_next_dist_client_e0517feb._.js",
+      "static/chunks/b5d7d_next_dist_0fbe6411._.js",
+      "static/chunks/69652_@swc_helpers_cjs_77b72907._.js",
+      "static/chunks/Documents_GitHub_nextra_a0ff3932._.js",
+      "static/chunks/turbopack-Documents_GitHub_nextra_d0990089._.js"
+    ]
+  }
+}
