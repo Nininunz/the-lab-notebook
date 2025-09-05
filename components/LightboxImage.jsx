@@ -6,6 +6,13 @@ import Image from 'next/image'
 
 /**
  * Usage:
+ * // With image utility (recommended)
+ * <LightboxImage
+ *   {...HomelinkImages.getPaths('mirror-connection')}
+ *   alt="Unplug connector"
+ * />
+ *
+ * // Manual paths (still supported)
  * <LightboxImage
  *   src="/images/homelink-retrofit/mirror-connection.webp"
  *   largeSrc="/images/homelink-retrofit/original/mirror-connection.png"
@@ -16,10 +23,21 @@ export default function LightboxImage({
   src,
   largeSrc,
   alt,
-  width = 1000,
-  height = 10000,
+  width = 800,
+  height = 600,
+  className = '',
+  style = {},
 }) {
   const [open, setOpen] = useState(false)
+
+  const defaultStyle = {
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    ...style,
+  }
+
   return (
     <>
       <Image
@@ -27,8 +45,11 @@ export default function LightboxImage({
         alt={alt}
         width={width}
         height={height}
-        style={{ maxWidth: '100%', borderRadius: '8px', cursor: 'pointer' }}
+        className={className}
+        style={defaultStyle}
         onClick={() => setOpen(true)}
+        placeholder='blur'
+        blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
       />
       <Lightbox
         open={open}
