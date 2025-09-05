@@ -1,103 +1,114 @@
-import { Callout } from 'nextra/components'
+{/* HERO */}
 
-<div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-12 mb-12 text-center">
-  <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6">
+<div className='text-center py-20 mb-16'>
+  <h1
+    className='text-6xl font-bold mb-6 text-gray-900 dark:text-white leading-tight pb-2'
+    style={{ fontFamily: 'Kanit, sans-serif' }}
+  >
     The Lab Notebook
   </h1>
-  <div className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
-    A curated portfolio of engineering writeups and project documentation spanning software, electronics, and mechanical systems. A small window into my work — the rest remains confidential or not publicly documented.
+  <div className='text-lg text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-light'>
+    A curated portfolio of engineering writeups and project documentation
+    spanning software, electronics, and mechanical systems.
   </div>
-  <div className="flex flex-wrap justify-center gap-3">
-    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-      Hardware Engineering
-    </span>
-    <span className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
-      Software Development
-    </span>
-    <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
-      System Integration
-    </span>
+  <div className='text-sm text-gray-400 dark:text-gray-500 mt-3 font-light'>
+    A small window into my work — the rest remains confidential or not publicly
+    documented.
   </div>
 </div>
 
-## Areas of Expertise
+## Engineering Domains
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
 
-<div className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-red-50 to-orange-50 dark:from-gray-800 dark:to-gray-750">
-  <div className="flex items-center mb-3">
-    <div className="w-10 h-10 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mr-3">
+<div className='group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-red-50 to-orange-50 dark:from-gray-800 dark:to-gray-750'>
+  <div className='flex items-center mb-3'>
+    <div className='w-10 h-10 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mr-3'>
       🚗
     </div>
-    <h3 className="text-xl font-semibold text-red-800 dark:text-red-200">Automotive</h3>
+    <h3 className='text-xl font-semibold text-red-800 dark:text-red-200'>
+      Automotive
+    </h3>
   </div>
-  <div className="text-gray-700 dark:text-gray-300">
-    CAN bus diagnostics, EEPROM work, locksmithing, retrofits, harness fabrication, module repair, and full mechanical rebuilds.
+  <div className='text-gray-700 dark:text-gray-300'>
+    CAN bus diagnostics, EEPROM work, locksmithing, retrofits, harness
+    fabrication, module repair, and full mechanical rebuilds.
   </div>
 </div>
 
-<div className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-gray-750">
-  <div className="flex items-center mb-3">
-    <div className="w-10 h-10 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mr-3">
+<div className='group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-gray-750'>
+  <div className='flex items-center mb-3'>
+    <div className='w-10 h-10 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mr-3'>
       ⚡
     </div>
-    <h3 className="text-xl font-semibold text-yellow-800 dark:text-yellow-200">Electronics & Embedded</h3>
+    <h3 className='text-xl font-semibold text-yellow-800 dark:text-yellow-200'>
+      Electronics & Embedded
+    </h3>
   </div>
-  <div className="text-gray-700 dark:text-gray-300">
-    Microsoldering and board rework, microcontroller and sensor integration, power electronics, and hardware-in-the-loop debugging.
+  <div className='text-gray-700 dark:text-gray-300'>
+    Microsoldering and board rework, microcontroller and sensor integration,
+    power electronics, and hardware-in-the-loop debugging.
   </div>
 </div>
 
-<div className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-gray-800 dark:to-gray-750">
-  <div className="flex items-center mb-3">
-    <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+<div className='group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-gray-800 dark:to-gray-750'>
+  <div className='flex items-center mb-3'>
+    <div className='w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3'>
       💻
     </div>
-    <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-200">Software & Systems</h3>
+    <h3 className='text-xl font-semibold text-blue-800 dark:text-blue-200'>
+      Software & Systems
+    </h3>
   </div>
-  <div className="text-gray-700 dark:text-gray-300">
-    Web applications, system architecture, data pipelines, developer tooling, automation workflows, and API integrations.
+  <div className='text-gray-700 dark:text-gray-300'>
+    Web applications, system architecture, data pipelines, developer tooling,
+    automation workflows, and API integrations.
   </div>
 </div>
 
-<div className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-750">
-  <div className="flex items-center mb-3">
-    <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-3">
+<div className='group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-750'>
+  <div className='flex items-center mb-3'>
+    <div className='w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-3'>
       📋
     </div>
-    <h3 className="text-xl font-semibold text-green-800 dark:text-green-200">Notes & References</h3>
+    <h3 className='text-xl font-semibold text-green-800 dark:text-green-200'>
+      Notes & References
+    </h3>
   </div>
-  <div className="text-gray-700 dark:text-gray-300">
-    Schematics, wiring diagrams, pinouts, quick-reference tables, and field-tested documentation from ongoing projects.
+  <div className='text-gray-700 dark:text-gray-300'>
+    Schematics, wiring diagrams, pinouts, quick-reference tables, and
+    field-tested documentation from ongoing projects.
   </div>
 </div>
 
-<div className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-750">
-  <div className="flex items-center mb-3">
-    <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-3">
+<div className='group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-750'>
+  <div className='flex items-center mb-3'>
+    <div className='w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-3'>
       🔧
     </div>
-    <h3 className="text-xl font-semibold text-purple-800 dark:text-purple-200">Mechanical & Fabrication</h3>
+    <h3 className='text-xl font-semibold text-purple-800 dark:text-purple-200'>
+      Mechanical & Fabrication
+    </h3>
   </div>
-  <div className="text-gray-700 dark:text-gray-300">
-    CAD modeling, 3D printing, custom tooling, fixture design, mechatronics, and rapid prototyping.
+  <div className='text-gray-700 dark:text-gray-300'>
+    CAD modeling, 3D printing, custom tooling, fixture design, mechatronics, and
+    rapid prototyping.
   </div>
 </div>
 
-<div className="group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-750">
-  <div className="flex items-center mb-3">
-    <div className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mr-3">
+<div className='group hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-750'>
+  <div className='flex items-center mb-3'>
+    <div className='w-10 h-10 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mr-3'>
       🧪
     </div>
-    <h3 className="text-xl font-semibold text-indigo-800 dark:text-indigo-200">Miscellaneous</h3>
+    <h3 className='text-xl font-semibold text-indigo-800 dark:text-indigo-200'>
+      Miscellaneous
+    </h3>
   </div>
-  <div className="text-gray-700 dark:text-gray-300">
-    Cross-disciplinary experiments, exploratory builds, and side projects that blend hardware, software, and design.
+  <div className='text-gray-700 dark:text-gray-300'>
+    Cross-disciplinary experiments, exploratory builds, and side projects that
+    blend hardware, software, and design.
   </div>
 </div>
 
 </div>
-
-<Callout type="info" emoji="🚀">
-  **Ready to explore?** Browse through the documentation sections to dive into specific projects, technical guides, and engineering insights from years of hands-on development work.
-</Callout>
