@@ -1,0 +1,56 @@
+# Components
+
+API reference for all available components in the system.
+
+## Button
+
+A customizable button component with multiple variants.
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'danger'` | `'primary'` | The visual style variant |
+| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | The size of the button |
+| `disabled` | `boolean` | `false` | Whether the button is disabled |
+| `onClick` | `() => void` | - | Click event handler |
+
+### Usage
+
+```jsx
+import { Button } from './components'
+
+export default function Example() {
+  return (
+    <Button variant="primary" size="large">
+      Click me
+    </Button>
+  )
+}
+```
+
+## Card
+
+A flexible container component for displaying content.
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | - | The card title |
+| `children` | `ReactNode` | - | The card content |
+| `className` | `string` | - | Additional CSS classes |
+
+### Usage
+
+```jsx
+import { Card } from './components'
+
+export default function Example() {
+  return (
+    <Card title="My Card">
+      <p>This is the card content.</p>
+    </Card>
+  )
+}
+```
