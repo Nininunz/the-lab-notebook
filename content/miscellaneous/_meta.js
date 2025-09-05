@@ -1,7 +1,7 @@
 import { withTodos } from '@/lib/meta-utils.js'
 
 const meta = {
-  index: 'Home',
+  index: 'The Mysterious BMW N52 Engine',
 }
 
 export default withTodos(meta, import.meta.url)
