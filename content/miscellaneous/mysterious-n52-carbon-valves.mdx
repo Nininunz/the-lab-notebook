@@ -1,5 +1,6 @@
 import Masonry from '@/components/Masonry'
 import LightboxImage from '@/components/LightboxImage'
+import { E83N52Images } from '@/lib/project-images'
 
 # The Mysterious BMW N52 Engine Failure
 
@@ -64,7 +65,7 @@ I'll include pictures of the valves below. For reference, I've also included a v
 <Masonry columns={2} className='mt-6'>
   <div>
     <LightboxImage
-      src='/images/mysterious-n52-carbon-valves/n52-valve-carbon.jpg'
+      {...E83N52Images.getPaths('n52-valve-carbon')}
       alt='N52 valve with extreme carbon buildup'
     />
     <div
@@ -82,7 +83,7 @@ I'll include pictures of the valves below. For reference, I've also included a v
 
   <div>
     <LightboxImage
-      src='/images/mysterious-n52-carbon-valves/n55-valve-carbon.jpg'
+      {...E83N52Images.getPaths('n55-valve-carbon')}
       alt='N55 valve for comparison'
     />
     <div
@@ -112,7 +113,7 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 
 <div>
   <LightboxImage
-    src='/images/mysterious-n52-carbon-valves/n52-head-2.jpg'
+    {...E83N52Images.getPaths('n52-head-2')}
     alt='Cylinder head removal process'
   />
   <div
@@ -129,7 +130,7 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 </div>
 <div>
   <LightboxImage
-    src='/images/mysterious-n52-carbon-valves/n52-deck-1.jpg'
+    {...E83N52Images.getPaths('n52-deck-1')}
     alt='Carbon buildup on valve seat #1'
   />
   <div
@@ -147,7 +148,7 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 </div>
 <div>
   <LightboxImage
-    src='/images/mysterious-n52-carbon-valves/n52-deck-cylinder-1.jpg'
+    {...E83N52Images.getPaths('n52-deck-cylinder-1')}
     alt='Intact head gasket'
   />
   <div
@@ -165,7 +166,7 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 </div>
 <div>
     <LightboxImage
-      src='/images/mysterious-n52-carbon-valves/n52-valve-close-up.jpg'
+      {...E83N52Images.getPaths('n52-valve-close-up')}
       alt='BMW E83 N52 engine bay'
     />
     <div
