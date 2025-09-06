@@ -53,7 +53,8 @@ next-env.d.ts
 .eslintcache
 
 # Editor directories and files
-.vscode/
+# Keeping the .vscode config due to linting settings
+# .vscode/
 .idea/
 *.swp
 *.swo
