@@ -56,6 +56,10 @@ export default function LightboxImage({
         close={() => setOpen(false)}
         slides={[{ src: largeSrc || src, alt }]}
         carousel={{ finite: true }}
+        render={{
+          buttonPrev: () => null,
+          buttonNext: () => null,
+        }}
       />
     </>
   )
