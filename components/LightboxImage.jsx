@@ -31,7 +31,7 @@ export default function LightboxImage({
   const [open, setOpen] = useState(false)
 
   const defaultStyle = {
-    maxWidth: '100%',
+    width: '100%',
     height: 'auto',
     borderRadius: '8px',
     cursor: 'pointer',
