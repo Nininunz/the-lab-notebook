@@ -82,7 +82,7 @@ export default function AutoLightboxImage({
     <LightboxImage
       src={src}
       largeSrc={largeSrc}
-      alt={alt}
+      alt={alt || keyName}
       width={width}
       height={height}
       className={className}
