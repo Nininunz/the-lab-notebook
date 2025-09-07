@@ -1,6 +1,5 @@
 import Masonry from '@/components/Masonry'
-import LightboxImage from '@/components/LightboxImage'
-import { E83N52Images } from '@/lib/project-images'
+import AutoLightboxImage from '@/components/AutoLightboxImage'
 
 # The Mysterious BMW N52 Engine Failure
 
@@ -64,9 +63,10 @@ I'll include pictures of the valves below. For reference, I've also included a v
 
 <Masonry columns={2} className='mt-6'>
   <div>
-    <LightboxImage
-      {...E83N52Images.getPaths('n52-valve-carbon')}
-      alt='N52 valve with extreme carbon buildup'
+    <AutoLightboxImage
+      keyName="n52-valve-carbon"
+      parentDir="mysterious-n52-carbon-valves"
+      alt="N52 valve with extreme carbon buildup"
     />
     <div
       style={{
@@ -82,9 +82,10 @@ I'll include pictures of the valves below. For reference, I've also included a v
   </div>
 
   <div>
-    <LightboxImage
-      {...E83N52Images.getPaths('n55-valve-carbon')}
-      alt='N55 valve for comparison'
+    <AutoLightboxImage
+      keyName="n55-valve-carbon"
+      parentDir="mysterious-n52-carbon-valves"
+      alt="N55 valve for comparison"
     />
     <div
       style={{
@@ -112,9 +113,10 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 <Masonry gap='1.5rem' className='mt-6'>
 
 <div>
-  <LightboxImage
-    {...E83N52Images.getPaths('n52-head-2')}
-    alt='Cylinder head removal process'
+  <AutoLightboxImage
+    keyName="n52-head-2"
+    parentDir="mysterious-n52-carbon-valves"
+    alt="Cylinder head removal process"
   />
   <div
     style={{
@@ -129,9 +131,10 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
   </div>
 </div>
 <div>
-  <LightboxImage
-    {...E83N52Images.getPaths('n52-deck-1')}
-    alt='Carbon buildup on valve seat #1'
+  <AutoLightboxImage
+    keyName="n52-deck-1"
+    parentDir="mysterious-n52-carbon-valves"
+    alt="Carbon buildup on valve seat #1"
   />
   <div
     style={{
@@ -147,9 +150,10 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
   </div>
 </div>
 <div>
-  <LightboxImage
-    {...E83N52Images.getPaths('n52-deck-cylinder-1')}
-    alt='Intact head gasket'
+  <AutoLightboxImage
+    keyName="n52-deck-cylinder-1"
+    parentDir="mysterious-n52-carbon-valves"
+    alt="Intact head gasket"
   />
   <div
     style={{
@@ -165,9 +169,10 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
   </div>
 </div>
 <div>
-    <LightboxImage
-      {...E83N52Images.getPaths('n52-valve-close-up')}
-      alt='BMW E83 N52 engine bay'
+    <AutoLightboxImage
+      keyName="n52-valve-close-up"
+      parentDir="mysterious-n52-carbon-valves"
+      alt="BMW E83 N52 engine bay"
     />
     <div
       style={{

@@ -1,7 +1,6 @@
 import { Callout } from 'nextra/components'
 import { Steps } from 'nextra/components'
-import LightboxImage from '@/components/LightboxImage'
-import { HomelinkImages } from '@/lib/project-images'
+import AutoLightboxImage from '@/components/AutoLightboxImage'
 
 ## Replacing Mirror
 
@@ -9,9 +8,10 @@ import { HomelinkImages } from '@/lib/project-images'
 This step is straightforward. The trim cover design may vary slightly between models, but the removal method is the same. Unclip the cover carefully, then swivel the mirror as needed to fully detach the trim once it's loose.
 
 <div className='mt-4'>
-  <LightboxImage
-    {...HomelinkImages.getPaths('mirror-trim-removal')}
-    alt='Trim removal instructions'
+  <AutoLightboxImage
+    keyName="mirror-trim-removal"
+    parentDir="homelink-retrofit"
+    alt="Trim removal instructions"
   />
 </div>
 
@@ -21,9 +21,10 @@ This step is straightforward. The trim cover design may vary slightly between mo
 Locate the main connector block at the top of the mirror. Some vehicles may have additional smaller plugs, but the large multi-pin connector is the one you need. Gently move any surrounding wires aside for easier access, then unplug the connector.
 
 <div className='mt-4'>
-  <LightboxImage
-    {...HomelinkImages.getPaths('mirror-connection')}
-    alt='Unplug connector instructions'
+  <AutoLightboxImage
+    keyName="mirror-connection"
+    parentDir="homelink-retrofit"
+    alt="Unplug connector instructions"
   />
 </div>
 <br />
@@ -32,9 +33,10 @@ Locate the main connector block at the top of the mirror. Some vehicles may have
 Use caution during this step — the mirror mount is bonded to the glass, and forcing it incorrectly can crack or shatter the windshield. Support the mirror with both hands and rotate it **to the right** to release it from the mount. Do not apply pressure in any other direction.
 
 <div className='mt-4'>
-  <LightboxImage
-    {...HomelinkImages.getPaths('mirror-removal')}
-    alt='Mirror removal instructions'
+  <AutoLightboxImage
+    keyName="mirror-removal"
+    parentDir="homelink-retrofit"
+    alt="Mirror removal instructions"
   />
 </div>
 
@@ -65,9 +67,10 @@ If the new mirror's compass is inaccurate or displays a **“C”**, calibration
 - **Magnetic Zone Setting:** Press the hidden button until a number shows, then cycle to the correct zone for your region.
 - **Calibration:** Press until **“C”** appears, then drive 2-3 slow circles (~10 mph) until the direction display returns.
   <div className='mt-4'>
-    <LightboxImage
-      {...HomelinkImages.getPaths('compass-calibration')}
-      alt='Compass calibration instructions'
+    <AutoLightboxImage
+      keyName="compass-calibration"
+      parentDir="homelink-retrofit"
+      alt="Compass calibration instructions"
     />
   </div>
 

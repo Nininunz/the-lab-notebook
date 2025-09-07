@@ -1,6 +1,5 @@
 import { Callout } from 'nextra/components'
-import LightboxImage from '@/components/LightboxImage'
-import { HomelinkImages } from '@/lib/project-images'
+import AutoLightboxImage from '@/components/AutoLightboxImage'
 
 ## Wiring Overview (No Pre-Existing Harness)
 
@@ -54,10 +53,11 @@ This kit includes all necessary wiring, connectors, and installation hardware. H
 
 In this diagram, **A22 (mirror)** connects with **X18246 (10-pin connector).**
 
-<LightboxImage
-  {...HomelinkImages.getPaths('connector-wiring', 'jpg')}
-  alt='Wiring Diagram'
-  width='600'
+<AutoLightboxImage
+  keyName="connector-wiring"
+  parentDir="homelink-retrofit"
+  alt="Wiring Diagram"
+  width={600}
 />
 
 The relevant wires are:
@@ -66,10 +66,11 @@ The relevant wires are:
 - **Pin 3 — 15&lt;24**: switched power (Terminal 15, Fuse 24)
 - **Pin 10 — 31E**: ground
 
-<LightboxImage
-  {...HomelinkImages.getPaths('connector')}
-  alt='Connector Diagram'
-  width='400'
+<AutoLightboxImage
+  keyName="connector"
+  parentDir="homelink-retrofit"
+  alt="Connector Diagram"
+  width={400}
 />
 
 <Callout type='info'>
