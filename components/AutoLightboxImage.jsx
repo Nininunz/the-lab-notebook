@@ -1,5 +1,5 @@
 /**
- * Auto-resolving LightboxImage component using the new resolveImage.ts utility
+ * Auto-resolving LightboxImage component using the new resolveImage.js utility
  *
  * Combines the resolveImage utility with LightboxImage for seamless MDX usage.
  * Automatically detects the best available image format and provides lightbox functionality.
@@ -45,6 +45,12 @@ export default function AutoLightboxImage({
   fallback,
   ...props
 }) {
+  // For now, require parentDir to be explicitly passed
+  // TODO: In the future, we could implement build-time path resolution
+  if (!parentDir) {
+    throw new Error('parentDir is required for AutoLightboxImage')
+  }
+
   // Auto-resolve display image path
   const src = resolveImagePath({
     keyName,
@@ -54,25 +60,22 @@ export default function AutoLightboxImage({
     fallback,
   })
 
-  // Try to find original image (for lightbox)
-  // Build expected original path - try common formats
+  // Try to find original image (for lightbox) using auto-detection
   let largeSrc = src // Default to display image
 
-  // For homelink: connector* are JPG, others may be PNG
-  if (parentDir.includes('homelink')) {
-    const originalExt = keyName.includes('connector')
-      ? 'jpg'
-      : keyName.includes('compass-calibration')
-        ? 'png'
-        : keyName.includes('mirror-') && keyName.includes('removal')
-          ? 'png'
-          : keyName.includes('mirror-connection')
-            ? 'png'
-            : 'jpg'
-    largeSrc = `/images/${parentDir}/original/${keyName}.${originalExt}`
-  } else {
-    // For other projects, assume JPG
-    largeSrc = `/images/${parentDir}/original/${keyName}.jpg`
+  try {
+    // Check for original image in /original subdirectory with auto-detection
+    const originalSrc = resolveImagePath({
+      keyName,
+      parentDir: `${parentDir}/original`,
+      basePublicDir,
+      extensions,
+      fallback: null,
+    })
+    largeSrc = originalSrc
+  } catch (e) {
+    // No original found, use display image for lightbox
+    largeSrc = src
   }
 
   return (
