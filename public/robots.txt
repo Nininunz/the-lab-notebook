@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: https://docs.nininunz.dev/sitemap.xml
 
 # Block crawling of build artifacts
 Disallow: /_next/

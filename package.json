@@ -1,7 +1,7 @@
 {
-  "name": "nextra",
+  "name": "the-lab-notebook",
   "version": "1.0.0",
-  "description": "",
+  "description": "Engineering documentation and project notes",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -14,7 +14,7 @@
     "prepare": "husky"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nininunz",
   "license": "ISC",
   "packageManager": "pnpm@10.15.1",
   "dependencies": {

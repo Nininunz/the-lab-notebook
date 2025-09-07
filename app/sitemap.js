@@ -2,7 +2,8 @@ import { getPageMap } from 'nextra/page-map'
 
 export default async function sitemap() {
   const pageMap = await getPageMap()
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || 'https://docs.nininunz.dev'
 
   const extractRoutes = (items, parentPath = '') => {
     const routes = []

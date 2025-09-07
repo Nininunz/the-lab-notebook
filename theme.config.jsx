@@ -1,27 +1,30 @@
 import { useRouter } from 'next/router'
 
 const config = {
-  logo: <span>My Nextra Documentation</span>,
+  logo: <span>The Lab Notebook</span>,
   project: {
-    link: 'https://github.com/yourusername/nextra',
+    link: 'https://github.com/nininunz/the-lab-notebook',
   },
-  docsRepositoryBase: 'https://github.com/yourusername/nextra/tree/main',
+  docsRepositoryBase: 'https://github.com/nininunz/the-lab-notebook/tree/main',
   footer: {
-    text: `MIT ${new Date().getFullYear()} © My Documentation.`,
+    text: `© ${new Date().getFullYear()} The Lab Notebook.`,
   },
   useNextSeoProps() {
     const { asPath } = useRouter()
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s – My Docs',
+        titleTemplate: '%s – The Lab Notebook',
       }
     }
   },
   head: (
     <>
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <meta property='og:title' content='My Documentation' />
-      <meta property='og:description' content='The next site builder' />
+      <meta property='og:title' content='The Lab Notebook' />
+      <meta
+        property='og:description'
+        content='Engineering documentation and project notes'
+      />
     </>
   ),
   sidebar: {
