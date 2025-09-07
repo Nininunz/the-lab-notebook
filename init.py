@@ -1,5 +1,6 @@
-# Script provided solely for VS Code run convenience - to be expanded upon
-import sys
+# Script provided solely for VS Code run convenience.
 import subprocess
 
-subprocess.run(["pnpm", "install"], check=True)
+subprocess.run(["npm", "i"], check=True)
+subprocess.run(["pnpm", "build"], check=True)
+subprocess.run(["pnpm", "dev"], check=True)
