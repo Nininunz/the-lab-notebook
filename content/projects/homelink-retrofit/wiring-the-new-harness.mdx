@@ -1,5 +1,6 @@
 import { Callout } from 'nextra/components'
 import AutoLightboxImage from '@/components/AutoLightboxImage'
+export const IMAGE_DIR = '/images/homelink-retrofit'
 
 # Wiring The New Harness
 
@@ -54,8 +55,7 @@ Your connector layout may look different depending on chassis, but the wiring fu
   <div className='h-2' />
   <div className='max-w-xl'>
     <AutoLightboxImage
-      keyName='connector-wiring'
-      parentDir='homelink-retrofit'
+      src={`${IMAGE_DIR}/connector-wiring.webp`}
       alt='Wiring Diagram'
       width={800}
     />
@@ -77,8 +77,7 @@ Your connector layout may look different depending on chassis, but the wiring fu
   <div className='h-2' />
   <div className='max-w-xl'>
     <AutoLightboxImage
-      keyName='connector'
-      parentDir='homelink-retrofit'
+      src={`${IMAGE_DIR}/connector.webp`}
       alt='Connector Diagram'
       width={400}
     />

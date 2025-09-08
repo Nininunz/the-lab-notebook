@@ -1,8 +1,10 @@
 import { Callout } from 'nextra/components'
 import { Steps } from 'nextra/components'
+import PhotoGrid from '@/components/PhotoGrid'
 import BaseLightboxImage from '@/components/BaseLightboxImage'
-import Masonry from '@/components/Masonry'
 import AutoLightboxImage from '@/components/AutoLightboxImage'
+
+export const IMAGE_DIR = '/images/homelink-retrofit'
 
 # Choosing the Right Mirror
 
@@ -74,11 +76,11 @@ catalog.
 Compass mirrors came in two versions: early models with a visible cutout, and post-2006 versions with a hidden display.
 
 <br />
-<Masonry columns={2} className='mt-6'>
+<PhotoGrid columns={2} className='mt-6'>
   <div>
     <AutoLightboxImage
-      keyName="compass-cutout"
-      parentDir="homelink-retrofit"
+      src={`${IMAGE_DIR}/compass-cutout.webp`}
+      largeSrc={`${IMAGE_DIR}/original/compass-cutout.jpg`}
       alt="Compass with cutout"
       aspectRatio="5/3"
     />
@@ -93,12 +95,13 @@ Compass mirrors came in two versions: early models with a visible cutout, and po
     >
       Early compass mirror with visible cutout
     </div>
+
   </div>
 
   <div>
     <AutoLightboxImage
-      keyName="compass-hidden"
-      parentDir="homelink-retrofit"
+      src={`${IMAGE_DIR}/compass-hidden.webp`}
+      largeSrc={`${IMAGE_DIR}/original/compass-hidden.jpg`}
       alt="Compass with hidden display"
       aspectRatio="5/3"
     />
@@ -114,17 +117,17 @@ Compass mirrors came in two versions: early models with a visible cutout, and po
       Later compass mirror with hidden display
     </div>
   </div>
-</Masonry>
+</PhotoGrid>
 
 ### Other Styles
 
-<Masonry columns={2} className='mt-6'>
+<PhotoGrid columns={2} className='mt-6'>
   <div>
     <AutoLightboxImage
-      keyName='mirror-toll'
-      parentDir='homelink-retrofit'
+      src={`${IMAGE_DIR}/mirror-toll.webp`}
+      largeSrc={`${IMAGE_DIR}/original/mirror-toll.jpg`}
       alt='Electronic toll collection'
-      width={500}
+      aspectRatio='5/3'
     />
     <div
       style={{
@@ -138,7 +141,7 @@ Compass mirrors came in two versions: early models with a visible cutout, and po
       Electronic toll collection (ETC) - possibly Japan-only
     </div>
   </div>
-</Masonry>
+</PhotoGrid>
 
 ---
 
