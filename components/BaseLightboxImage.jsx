@@ -102,7 +102,7 @@ export default function BaseLightboxImage({
             alt={alt}
             width={1920}
             height={1080}
-            className='max-w-[90vw] max-h-[90vh] object-contain w-auto h-auto rounded-xl'
+            className='max-w-[90vw] max-h-[90vh] object-contain w-auto h-auto rounded-xl cursor-default'
             onClick={handleImageClick}
           />
         </div>
