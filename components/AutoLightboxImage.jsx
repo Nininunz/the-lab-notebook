@@ -46,38 +46,26 @@ export default function AutoLightboxImage({
     throw new Error('src is required for AutoLightboxImage')
   }
 
-  // Create style object with aspect ratio and hover effects
+  // Create style object for aspect ratio if needed
   const imageStyle = {
-    width: '100%',
-    height: 'auto',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
     ...(aspectRatio && { aspectRatio, objectFit: 'cover' }),
     ...style,
   }
 
-  const imageClassName = `lightbox-image ${className}`.trim()
+  const imageClassName =
+    `w-full h-auto rounded-lg cursor-pointer transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-lg ${className}`.trim()
 
   return (
-    <>
-      <BaseLightboxImage
-        src={src}
-        largeSrc={largeSrc || src}
-        alt={alt}
-        width={width}
-        height={height}
-        className={imageClassName}
-        style={imageStyle}
-        aspectRatio={aspectRatio}
-        {...props}
-      />
-      <style jsx>{`
-        :global(.lightbox-image:hover) {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-      `}</style>
-    </>
+    <BaseLightboxImage
+      src={src}
+      largeSrc={largeSrc || src}
+      alt={alt}
+      width={width}
+      height={height}
+      className={imageClassName}
+      style={imageStyle}
+      aspectRatio={aspectRatio}
+      {...props}
+    />
   )
 }
