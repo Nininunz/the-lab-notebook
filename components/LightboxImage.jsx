@@ -27,12 +27,13 @@ export default function LightboxImage({
   height = 600,
   className = '',
   style = {},
+  aspectRatio,
 }) {
   const [open, setOpen] = useState(false)
 
   const defaultStyle = {
     width: '100%',
-    height: 'auto',
+    height: aspectRatio ? undefined : 'auto',
     borderRadius: '8px',
     cursor: 'pointer',
     ...style,
