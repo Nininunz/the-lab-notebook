@@ -8,3 +8,4 @@
 ## GENERAL
 
 - [ ] Verify sitemap functionality
+- [ ] Lint and correct errors relating to AutoLightboxImage and Masonry (not in the right headspace right now)

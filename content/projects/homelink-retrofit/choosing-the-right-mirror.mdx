@@ -1,6 +1,8 @@
 import { Callout } from 'nextra/components'
 import { Steps } from 'nextra/components'
 import LightboxImage from '@/components/LightboxImage'
+import Masonry from '@/components/Masonry'
+import AutoLightboxImage from '@/components/AutoLightboxImage'
 
 # Choosing the Right Mirror
 
@@ -72,53 +74,71 @@ catalog.
 Compass mirrors came in two versions: early models with a visible cutout, and post-2006 versions with a hidden display.
 
 <br />
-<div
-  style={{
-    display: 'flex',
-    gap: '1.5rem',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  }}
->
+<Masonry columns={2} className='mt-6'>
   <div>
-    <span className='text-lg font-bold'>Compass with cutout:</span>
-    <div className='h-2' />
-    <LightboxImage
-      src='/images/homelink-retrofit/compass-cutout.webp'
-      largeSrc='/images/homelink-retrofit/original/compass-cutout.jpg'
-      alt='Compass with cutout'
-      width='400'
+    <AutoLightboxImage
+      keyName="compass-cutout"
+      parentDir="homelink-retrofit"
+      alt="Compass with cutout"
+      aspectRatio="5/3"
     />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      Early compass mirror with visible cutout
+    </div>
   </div>
+
   <div>
-    <span className='text-lg font-bold'>Compass with hidden display:</span>
-    <div className='h-2' />
-    <LightboxImage
-      src='/images/homelink-retrofit/compass-hidden.webp'
-      largeSrc='/images/homelink-retrofit/original/compass-hidden.jpg'
-      alt='Compass with hidden display'
-      width='400'
+    <AutoLightboxImage
+      keyName="compass-hidden"
+      parentDir="homelink-retrofit"
+      alt="Compass with hidden display"
+      aspectRatio="5/3"
     />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      Later compass mirror with hidden display
+    </div>
   </div>
-</div>
+</Masonry>
 
 ### Other Styles
 
-<br />
-<div>
-  <span className='text-lg font-bold'>Electronic toll collection:</span>
-  <div className='h-2' />
-  <LightboxImage
-    src='/images/homelink-retrofit/mirror-toll.webp'
-    largeSrc='/images/homelink-retrofit/original/mirror-toll.jpg'
-    alt='Electronic toll collection'
-    width='500'
-  />
-</div>
-
-<Callout type='info'>
-  Not observed in North America. Possibly limited to the Japanese market.
-</Callout>
+<Masonry columns={2} className='mt-6'>
+  <div>
+    <AutoLightboxImage
+      keyName='mirror-toll'
+      parentDir='homelink-retrofit'
+      alt='Electronic toll collection'
+      width={500}
+    />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      Electronic toll collection (ETC) - possibly Japan-only
+    </div>
+  </div>
+</Masonry>
 
 ---
 
