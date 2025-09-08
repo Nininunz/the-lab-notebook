@@ -1,6 +1,8 @@
 import Masonry from '@/components/Masonry'
 import AutoLightboxImage from '@/components/AutoLightboxImage'
 
+export const IMAGE_DIR = '/images/mysterious-n52-carbon-valves'
+
 # The Mysterious BMW N52 Engine Failure
 
 This story doesn't really have a point—just thought it was interesting and weird. Never seen anything like it and can't explain it.
@@ -64,8 +66,8 @@ I'll include pictures of the valves below. For reference, I've also included a v
 <Masonry columns={2} className='mt-6'>
   <div>
     <AutoLightboxImage
-      keyName="n52-valve-carbon"
-      parentDir="mysterious-n52-carbon-valves"
+      src={`${IMAGE_DIR}/n52-ex-valve_cls_3x4.webp`}
+      largeSrc={`${IMAGE_DIR}/n52-ex-valve_cls_full_3x4.png`}
       alt="N52 valve with extreme carbon buildup"
       aspectRatio="3/4"
     />
@@ -84,8 +86,8 @@ I'll include pictures of the valves below. For reference, I've also included a v
 
   <div>
     <AutoLightboxImage
-      keyName="n55-valve-carbon"
-      parentDir="mysterious-n52-carbon-valves"
+      src={`${IMAGE_DIR}/n55-in-valve_cls_3x4.webp`}
+      largeSrc={`${IMAGE_DIR}/n55-in-valve_cls_full_3x4.png`}
       alt="N55 valve for comparison"
       aspectRatio="3/4"
     />
@@ -116,8 +118,9 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 
 <div>
   <AutoLightboxImage
-    keyName="n52-head-2"
-    parentDir="mysterious-n52-carbon-valves"
+    src={`${IMAGE_DIR}/n52-head-2.webp`}
+    largeSrc={`${IMAGE_DIR}/original/n52-head-2.webp`}
+    alt="N52 head combustion chamber view"
   />
   <div
     style={{
@@ -133,8 +136,9 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 </div>
 <div>
   <AutoLightboxImage
-    keyName="n52-deck-1"
-    parentDir="mysterious-n52-carbon-valves"
+    src={`${IMAGE_DIR}/n52-deck-1.webp`}
+    largeSrc={`${IMAGE_DIR}/original/n52-deck-1.webp`}
+    alt="N52 engine deck top view"
   />
   <div
     style={{
@@ -151,8 +155,9 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 </div>
 <div>
   <AutoLightboxImage
-    keyName="n52-deck-cylinder-1"
-    parentDir="mysterious-n52-carbon-valves"
+    src={`${IMAGE_DIR}/n52-deck-cylinder-1.webp`}
+    largeSrc={`${IMAGE_DIR}/original/n52-deck-cylinder-1.webp`}
+    alt="N52 cylinder 4 with carbon and coolant"
   />
   <div
     style={{
@@ -169,8 +174,9 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 </div>
 <div>
     <AutoLightboxImage
-      keyName="n52-valve-close-up"
-      parentDir="mysterious-n52-carbon-valves"
+      src={`${IMAGE_DIR}/n52-valve-close-up.webp`}
+      largeSrc={`${IMAGE_DIR}/original/n52-valve-close-up.webp`}
+      alt="N52 exhaust valves close up"
     />
     <div
       style={{

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import LightboxImage from './LightboxImage'
+import LightboxImage from './BaseLightboxImage'
 
 /**
  * PhotoMasonry component for displaying images in a masonry layout

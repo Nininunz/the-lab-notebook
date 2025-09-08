@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import LightboxImage from './LightboxImage'
+import LightboxImage from './BaseLightboxImage'
 
 /**
  * CSS Masonry component using CSS Grid for better performance
@@ -36,36 +36,36 @@ export default function Masonry({
       gap: ${gap};
       align-items: start;
     }
-    
+
     @media (max-width: 768px) {
       .masonry-grid {
         grid-template-columns: repeat(${Math.min(2, columns)}, 1fr);
       }
     }
-    
+
     @media (max-width: 480px) {
       .masonry-grid {
         grid-template-columns: 1fr;
       }
     }
-    
+
     .masonry-item {
       break-inside: avoid;
       margin-bottom: 0;
     }
-    
+
     .masonry-item img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
-    
+
     .masonry-item img:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
-    
+
     .photo-caption {
       margin-top: 0.5rem;
       margin-bottom: 0;

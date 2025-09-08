@@ -4,12 +4,12 @@ import 'yet-another-react-lightbox/styles.css'
 import React, { useState, useCallback } from 'react'
 import Image from 'next/image'
 
-export default function LightboxImage({
+export default function BaseLightboxImage({
   src,
   largeSrc,
   alt,
-  width = 800,
-  height = 600,
+  width = 1000,
+  height = 750,
   className = '',
   style = {},
   aspectRatio,
