@@ -27,12 +27,7 @@ export default function Masonry({
   gap = '1rem',
   className = '',
 }) {
-  const masonryStyle = {
-    display: 'grid',
-    gridTemplateColumns: `repeat(${columns}, 1fr)`,
-    gap: gap,
-    alignItems: 'start',
-  }
+  // masonryStyle removed (was unused)
 
   const responsiveStyle = `
     .masonry-grid {
@@ -87,8 +82,8 @@ export default function Masonry({
     return (
       <>
         <div className={`masonry-grid ${className}`}>
-          {photos.map((photo, index) => (
-            <div key={index} className='masonry-item'>
+          {photos.map(photo => (
+            <div key={photo.src} className='masonry-item'>
               <LightboxImage
                 src={photo.src}
                 largeSrc={photo.largeSrc}
@@ -111,7 +106,7 @@ export default function Masonry({
     <>
       <div className={`masonry-grid ${className}`}>
         {React.Children.map(children, (child, index) => (
-          <div key={index} className='masonry-item'>
+          <div key={child.key || index} className='masonry-item'>
             {child}
           </div>
         ))}

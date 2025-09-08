@@ -1,7 +1,7 @@
 'use client'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import Image from 'next/image'
 
 /**
@@ -39,6 +39,11 @@ export default function LightboxImage({
     ...style,
   }
 
+  const handleOpen = useCallback(() => setOpen(true), [])
+  const handleClose = useCallback(() => setOpen(false), [])
+  const renderButtonPrev = useCallback(() => null, [])
+  const renderButtonNext = useCallback(() => null, [])
+
   return (
     <>
       <Image
@@ -48,18 +53,18 @@ export default function LightboxImage({
         height={height}
         className={className}
         style={defaultStyle}
-        onClick={() => setOpen(true)}
+        onClick={handleOpen}
         placeholder='blur'
         blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=='
       />
       <Lightbox
         open={open}
-        close={() => setOpen(false)}
+        close={handleClose}
         slides={[{ src: largeSrc || src, alt }]}
         carousel={{ finite: true }}
         render={{
-          buttonPrev: () => null,
-          buttonNext: () => null,
+          buttonPrev: renderButtonPrev,
+          buttonNext: renderButtonNext,
         }}
       />
     </>

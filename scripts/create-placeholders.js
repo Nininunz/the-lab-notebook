@@ -63,14 +63,18 @@ ratios.forEach((ratio, index) => {
   const filepath = path.join(placeholderDir, filename)
 
   fs.writeFileSync(filepath, svg)
+  // eslint-disable-next-line no-console
   console.log(`Created: ${filename}`)
 })
 
+// eslint-disable-next-line no-console
 console.log(
   `\nCreated ${ratios.length} placeholder images in public/images/placeholders/`
 )
+// eslint-disable-next-line no-console
 console.log('\nUsage examples:')
 ratios.forEach(ratio => {
+  // eslint-disable-next-line no-console
   console.log(
     `<AutoLightboxImage keyName="placeholder-${ratio.name}" parentDir="placeholders" alt="${ratio.label} placeholder" aspectRatio="${ratio.name.replace('-', '/')}" />`
   )

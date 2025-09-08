@@ -1,6 +1,4 @@
-import { Callout } from 'nextra/components'
 import { useMDXComponents as getThemeComponents } from 'nextra-theme-docs' // nextra-theme-blog or your custom theme
-import LightboxImage from './components/LightboxImage'
 
 // Get the default MDX components
 const themeComponents = getThemeComponents()
@@ -13,7 +11,6 @@ export function useMDXComponents(components) {
   }
 }
 
-export default {
-  LightboxImage,
-  // ...other components
-}
+const mdxComponents = {}
+
+export default mdxComponents

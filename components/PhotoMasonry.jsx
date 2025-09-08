@@ -24,14 +24,7 @@ export default function PhotoMasonry({
   columns = 'auto',
   gap = '1rem',
 }) {
-  const columnCount =
-    columns === 'auto'
-      ? {
-          base: 1,
-          sm: 2,
-          lg: 3,
-        }
-      : columns
+  // columnCount removed (was unused)
 
   const gridStyle = {
     display: 'grid',
@@ -45,8 +38,8 @@ export default function PhotoMasonry({
 
   return (
     <div style={gridStyle} className='photo-masonry'>
-      {photos.map((photo, index) => (
-        <div key={index} className='photo-item'>
+      {photos.map(photo => (
+        <div key={photo.src} className='photo-item'>
           <LightboxImage
             src={photo.src}
             largeSrc={photo.largeSrc}

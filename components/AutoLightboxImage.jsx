@@ -82,7 +82,7 @@ export default function AutoLightboxImage({
           extensions: ['svg'],
           fallback: null,
         })
-      } catch (e) {
+      } catch {
         return fallback
       }
     }
@@ -102,7 +102,7 @@ export default function AutoLightboxImage({
       extensions,
       fallback: aspectRatioFallback,
     })
-  } catch (e) {
+  } catch {
     // If image resolution fails, use the aspect ratio fallback
     src = aspectRatioFallback || '/images/placeholders/placeholder-16-9.svg'
   }
@@ -120,7 +120,7 @@ export default function AutoLightboxImage({
       fallback: null,
     })
     largeSrc = originalSrc
-  } catch (e) {
+  } catch {
     // No original found, use display image for lightbox
     largeSrc = src
   }
