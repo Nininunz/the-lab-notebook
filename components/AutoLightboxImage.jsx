@@ -1,3 +1,4 @@
+'use client'
 /**
  * Auto-resolving LightboxImage component
  *
@@ -45,22 +46,38 @@ export default function AutoLightboxImage({
     throw new Error('src is required for AutoLightboxImage')
   }
 
-  // Create style object with aspect ratio if provided
-  const imageStyle = aspectRatio
-    ? { aspectRatio, objectFit: 'cover', ...style }
-    : style
+  // Create style object with aspect ratio and hover effects
+  const imageStyle = {
+    width: '100%',
+    height: 'auto',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+    ...(aspectRatio && { aspectRatio, objectFit: 'cover' }),
+    ...style,
+  }
+
+  const imageClassName = `lightbox-image ${className}`.trim()
 
   return (
-    <BaseLightboxImage
-      src={src}
-      largeSrc={largeSrc || src}
-      alt={alt}
-      width={width}
-      height={height}
-      className={className}
-      style={imageStyle}
-      aspectRatio={aspectRatio}
-      {...props}
-    />
+    <>
+      <BaseLightboxImage
+        src={src}
+        largeSrc={largeSrc || src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={imageClassName}
+        style={imageStyle}
+        aspectRatio={aspectRatio}
+        {...props}
+      />
+      <style jsx>{`
+        :global(.lightbox-image:hover) {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+      `}</style>
+    </>
   )
 }

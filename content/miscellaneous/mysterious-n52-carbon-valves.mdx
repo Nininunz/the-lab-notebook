@@ -1,4 +1,5 @@
-import Masonry from '@/components/Masonry'
+import PhotoGrid from '@/components/PhotoGrid'
+
 import AutoLightboxImage from '@/components/AutoLightboxImage'
 
 export const IMAGE_DIR = '/images/mysterious-n52-carbon-valves'
@@ -63,7 +64,7 @@ Honestly, I can't explain how that even happens. It doesn't matter the amount of
 
 I'll include pictures of the valves below. For reference, I've also included a valve from my N55 that has tons more buildup but still maintains a shiny ring where it should.
 
-<Masonry columns={2} className='mt-6'>
+<PhotoGrid columns={2} className='mt-6'>
   <div>
     <AutoLightboxImage
       src={`${IMAGE_DIR}/n52-ex-valve_cls_3x4.webp`}
@@ -104,7 +105,7 @@ I'll include pictures of the valves below. For reference, I've also included a v
       carbon buildup
     </div>
   </div>
-</Masonry>
+</PhotoGrid>
 
 ## The Mystery Continues
 
@@ -114,7 +115,7 @@ This remains one of the most bizarre engine failures I've encountered. The compl
 
 Here's a few other pictures from the teardown process. I didn't take many. The photos tell the story of one of the most unusual failures I've come across.
 
-<Masonry gap='1.5rem' className='mt-6'>
+<PhotoGrid gap='1.5rem' className='mt-6'>
 
 <div>
   <AutoLightboxImage
@@ -190,6 +191,6 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
       Close up of exhaust valves - odd texture pattern
     </div>
   </div>
-</Masonry>
+</PhotoGrid>
 
 **Still can't explain it.** If you've seen anything like this before or have theories about how carbon can accumulate to this extent around the valve seats — to the point of zero compression — I'd love to hear from you.
