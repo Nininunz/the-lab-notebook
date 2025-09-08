@@ -1,13 +1,11 @@
 import { Callout } from 'nextra/components'
 import AutoLightboxImage from '@/components/AutoLightboxImage'
 
-## Wiring Overview (No Pre-Existing Harness)
+# Wiring The New Harness
 
-This section applies to **E38, E39, E46, E53, E60, E61, E63, and E83** retrofits where the vehicle did not come pre-wired for an electrochromic mirror.
+This section applies to **E38, E39, E46, E53, E60, E61, E63, and E83** retrofits where the vehicle did not come pre-wired for an electrochromic mirror. If your vehicle **already has a connector** behind the windshield mount, you can **skip this section.**
 
-Your connector layout may look different depending on chassis, but the wiring functions are consistent: **signal, ground, and power.**
-
----
+## Overview
 
 #### OEM Approach
 
@@ -22,9 +20,7 @@ This kit includes all necessary wiring, connectors, and installation hardware. H
 
 #### Budget-Friendly Alternative
 
-<Callout type='info'>
-  **DIY Solution:** If you don't mind sourcing parts and wrapping harnesses.
-</Callout>
+**DIY Solution:** If you don't mind sourcing parts and wrapping harnesses.
 
 **Required Components:**
 
@@ -47,31 +43,47 @@ This kit includes all necessary wiring, connectors, and installation hardware. H
 - **Scissors:** For cutting wire and tape.
 - **Wire Strippers:** Anything that can strip 0.35 mm² (22 AWG) wire works.
 
----
+## Wiring Diagram
 
-### Wiring Diagram
+Your connector layout may look different depending on chassis, but the wiring functions are consistent: **signal, ground, and power.**
 
-In this diagram, **A22 (mirror)** connects with **X18246 (10-pin connector).**
+<div className='mt-8 mb-12'>
+  <span className='text-lg font-bold'>
+    In this diagram, A22 (mirror) connects with X18246 (10-pin connector):
+  </span>
+  <div className='h-2' />
+  <div className='max-w-xl'>
+    <AutoLightboxImage
+      keyName='connector-wiring'
+      parentDir='homelink-retrofit'
+      alt='Wiring Diagram'
+      width={800}
+    />
+  </div>
+</div>
 
-<AutoLightboxImage
-  keyName="connector-wiring"
-  parentDir="homelink-retrofit"
-  alt="Wiring Diagram"
-  width={600}
-/>
+**The relevant wires are:**
 
-The relevant wires are:
-
-- **Pin 1 — S_RS+**: signal wire for the mirror’s auto-dimming function
+- **Pin 1 — S_RS+**: signal wire for the mirror's auto-dimming function
 - **Pin 3 — 15&lt;24**: switched power (Terminal 15, Fuse 24)
 - **Pin 10 — 31E**: ground
 
-<AutoLightboxImage
-  keyName="connector"
-  parentDir="homelink-retrofit"
-  alt="Connector Diagram"
-  width={400}
-/>
+---
+
+<div className='mt-8 mb-12'>
+  <span className='text-lg font-bold'>
+    Here is the pin layout for the connector itself:
+  </span>
+  <div className='h-2' />
+  <div className='max-w-xl'>
+    <AutoLightboxImage
+      keyName='connector'
+      parentDir='homelink-retrofit'
+      alt='Connector Diagram'
+      width={400}
+    />
+  </div>
+</div>
 
 <Callout type='info'>
   If you sourced your connector from a mirror at the junkyard you may notice
@@ -94,7 +106,7 @@ Now this is the part where you'll have to consult your specific vehicle's wiring
 
 If you want a simpler approach, you can tap into nearby switched power and ground instead of running wires all the way to the fuse panel.
 
-For example:
+**For example:**
 
 - **Power (Terminal 15)** → use the sunroof harness
 - **Ground** → nearby ground point
@@ -107,5 +119,3 @@ You will still need to run the **S_RS+ signal wire** to a valid connection point
   Always double-check what you tap into. Never splice into safety-critical
   systems such as airbags.
 </Callout>
-
-im unable to confirm at this time but it looks like bmw used the same windshield mount for the mirror going back to at least the e36. that would make this mirror almost plug and play if you wanted homelink and compass and didnt care about auto dimming. as ive mentioned, those work independently of the car so you could just run power and ground to the mirror and it would work. you could use 12v from the dome lights.

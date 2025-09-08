@@ -4,7 +4,7 @@ const meta = {
   introduction: 'Introduction',
   'choosing-the-right-mirror': 'Choosing the Right Mirror',
   'mirror-removal-and-installation': 'Mirror Removal and Installation',
-  wiring: 'Wiring',
+  'wiring-the-new-harness': 'Wiring The New Harness',
   conclusion: 'Conclusion',
 }
 
