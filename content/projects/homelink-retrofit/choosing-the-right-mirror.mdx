@@ -3,6 +3,7 @@ import { Steps } from 'nextra/components'
 import PhotoGrid from '@/components/PhotoGrid'
 import BaseLightboxImage from '@/components/BaseLightboxImage'
 import AutoLightboxImage from '@/components/AutoLightboxImage'
+import LightboxImage from '@/components/LightboxImage'
 
 export const IMAGE_DIR = '/images/homelink-retrofit'
 
@@ -59,11 +60,13 @@ catalog.
 ## Styling Variations
 
 <br />
-<BaseLightboxImage
-  src='/images/homelink-retrofit/mirror-highlight.webp'
-  largeSrc='/images/homelink-retrofit/original/mirror-highlight.jpg'
-  alt='Mirror highlight'
+<LightboxImage
+  src={`${IMAGE_DIR}/mirror-highlight_edit_10x3.5.webp`}
+  largeSrc={`${IMAGE_DIR}/mirror-highlight_edit_full_10x3.5.jpg`}
+  alt='Mirror highlighting styling differences'
+  aspectRatio='10x3.5'
 />
+
 <Callout>
   These areas will have varied styling differences across different years and
   models.
@@ -78,7 +81,7 @@ Compass mirrors came in two versions: early models with a visible cutout, and po
 <br />
 <PhotoGrid columns={2} className='mt-6'>
   <div>
-    <AutoLightboxImage
+    <LightboxImage
       src={`${IMAGE_DIR}/compass-cutout.webp`}
       largeSrc={`${IMAGE_DIR}/original/compass-cutout.jpg`}
       alt="Compass with cutout"
@@ -99,7 +102,7 @@ Compass mirrors came in two versions: early models with a visible cutout, and po
   </div>
 
   <div>
-    <AutoLightboxImage
+    <LightboxImage
       src={`${IMAGE_DIR}/compass-hidden.webp`}
       largeSrc={`${IMAGE_DIR}/original/compass-hidden.jpg`}
       alt="Compass with hidden display"
@@ -123,7 +126,7 @@ Compass mirrors came in two versions: early models with a visible cutout, and po
 
 <PhotoGrid columns={2} className='mt-6'>
   <div>
-    <AutoLightboxImage
+    <LightboxImage
       src={`${IMAGE_DIR}/mirror-toll.webp`}
       largeSrc={`${IMAGE_DIR}/original/mirror-toll.jpg`}
       alt='Electronic toll collection'
