@@ -8,13 +8,7 @@ const meta = {
     },
   },
   projects: 'Projects',
-  miscellaneous: 'Miscellaneous',
-  'home-alt': {
-    title: 'Alt',
-    theme: {
-      breadcrumb: false,
-    },
-  },
+  'docs-guides': 'Docs & Guides',
 }
 
 export default withTodos(meta, import.meta.url)

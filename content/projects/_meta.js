@@ -2,7 +2,7 @@ import { withTodos } from '@/lib/meta-utils.js'
 
 const meta = {
   index: 'All Projects',
-  'homelink-retrofit': 'HomeLink Retrofit',
+  'e83-cas3-retrofit': 'E83 CAS3 Retrofit & Comfort Access',
 }
 
 export default withTodos(meta, import.meta.url)
