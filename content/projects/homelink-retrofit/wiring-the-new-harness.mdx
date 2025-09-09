@@ -1,5 +1,5 @@
 import { Callout } from 'nextra/components'
-import AutoLightboxImage from '@/components/AutoLightboxImage'
+import LightboxImage from '@/components/LightboxImage'
 export const IMAGE_DIR = '/images/homelink-retrofit'
 
 # Wiring The New Harness
@@ -80,10 +80,9 @@ functions are consistent: **signal, ground, and power.**
   </span>
   <div className='h-2' />
   <div className='max-w-xl'>
-    <AutoLightboxImage
+    <LightboxImage
       src={`${IMAGE_DIR}/connector-wiring.webp`}
       alt='Wiring Diagram'
-      width={800}
     />
   </div>
 </div>
@@ -102,10 +101,9 @@ functions are consistent: **signal, ground, and power.**
   </span>
   <div className='h-2' />
   <div className='max-w-xl'>
-    <AutoLightboxImage
+    <LightboxImage
       src={`${IMAGE_DIR}/connector.webp`}
       alt='Connector Diagram'
-      width={400}
     />
   </div>
 </div>
