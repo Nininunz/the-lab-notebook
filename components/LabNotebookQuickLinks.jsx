@@ -9,11 +9,11 @@ import {
 
 export default function LabNotebookQuickLinks() {
   const quickLinks = [
-    { label: 'All Projects', href: '', icon: Sparkles },
-    { label: 'Docs Index', href: '', icon: FileText },
+    { label: 'All Projects', href: '/projects', icon: Sparkles },
+    { label: 'Docs Index', href: '/docs', icon: FileText },
     { label: 'Portfolio', href: '', icon: GitBranch },
     { label: 'Changelog', href: '', icon: CalendarClock },
-    { label: 'Shortcuts', href: '', icon: Link },
+    { label: 'Shortcuts', href: '/shortcuts', icon: Link },
   ]
 
   return (
