@@ -127,7 +127,9 @@ export default function CompletedProjectCard({
             {completedDate}
           </div>
           {domain && (
-            <div className={`text-xs font-medium ${colors.text}`}>{domain}</div>
+            <div className='text-xs font-medium text-gray-500 dark:text-gray-400'>
+              {domain}
+            </div>
           )}
         </div>
 
