@@ -9,10 +9,14 @@ const kanit = Kanit({
 })
 
 export const Logo = () => {
-  const { resolvedTheme } = useTheme()
-  const fillColor = resolvedTheme === 'dark' ? '#fff' : '#000'
+  const { resolvedTheme, theme } = useTheme()
+  // Use currentColor to avoid hydration mismatch and let CSS handle the color
+  const fillColor = 'currentColor'
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+    <span
+      className='text-gray-900 dark:text-white'
+      style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
+    >
       <svg
         version='1.0'
         xmlns='http://www.w3.org/2000/svg'
