@@ -1,6 +1,5 @@
 import PhotoGrid from '@/components/PhotoGrid'
-
-import AutoLightboxImage from '@/components/AutoLightboxImage'
+import LightboxImage from '@/components/LightboxImage'
 
 export const IMAGE_DIR = '/images/mysterious-n52-carbon-valves'
 
@@ -66,7 +65,7 @@ I'll include pictures of the valves below. For reference, I've also included a v
 
 <PhotoGrid columns={2} className='mt-6'>
   <div>
-    <AutoLightboxImage
+    <LightboxImage
       src={`${IMAGE_DIR}/n52-ex-valve_cls_3x4.webp`}
       largeSrc={`${IMAGE_DIR}/n52-ex-valve_cls_full_3x4.png`}
       alt="N52 valve with extreme carbon buildup"
@@ -86,7 +85,7 @@ I'll include pictures of the valves below. For reference, I've also included a v
   </div>
 
   <div>
-    <AutoLightboxImage
+    <LightboxImage
       src={`${IMAGE_DIR}/n55-in-valve_cls_3x4.webp`}
       largeSrc={`${IMAGE_DIR}/n55-in-valve_cls_full_3x4.png`}
       alt="N55 valve for comparison"
@@ -118,7 +117,7 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
 <PhotoGrid gap='1.5rem' className='mt-6'>
 
 <div>
-  <AutoLightboxImage
+  <LightboxImage
     src={`${IMAGE_DIR}/n52-head-valves-02_3x4.webp`}
     largeSrc={`${IMAGE_DIR}/n52-head-valves-02_full_3x4.jpg`}
     alt="N52 head combustion chamber view"
@@ -136,7 +135,7 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
   </div>
 </div>
 <div>
-  <AutoLightboxImage
+  <LightboxImage
     src={`${IMAGE_DIR}/n52-deck-top-01_3x4.webp`}
     largeSrc={`${IMAGE_DIR}/n52-deck-top-01_full_3x4.jpg`}
     alt="N52 engine deck top view"
@@ -155,7 +154,7 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
   </div>
 </div>
 <div>
-  <AutoLightboxImage
+  <LightboxImage
     src={`${IMAGE_DIR}/n52-deck-top-cylinder-1_4x3.webp`}
     largeSrc={`${IMAGE_DIR}/n52-deck-top-cylinder-1_full_4x3.jpg`}
     alt="N52 cylinder 4 with carbon and coolant"
@@ -174,7 +173,7 @@ Here's a few other pictures from the teardown process. I didn't take many. The p
   </div>
 </div>
 <div>
-    <AutoLightboxImage
+    <LightboxImage
       src={`${IMAGE_DIR}/n52-head-valves_cls_3x4.webp`}
       largeSrc={`${IMAGE_DIR}/n52-head-valves_cls_full_3x4.jpg`}
       alt="N52 exhaust valves close up"
