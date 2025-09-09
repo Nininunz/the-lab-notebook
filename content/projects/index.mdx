@@ -2,90 +2,79 @@
 
 Project portfolio organized by status, domain, and completion timeline.
 
+import ProjectCard from '@/components/ProjectCard'
+import CompletedProjectCard from '@/components/CompletedProjectCard'
+
 ## Currently Active
 
-<div className="grid gap-4 md:grid-cols-2">
+<div className="grid gap-6 mt-5 md:grid-cols-2">
 
-<div>
+<ProjectCard
+  title='HomeLink Retrofit'
+  timeline='2025 Q3-Q4'
+  progress={60}
+  description='Retrofitting garage door integration into E83 platform. Working on CAN message decoding and module programming.'
+  nextMilestones='Module installation, CAN gateway configuration, testing'
+  href='/projects/homelink-retrofit'
+  status='active'
+  color='blue'
+/>
 
-### HomeLink Retrofit
+<ProjectCard
+  title='Smart Grid Monitor V2'
+  timeline='Ongoing'
+  progress={85}
+  description='Enhanced energy monitoring with predictive analytics and automated demand response.'
+  nextMilestones='ML model training, alert system, mobile app'
+  href='/projects/smart-grid-monitor'
+  status='active'
+  color='green'
+/>
 
-**Timeline**: 2025 Q3-Q4 | **Progress**: 60%
-
-Retrofitting garage door integration into E83 platform. Working on CAN message decoding and module programming.
-
-**Next Milestones**: Module installation, CAN gateway configuration, testing
-**[View Progress →](/projects/homelink-retrofit)**
-
-</div>
-
-<div>
-
-### Smart Grid Monitor V2
-
-**Timeline**: Ongoing | **Progress**: 85%
-
-Enhanced energy monitoring with predictive analytics and automated demand response.
-
-**Next Milestones**: ML model training, alert system, mobile app
-**[View Progress →](/projects/smart-grid-monitor)**
-
-</div>
-
-<div>
-
-### Junkyard Intelligence Platform
-
-**Timeline**: 2025 Q4-2026 Q1 | **Progress**: 15%
-
-Next-generation salvage yard inventory system with AI-powered part identification and predictive availability modeling.
-
-**Next Milestones**: Computer vision training, database architecture, MVP development
-**[View Progress →](/projects/junkyard-intelligence)**
-
-</div>
+<ProjectCard
+  title='Junkyard Intelligence Platform'
+  timeline='2025 Q4-2026 Q1'
+  progress={15}
+  description='Next-generation salvage yard inventory system with AI-powered part identification and predictive availability modeling.'
+  nextMilestones='Computer vision training, database architecture, MVP development'
+  href='/projects/junkyard-intelligence'
+  status='planning'
+  color='purple'
+/>
 
 </div>
 
 ## Recently Completed
 
-<div className="grid gap-4 md:grid-cols-2">
+<div className=" mt-5 space-y-3">
 
-<div>
+<CompletedProjectCard
+  title='CAS3 Retrofit & Comfort Access'
+  description='Push-button start and keyless entry retrofit with full OEM integration.'
+  completedDate='2025 Q2'
+  domain='Automotive'
+  href='/projects/cas3-retrofit'
+  color='blue'
+/>
 
-### CAS3 Retrofit & Comfort Access
+<CompletedProjectCard
+  title='Salvage-Yard Inventory System'
+  description='Multi-source inventory aggregation with 10k+ daily updates.'
+  completedDate='2025 Q1'
+  domain='Software'
+  href='/projects/dumpyard'
+  color='purple'
+/>
 
-**Completed**: 2025 Q2 | **Domain**: Automotive
-
-Push-button start and keyless entry retrofit with full OEM integration.
-
-**[Case Study →](/projects/cas3-retrofit)**
-
-</div>
-
-<div>
-
-### Salvage-Yard Inventory System
-
-**Completed**: 2025 Q1 | **Domain**: Software
-
-Multi-source inventory aggregation with 10k+ daily updates.
-
-**[Case Study →](/projects/dumpyard)**
-
-</div>
-
-<div>
-
-### N52 Engine Analysis
-
-**Completed**: 2025 Q3 | **Domain**: Mechanical
-
-Complete teardown and carbon buildup failure investigation.
-
-**[Report →](/miscellaneous/mysterious-n52-carbon-valves)**
-
-</div>
+<CompletedProjectCard
+  title='N52 Engine Analysis'
+  description='Complete teardown and carbon buildup failure investigation.'
+  completedDate='2025 Q3'
+  domain='Mechanical'
+  href='/miscellaneous/mysterious-n52-carbon-valves'
+  linkText='Report'
+  color='orange'
+/>
 
 </div>
 

@@ -1,0 +1,146 @@
+# Completed Project Card Template Examples
+
+Import the CompletedProjectCard component and use it for finished projects:
+
+```jsx
+import CompletedProjectCard from '@/components/CompletedProjectCard'
+```
+
+## Usage Examples
+
+### Automotive Project
+
+```jsx
+<CompletedProjectCard
+  title='CAS3 Retrofit & Comfort Access'
+  description='Push-button start and keyless entry retrofit with full OEM integration.'
+  completedDate='2025 Q2'
+  domain='Automotive'
+  href='/projects/cas3-retrofit'
+  linkText='Case Study'
+/>
+```
+
+### Software Project
+
+```jsx
+<CompletedProjectCard
+  title='Salvage-Yard Inventory System'
+  description='Multi-source inventory aggregation with 10k+ daily updates.'
+  completedDate='2025 Q1'
+  domain='Software'
+  href='/projects/dumpyard'
+/>
+```
+
+### Mechanical Project
+
+```jsx
+<CompletedProjectCard
+  title='N52 Engine Analysis'
+  description='Complete teardown and carbon buildup failure investigation.'
+  completedDate='2025 Q3'
+  domain='Mechanical'
+  href='/miscellaneous/mysterious-n52-carbon-valves'
+  linkText='Report'
+/>
+```
+
+### Electronics Project
+
+```jsx
+<CompletedProjectCard
+  title='ESP32 BLE Gateway'
+  description='HomeKit integration with custom beacon management system.'
+  completedDate='2024 Q4'
+  domain='Electronics'
+  href='/projects/esp32-ble-gateway'
+/>
+```
+
+### Research Project
+
+```jsx
+<CompletedProjectCard
+  title='CAN Bus Protocol Analysis'
+  description='Deep dive into BMW E-series communication protocols and message structures.'
+  completedDate='2024 Q3'
+  domain='Research'
+  href='/research/can-bus-analysis'
+  linkText='Research Paper'
+  color='slate'
+/>
+```
+
+## Props Reference
+
+### Required Props
+
+- `title` (string) - Project name
+- `description` (string) - Brief project description
+- `completedDate` (string) - When the project was finished (e.g., "2025 Q2")
+- `domain` (string) - Project domain (see supported domains below)
+
+### Optional Props
+
+- `href` (string) - Link to detailed project page/case study
+- `linkText` (string) - Text for link accessibility (default: "Case Study")
+- `color` (string) - Color scheme independent of domain: "emerald", "blue", "red", "orange", "yellow", "purple", "slate" (default: "emerald")
+
+## Color Schemes
+
+Choose any color independent of domain:
+
+- **emerald** - Clean green gradient (default)
+- **blue** - Professional blue gradient
+- **red** - Vibrant red gradient
+- **orange** - Warm orange gradient
+- **yellow** - Bright yellow gradient
+- **purple** - Rich purple gradient
+- **slate** - Neutral gray gradient
+
+## Layout Usage
+
+### Simple List
+
+```jsx
+<div className='space-y-3'>
+  <CompletedProjectCard {...project1} />
+  <CompletedProjectCard {...project2} />
+  <CompletedProjectCard {...project3} />
+</div>
+```
+
+### With Section Header
+
+```jsx
+## Recently Completed
+
+<div className="space-y-3">
+  <CompletedProjectCard
+    title="Project Name"
+    description="Project description..."
+    completedDate="2025 Q1"
+    domain="Software"
+    href="/projects/project-name"
+  />
+</div>
+```
+
+## Visual Features
+
+- **Domain-specific coloring** with gradients and borders
+- **Checkmark completion icons** in domain colors
+- **Hover effects** with enhanced shadows and border colors
+- **Responsive design** that works on mobile and desktop
+- **Dark mode support** throughout all color schemes
+- **Consistent typography** with proper hierarchy
+
+## Accessibility
+
+- Navigation arrows include `title` attributes for screen readers
+- Color combinations meet WCAG contrast requirements
+- Hover states provide clear interaction feedback
+- Semantic HTML structure for better screen reader navigation
+
+This template provides a clean, consistent way to display completed projects with proper domain categorization and visual hierarchy.
