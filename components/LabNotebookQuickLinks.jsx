@@ -9,11 +9,11 @@ import {
 
 export default function LabNotebookQuickLinks() {
   const quickLinks = [
-    { label: 'All Projects', href: '#/projects', icon: Sparkles },
-    { label: 'Docs Index', href: '#/docs', icon: FileText },
-    { label: 'Tools & Stack', href: '#/stack', icon: GitBranch },
-    { label: 'Changelog', href: '#/updates', icon: CalendarClock },
-    { label: 'Shortcuts', href: '#/links', icon: Link },
+    { label: 'All Projects', href: '', icon: Sparkles },
+    { label: 'Docs Index', href: '', icon: FileText },
+    { label: 'Portfolio', href: '', icon: GitBranch },
+    { label: 'Changelog', href: '', icon: CalendarClock },
+    { label: 'Shortcuts', href: '', icon: Link },
   ]
 
   return (
@@ -30,7 +30,7 @@ export default function LabNotebookQuickLinks() {
           <a
             key={q.label}
             href={q.href}
-            className='group flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white/70 px-3 py-2 text-sm shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-white/5'
+            className='group flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white/70 px-3 py-3 text-sm shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-white/5'
           >
             <span className='inline-flex items-center gap-2 text-slate-700 dark:text-slate-200'>
               <q.icon className='h-4 w-4' />

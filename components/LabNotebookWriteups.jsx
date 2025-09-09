@@ -3,24 +3,9 @@ import { FileText, CalendarClock } from 'lucide-react'
 export default function LabNotebookWriteups() {
   const writeups = [
     {
-      title: 'N55 Intake Valve Carbon Study',
-      date: '2025‑08‑02',
-      href: '#/notes/n55-valve-study',
-    },
-    {
-      title: 'ESP32 BLE Beacons for HomeKit',
-      date: '2025‑07‑18',
-      href: '#/notes/esp32-ble-homekit',
-    },
-    {
-      title: 'LKQ Scraper Rebuild (Python→Node)',
-      date: '2025‑05‑19',
-      href: '#/notes/lkq-node-rewrite',
-    },
-    {
-      title: 'BMW VO/SA Parser Explained',
-      date: '2025‑03‑23',
-      href: '#/notes/bmw-vo-parser',
+      title: 'The Mysterious BMW N52 Engine Failure',
+      date: '2025-09-06',
+      href: '/miscellaneous/mysterious-n52-carbon-valves',
     },
   ]
 

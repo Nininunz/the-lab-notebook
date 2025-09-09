@@ -1,16 +1,8 @@
 export default function LabNotebookUpdates() {
   const updates = [
     {
-      date: '2025‑09‑07',
-      text: 'Polished Lab Notebook landing, standardized media aspect ratios.',
-    },
-    {
-      date: '2025‑08‑12',
-      text: 'Added energy dashboards and Ecobee metrics to Smart Grid Monitor.',
-    },
-    {
-      date: '2025‑06‑01',
-      text: 'Deployed unified inventory API (WAP/PNP/LKQ) with scheduler.',
+      date: '2025-09-06',
+      text: 'Completed N52 engine teardown and cylinder head inspection analysis.',
     },
   ]
 
