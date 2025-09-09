@@ -1,7 +1,7 @@
 export default function LabNotebookHeader() {
   return (
     <div className='w-full'>
-      <div className='mx-auto max-w-6xl'>
+      <div className='mx-auto max-w-6xl mt-7'>
         <div className='relative'>
           {/* Background grid pattern */}
           <div className='absolute inset-0 bottom-[-70px] bg-[linear-gradient(to_right,#8884_1px,transparent_1px),linear-gradient(to_bottom,#8884_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:center] opacity-30 [mask-image:linear-gradient(to_bottom,transparent_0%,black_16%,black_80%,transparent_100%),linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)] [mask-composite:intersect]' />

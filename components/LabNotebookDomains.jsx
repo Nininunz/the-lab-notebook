@@ -1,6 +1,6 @@
 import { Car, Cpu, Laptop, BookOpen, Wrench, FlaskConical } from 'lucide-react'
 
-export default function LabNotebookLanding() {
+export default function LabNotebookDomains() {
   const domains = [
     {
       title: 'Automotive',
@@ -47,8 +47,8 @@ export default function LabNotebookLanding() {
   ]
 
   return (
-    <div className='min-h-[80vh] w-full'>
-      <div className='mx-auto max-w-6xl py-12 md:py-16'>
+    <div className='w-full'>
+      <div className='mx-auto max-w-6xl pt-12'>
         {/* Section heading */}
         <div className='mb-4 flex items-center gap-3'>
           <h2 className='text-xl font-semibold tracking-tight text-slate-900 dark:text-white'>
