@@ -11,8 +11,8 @@ export default function LabNotebookQuickLinks() {
   const quickLinks = [
     { label: 'All Projects', href: '/projects', icon: Sparkles },
     { label: 'Docs Index', href: '/docs', icon: FileText },
-    { label: 'Portfolio', href: '', icon: GitBranch },
-    { label: 'Changelog', href: '', icon: CalendarClock },
+    { label: 'Portfolio', href: 'https://nininunz.dev', icon: GitBranch },
+    { label: 'Changelog', href: '/changelog', icon: CalendarClock },
     { label: 'Shortcuts', href: '/shortcuts', icon: Link },
   ]
 

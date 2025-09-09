@@ -7,8 +7,12 @@ const meta = {
       breadcrumb: false,
     },
   },
-  projects: 'Projects',
+  projects: 'Projects & Write-ups',
   'docs-guides': 'Docs & Guides',
+  shortcuts: 'Shortcuts & Quick Links',
+  docs: 'Technical Documentation',
+  PROJECT_STRUCTURE: 'Project Structure',
+  changelog: 'Changelog',
 }
 
 export default withTodos(meta, import.meta.url)
