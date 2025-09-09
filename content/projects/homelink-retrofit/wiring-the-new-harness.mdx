@@ -4,49 +4,75 @@ export const IMAGE_DIR = '/images/homelink-retrofit'
 
 # Wiring The New Harness
 
-This section applies to **E38, E39, E46, E53, E60, E61, E63, and E83** retrofits where the vehicle did not come pre-wired for an electrochromic mirror. If your vehicle **already has a connector** behind the windshield mount, you can **skip this section.**
+<div className='mt-5'>
+  This section applies to **E38, E39, E46, E53, E60, E61, E63, and E83**
+  retrofits where the vehicle did not come pre-wired for an electrochromic
+  mirror. If your vehicle **already has a connector** behind the windshield
+  mount, you can **skip this section.**
+</div>
 
 ## Overview
 
 #### OEM Approach
 
-BMW offers a complete wiring harness kit for this retrofit:
+<div className='mt-5'>
+  BMW offers a complete wiring harness kit for this retrofit:
+</div>
 
 **Part Number:** `61120140175` <br/>
 **Compatible with:** E38 / E39 / E46 / E53 / E60 / E61 / E63 / E83
 
-**Available from:** [FCP](https://www.fcpeuro.com/products/bmw-set-of-retrofit-cablesremote-rv-mirror-61120140175), [Turner](https://www.turnermotorsport.com/p-137565-61120140175-genuine-bmw-part/), [ECS](https://www.ecstuning.com/b-genuine-bmw-parts/rear-view-mirror-retrofit-cable-set/61120140175/)
+<div className='mt-5'>
+  **Available from:**
+  [FCP](https://www.fcpeuro.com/products/bmw-set-of-retrofit-cablesremote-rv-mirror-61120140175),
+  [Turner](https://www.turnermotorsport.com/p-137565-61120140175-genuine-bmw-part/),
+  [ECS](https://www.ecstuning.com/b-genuine-bmw-parts/rear-view-mirror-retrofit-cable-set/61120140175/)
+</div>
 
-This kit includes all necessary wiring, connectors, and installation hardware. However, it's quite costly for what is essentially some wire and a connector.
+<div className='mt-5'>
+  This kit includes all necessary wiring, connectors, and installation hardware.
+  However, it's quite costly for what is essentially some wire and a connector.
+</div>
 
 #### Budget-Friendly Alternative
 
-**DIY Solution:** If you don't mind sourcing parts and wrapping harnesses.
+<div className='mt-5'>
+  **DIY Solution:** If you don't mind sourcing parts and wrapping harnesses.
+</div>
 
 **Required Components:**
 
 - **Connector:**
-  - Available from [Tulay's Wire Werks](https://tulayswirewerks.com/product/bmw-10-pin-teal-unsealed-plug-connector-kit/) (connector + pins kit)
-  - Can be sourced from junkyard components: clockspring, mirror, driver window switch, turn signal stalk, wiper stalk, etc.
+  - Available from
+    [Tulay's Wire Werks](https://tulayswirewerks.com/product/bmw-10-pin-teal-unsealed-plug-connector-kit/)
+    (connector + pins kit)
+  - Can be sourced from junkyard components: clockspring, mirror, driver window
+    switch, turn signal stalk, wiper stalk, etc.
 
-    _Note: This connector uses various BMW part numbers depending on color and can't really be found by it._
+    _Note: This connector uses various BMW part numbers depending on color and
+    can't really be found by it._
 
 - **Pins:**
   - **Female:** `61138722287` (for 0.35mm wire)
-  - **Male:** `61138722314` (for 0.35mm wire) - _Don't actually need, just providing for reference._
+  - **Male:** `61138722314` (for 0.35mm wire) - _Don't actually need, just
+    providing for reference._
 
 - **Wire:** 22 AWG / 0.35mm² wire (various colors)
-- **Tape:** `Tesa 51608` harness tape - _Any harness tape will do but this is what BMW uses._
+- **Tape:** `Tesa 51608` harness tape - _Any harness tape will do but this is
+  what BMW uses._
 
 **Required Tools:**
 
-- **Crimpers:** I have [these IWISS crimpers](https://www.amazon.com/IWISS-Crimping-AWG28-20-Terminals-Connectors/dp/B078WNZ9FW/), but any that handle 0.35 mm² (22 AWG) terminals should work fine.
+- **Crimpers:** I have
+  [these IWISS crimpers](https://www.amazon.com/IWISS-Crimping-AWG28-20-Terminals-Connectors/dp/B078WNZ9FW/),
+  but any that handle 0.35 mm² (22 AWG) terminals should work fine.
 - **Scissors:** For cutting wire and tape.
 - **Wire Strippers:** Anything that can strip 0.35 mm² (22 AWG) wire works.
 
 ## Wiring Diagram
 
-Your connector layout may look different depending on chassis, but the wiring functions are consistent: **signal, ground, and power.**
+Your connector layout may look different depending on chassis, but the wiring
+functions are consistent: **signal, ground, and power.**
 
 <div className='mt-8 mb-12'>
   <span className='text-lg font-bold'>
@@ -99,20 +125,33 @@ Your connector layout may look different depending on chassis, but the wiring fu
 
 ### Wiring to Chassis
 
-Now this is the part where you'll have to consult your specific vehicle's wiring diagram, as it will be different for every model.
+<div className='mt-5'>
+  Now this is the part where you'll have to consult your specific vehicle's
+  wiring diagram, as it will be different for every model.
+</div>
 
 #### Shortcut Wiring Method
 
-If you want a simpler approach, you can tap into nearby switched power and ground instead of running wires all the way to the fuse panel.
+<div className='mt-5'>
+  If you want a simpler approach, you can tap into nearby switched power and
+  ground instead of running wires all the way to the fuse panel.
+</div>
 
 **For example:**
 
 - **Power (Terminal 15)** → use the sunroof harness
 - **Ground** → nearby ground point
 
-Because the mirror's current draw is very low, this is generally safe.
+<div className='mt-5'>
+  Because the mirror's current draw is very low, this is generally safe.
+</div>
 
-You will still need to run the **S_RS+ signal wire** to a valid connection point. In many cases, tapping into the existing run is sufficient if the signal is already shared with other systems. If not, route the wire directly to the originating module.
+<div className='mt-5'>
+  You will still need to run the **S_RS+ signal wire** to a valid connection
+  point. In many cases, tapping into the existing run is sufficient if the
+  signal is already shared with other systems. If not, route the wire directly
+  to the originating module.
+</div>
 
 <Callout type='warning'>
   Always double-check what you tap into. Never splice into safety-critical
