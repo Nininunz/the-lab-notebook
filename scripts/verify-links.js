@@ -1,7 +1,7 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
 import fs from 'fs'
-import path from 'path'
 import { glob } from 'glob'
 
 /**
@@ -31,7 +31,6 @@ class LinkVerifier {
     this.checkedFiles = new Set()
     this.existingPages = new Set()
     this.existingAssets = new Set()
-    this.docDirCount = 0
   }
 
   // Scan all content files to build list of existing pages
@@ -86,7 +85,7 @@ class LinkVerifier {
       console.log(
         `${colors.blue}Found ${this.existingAssets.size} static assets${colors.reset}`
       )
-    } catch (error) {
+    } catch {
       console.warn(
         `${colors.yellow}Warning: Could not scan public directory${colors.reset}`
       )
@@ -94,7 +93,7 @@ class LinkVerifier {
   }
 
   // Extract links from file content
-  extractLinks(content, filePath) {
+  extractLinks(content) {
     const links = []
 
     // Remove comments and code blocks to avoid false positives
@@ -103,15 +102,12 @@ class LinkVerifier {
     // First, resolve any DOC_DIR variables defined in the file
     const docDirMatch = content.match(/export const DOC_DIR = ['"]([^'"]+)['"]/)
     const docDir = docDirMatch ? docDirMatch[1] : null
-    if (docDir) {
-      this.docDirCount++
-    }
 
     // MDX/Markdown links: [text](url)
     const markdownLinks = cleanContent.match(/\[([^\]]*)\]\(([^)]+)\)/g) || []
     markdownLinks.forEach(match => {
       let url = match.match(/\]\(([^)]+)\)/)[1]
-      url = this.resolveTemplateUrl(url, docDir, filePath)
+      url = this.resolveTemplateUrl(url, docDir)
       if (this.isInternalLink(url)) {
         links.push({ url, type: 'markdown', match })
       }
@@ -121,7 +117,7 @@ class LinkVerifier {
     const hrefLinks = cleanContent.match(/href\s*=\s*["']([^"']+)["']/g) || []
     hrefLinks.forEach(match => {
       let url = match.match(/["']([^"']+)["']/)[1]
-      url = this.resolveTemplateUrl(url, docDir, filePath)
+      url = this.resolveTemplateUrl(url, docDir)
       if (this.isInternalLink(url)) {
         links.push({ url, type: 'jsx', match })
       }
@@ -131,7 +127,7 @@ class LinkVerifier {
     const imgSrcs = cleanContent.match(/src\s*=\s*["']([^"']+)["']/g) || []
     imgSrcs.forEach(match => {
       let url = match.match(/["']([^"']+)["']/)[1]
-      url = this.resolveTemplateUrl(url, docDir, filePath)
+      url = this.resolveTemplateUrl(url, docDir)
       if (this.isInternalLink(url) && this.isAssetPath(url)) {
         links.push({ url, type: 'image', match })
       }
@@ -161,7 +157,7 @@ class LinkVerifier {
   }
 
   // Resolve template URLs like ${DOC_DIR}/path
-  resolveTemplateUrl(url, docDir, filePath) {
+  resolveTemplateUrl(url, docDir) {
     if (url.includes('${DOC_DIR}') && docDir) {
       return url.replace('${DOC_DIR}', docDir)
     }
@@ -234,7 +230,7 @@ class LinkVerifier {
 
     try {
       const content = fs.readFileSync(filePath, 'utf-8')
-      const links = this.extractLinks(content, filePath)
+      const links = this.extractLinks(content)
 
       links.forEach(({ url }) => {
         this.verifyLink(url, filePath)
@@ -329,7 +325,6 @@ class LinkVerifier {
 
     console.log(`\n${colors.bold}📊 Link Verification Results${colors.reset}`)
     console.log(`Files checked: ${this.checkedFiles.size}`)
-    console.log(`DOC_DIR variables found: ${this.docDirCount}`)
     console.log(`Errors: ${this.errors.length}`)
     console.log(`Warnings: ${this.warnings.length}`)
   }

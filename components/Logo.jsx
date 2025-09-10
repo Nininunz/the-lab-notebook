@@ -1,6 +1,5 @@
 'use client'
 
-import { useTheme } from 'next-themes'
 import { Kanit } from 'next/font/google'
 
 const kanit = Kanit({
@@ -9,7 +8,6 @@ const kanit = Kanit({
 })
 
 export const Logo = () => {
-  const { resolvedTheme, theme } = useTheme()
   // Use currentColor to avoid hydration mismatch and let CSS handle the color
   const fillColor = 'currentColor'
   return (
