@@ -96,6 +96,7 @@ class LinkVerifier {
   }
 
   // Extract links from file content
+  // eslint-disable-next-line no-unused-vars
   extractLinks(content, filePath = '') {
     const links = []
 

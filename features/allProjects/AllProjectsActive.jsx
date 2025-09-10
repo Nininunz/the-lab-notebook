@@ -9,13 +9,13 @@ export default function AllProjectsActive() {
         progress={45}
         description='Next-generation salvage yard inventory system with AI-powered part identification, predictive availability modeling, real-time multi-yard aggregation, and a low-latency search interface—built for accuracy, scalability, and actionable insights.'
         nextMilestones='Computer vision training, cross-platform mobile app development, MVP development'
-        href='/future'
+        href='/project/junkyard-intelligence-platform'
         status='Active'
         color='purple'
         disabled
       />
 
-      <ProjectCardLarge
+      {/* <ProjectCardLarge
         title='Project Alpha'
         timeline='2035 Q1-Q4'
         progress={60}
@@ -37,7 +37,7 @@ export default function AllProjectsActive() {
         status='active'
         color='green'
         disabled
-      />
+      /> */}
     </div>
   )
 }

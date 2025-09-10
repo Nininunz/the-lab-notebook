@@ -5,7 +5,7 @@ export default function LabNotebookWriteups() {
     {
       title: 'The Mysterious BMW N52 Engine Failure',
       date: '2025-09-06',
-      href: '/miscellaneous/mysterious-n52-carbon-valves',
+      href: '/project/mysterious-n52-carbon-valves',
     },
   ]
   return <ListLinks listLinks={writeups} />

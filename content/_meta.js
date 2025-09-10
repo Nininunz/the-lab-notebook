@@ -7,13 +7,11 @@ const meta = {
       breadcrumb: false,
     },
   },
-  projects: 'Projects & Write-ups',
-  'docs-guides': 'Docs & Guides',
-  shortcuts: 'Shortcuts & Quick Links',
-  docs: 'Technical Documentation',
-  PROJECT_STRUCTURE: 'Project Structure',
-  changelog: 'Changelog',
-  future: { display: 'hidden' },
+  projects: { title: 'Projects & Write-ups' },
+  project: { title: 'All Projects' },
+  shortcuts: { title: 'Shortcuts & Quick Links' },
+  docs: { title: 'Technical Documentation', display: 'hidden' },
+  changelog: { title: 'Changelog', display: 'hidden' },
 }
 
 export default withTodos(meta, import.meta.url)

@@ -8,7 +8,7 @@ export default function AllProjectsCompleted() {
         description='Push-button start and keyless entry retrofit with full OEM integration.'
         completedDate='2025 Q1'
         domain='Automotive'
-        href='/projects/e83-cas3-retrofit'
+        href='/project/e83-cas3-retrofit'
       />
     </div>
   )
