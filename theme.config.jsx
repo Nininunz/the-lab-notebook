@@ -25,6 +25,10 @@ const config = {
         property='og:description'
         content='Engineering documentation and project notes'
       />
+      <meta
+        property='og:image'
+        content='https://docs.nininunz.dev/images/meta.png'
+      />
     </>
   ),
   sidebar: {
