@@ -12,9 +12,9 @@ export default function LabNotebookFeatured() {
       <SectionTitle title='Featured Projects' />
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3'>
         {featuredProjects.map(project =>
-          project.feature.map((feature, idx) => (
+          project.feature.map(feature => (
             <FeatureCard
-              key={project.id + '-' + idx}
+              key={project.id + '-' + feature.href}
               title={feature.title}
               summary={feature.summary}
               tags={feature.tags}

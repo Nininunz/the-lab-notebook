@@ -13,6 +13,9 @@ const CONTENT_DIR = 'content'
 const COMPONENTS_DIR = 'components'
 const PUBLIC_DIR = 'public'
 const TEMPLATES_DIR = 'templates'
+const FEATURES_DIR = 'features'
+const LIB_DIR = 'lib'
+const APP_DIR = 'app'
 
 // Colors for console output
 const colors = {
@@ -93,21 +96,25 @@ class LinkVerifier {
   }
 
   // Extract links from file content
-  extractLinks(content) {
+  extractLinks(content, filePath = '') {
     const links = []
 
     // Remove comments and code blocks to avoid false positives
     const cleanContent = this.removeCommentsAndCodeBlocks(content)
 
-    // First, resolve any DOC_DIR variables defined in the file
+    // First, resolve any DOC_DIR and IMAGE_DIR variables defined in the file
     const docDirMatch = content.match(/export const DOC_DIR = ['"]([^'"]+)['"]/)
+    const imageDirMatch = content.match(
+      /export const IMAGE_DIR = ['"]([^'"]+)['"]/
+    )
     const docDir = docDirMatch ? docDirMatch[1] : null
+    const imageDir = imageDirMatch ? imageDirMatch[1] : null
 
     // MDX/Markdown links: [text](url)
     const markdownLinks = cleanContent.match(/\[([^\]]*)\]\(([^)]+)\)/g) || []
     markdownLinks.forEach(match => {
       let url = match.match(/\]\(([^)]+)\)/)[1]
-      url = this.resolveTemplateUrl(url, docDir)
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
       if (this.isInternalLink(url)) {
         links.push({ url, type: 'markdown', match })
       }
@@ -117,9 +124,19 @@ class LinkVerifier {
     const hrefLinks = cleanContent.match(/href\s*=\s*["']([^"']+)["']/g) || []
     hrefLinks.forEach(match => {
       let url = match.match(/["']([^"']+)["']/)[1]
-      url = this.resolveTemplateUrl(url, docDir)
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
       if (this.isInternalLink(url)) {
         links.push({ url, type: 'jsx', match })
+      }
+    })
+
+    // JSX shorthand href attributes: href='/path' (without =)
+    const shorthandHrefs = cleanContent.match(/\bhref['"]([^'"]+)['"]/g) || []
+    shorthandHrefs.forEach(match => {
+      let url = match.match(/['"]([^'"]+)['"]/)[1]
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
+      if (this.isInternalLink(url)) {
+        links.push({ url, type: 'jsx_shorthand', match })
       }
     })
 
@@ -127,9 +144,71 @@ class LinkVerifier {
     const imgSrcs = cleanContent.match(/src\s*=\s*["']([^"']+)["']/g) || []
     imgSrcs.forEach(match => {
       let url = match.match(/["']([^"']+)["']/)[1]
-      url = this.resolveTemplateUrl(url, docDir)
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
       if (this.isInternalLink(url) && this.isAssetPath(url)) {
         links.push({ url, type: 'image', match })
+      }
+    })
+
+    // Template literal src attributes: src={`${VAR}/path`}
+    const templateSrcs = cleanContent.match(/src\s*=\s*\{`([^`]+)`\}/g) || []
+    templateSrcs.forEach(match => {
+      let url = match.match(/\{`([^`]+)`\}/)[1]
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
+      if (this.isInternalLink(url) && this.isAssetPath(url)) {
+        links.push({ url, type: 'template_src', match })
+      }
+    })
+
+    // Template literal largeSrc attributes: largeSrc={`${VAR}/path`}
+    const templateLargeSrcs =
+      cleanContent.match(/largeSrc\s*=\s*\{`([^`]+)`\}/g) || []
+    templateLargeSrcs.forEach(match => {
+      let url = match.match(/\{`([^`]+)`\}/)[1]
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
+      if (this.isInternalLink(url) && this.isAssetPath(url)) {
+        links.push({ url, type: 'template_large_src', match })
+      }
+    })
+
+    // Object property hrefs: href: '/path' or href: "/path"
+    const objHrefs = cleanContent.match(/href\s*:\s*["']([^"']+)["']/g) || []
+    objHrefs.forEach(match => {
+      let url = match.match(/["']([^"']+)["']/)[1]
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
+      if (this.isInternalLink(url)) {
+        links.push({ url, type: 'object_href', match })
+      }
+    })
+
+    // Object property images: image: '/path' or image: "/path"
+    const objImages = cleanContent.match(/image\s*:\s*["']([^"']+)["']/g) || []
+    objImages.forEach(match => {
+      let url = match.match(/["']([^"']+)["']/)[1]
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
+      if (this.isInternalLink(url) && this.isAssetPath(url)) {
+        links.push({ url, type: 'object_image', match })
+      }
+    })
+
+    // Object property src: src: '/path' or src: "/path"
+    const objSrcs = cleanContent.match(/src\s*:\s*["']([^"']+)["']/g) || []
+    objSrcs.forEach(match => {
+      let url = match.match(/["']([^"']+)["']/)[1]
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
+      if (this.isInternalLink(url) && this.isAssetPath(url)) {
+        links.push({ url, type: 'object_src', match })
+      }
+    })
+
+    // Object property largeSrc: largeSrc: '/path' or largeSrc: "/path"
+    const objLargeSrcs =
+      cleanContent.match(/largeSrc\s*:\s*["']([^"']+)["']/g) || []
+    objLargeSrcs.forEach(match => {
+      let url = match.match(/["']([^"']+)["']/)[1]
+      url = this.resolveTemplateUrl(url, docDir, imageDir)
+      if (this.isInternalLink(url) && this.isAssetPath(url)) {
+        links.push({ url, type: 'object_large_src', match })
       }
     })
 
@@ -150,21 +229,44 @@ class LinkVerifier {
     // Remove code blocks (```...```)
     cleaned = cleaned.replace(/```[\s\S]*?```/g, '')
 
-    // Remove inline code (`...`)
+    // Remove inline code (`...`) but preserve JSX template literals like src={`...`}
+    // First preserve JSX template literals by replacing them with placeholders
+    const jsxTemplates = []
+    cleaned = cleaned.replace(/([\w]+\s*=\s*\{`[^`]*`\})/g, (_, template) => {
+      const placeholder = `__JSX_TEMPLATE_${jsxTemplates.length}__`
+      jsxTemplates.push(template)
+      return placeholder
+    })
+
+    // Now remove inline code
     cleaned = cleaned.replace(/`[^`]*`/g, '')
+
+    // Restore JSX template literals
+    jsxTemplates.forEach((template, index) => {
+      const placeholder = `__JSX_TEMPLATE_${index}__`
+      cleaned = cleaned.replace(placeholder, template)
+    })
 
     return cleaned
   }
 
-  // Resolve template URLs like ${DOC_DIR}/path
-  resolveTemplateUrl(url, docDir) {
+  // Resolve template URLs like ${DOC_DIR}/path or ${IMAGE_DIR}/path
+  resolveTemplateUrl(url, docDir, imageDir) {
     if (url.includes('${DOC_DIR}') && docDir) {
-      return url.replace('${DOC_DIR}', docDir)
+      url = url.replace(/\$\{DOC_DIR\}/g, docDir)
+    }
+
+    if (url.includes('${IMAGE_DIR}') && imageDir) {
+      url = url.replace(/\$\{IMAGE_DIR\}/g, imageDir)
     }
 
     // Handle template literals with backticks
     if (url.includes('`${DOC_DIR}') && docDir) {
-      return url.replace(/`\${DOC_DIR}([^`]*)`/, docDir + '$1')
+      url = url.replace(/`\${DOC_DIR}([^`]*)`/, docDir + '$1')
+    }
+
+    if (url.includes('`${IMAGE_DIR}') && imageDir) {
+      url = url.replace(/`\${IMAGE_DIR}([^`]*)`/, imageDir + '$1')
     }
 
     return url
@@ -230,7 +332,7 @@ class LinkVerifier {
 
     try {
       const content = fs.readFileSync(filePath, 'utf-8')
-      const links = this.extractLinks(content)
+      const links = this.extractLinks(content, filePath)
 
       links.forEach(({ url }) => {
         this.verifyLink(url, filePath)
@@ -267,6 +369,9 @@ class LinkVerifier {
       `${CONTENT_DIR}/**/*.{mdx,md}`,
       `${COMPONENTS_DIR}/**/*.{js,jsx,ts,tsx}`,
       `${TEMPLATES_DIR}/**/*.{mdx,md}`,
+      `${FEATURES_DIR}/**/*.{js,jsx,ts,tsx}`,
+      `${LIB_DIR}/**/*.{js,jsx,ts,tsx}`,
+      `${APP_DIR}/**/*.{js,jsx,ts,tsx}`,
     ]
 
     const allFiles = []

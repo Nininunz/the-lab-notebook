@@ -7,6 +7,7 @@ import { projects } from '@/lib/project-directory.js'
 export default function ProjectDomainTabs() {
   // Hardcoded domain list
   const hardcodedDomains = [
+    { id: 'all', name: 'All', projects: projects },
     { id: 'software', name: 'Software' },
     { id: 'automotive', name: 'Automotive' },
     { id: 'embedded', name: 'Embedded' },
@@ -14,15 +15,23 @@ export default function ProjectDomainTabs() {
   ]
 
   // Map projects to hardcoded domains
-  const domainList = hardcodedDomains.map(domain => ({
-    ...domain,
-    projects: projects.filter(project =>
-      project.domains.map(d => d.toLowerCase()).includes(domain.id)
-    ),
-  }))
+  const domainList = hardcodedDomains.map(domain =>
+    domain.id === 'all'
+      ? domain
+      : {
+          ...domain,
+          projects: projects.filter(project =>
+            project.domains.map(d => d.toLowerCase()).includes(domain.id)
+          ),
+        }
+  )
 
   const [activeTab, setActiveTab] = useState(domainList[0]?.id || '')
   const activeDomain = domainList.find(domain => domain.id === activeTab)
+
+  const handleTabChange = useCallback(event => {
+    setActiveTab(event.currentTarget.dataset.domainId)
+  }, [])
 
   return (
     <div className='mt-8'>
@@ -32,7 +41,8 @@ export default function ProjectDomainTabs() {
           {domainList.map(domain => (
             <button
               key={domain.id}
-              onClick={() => setActiveTab(domain.id)}
+              data-domain-id={domain.id}
+              onClick={handleTabChange}
               className={`whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm transition-colors cursor-pointer ${
                 activeTab === domain.id
                   ? 'border-blue-500 text-blue-600 dark:text-blue-400'
