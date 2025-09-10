@@ -138,3 +138,162 @@
 ---
 
 _Last updated: {new Date().toLocaleDateString()}_
+
+{/* from docs.mdx */}
+
+## Procedures & Protocols
+
+### BMW CAS3 Programming
+
+- **Key Programming Sequence** - Step-by-step ISN synchronization
+- **EEPROM Backup/Restore** - Memory dump procedures and validation
+- **DME Pairing Protocol** - Engine control unit authorization
+- **Fault Code Interpretation** - Common error codes and solutions
+
+### CAN Bus Communication
+
+- **Message Frame Structure** - Standard vs extended frame formats
+- **Diagnostic Protocol (UDS)** - ISO 14229 implementation details
+- **Gateway Configuration** - E-series module routing setup
+- **Signal Analysis Techniques** - Oscilloscope and logic analyzer usage
+
+## Circuit Diagrams & Schematics
+
+### Power Distribution
+
+- **BMW E-series Fuse Box Layouts** - Location and amperage ratings
+- **Relay Replacement Circuits** - Solid-state switching alternatives
+- **Load Calculation Worksheets** - Current draw and wire sizing
+
+### Signal Processing
+
+- **CAN Transceiver Circuits** - MCP2551/TJA1050 implementation
+- **Level Shifting Networks** - 3.3V ↔ 5V interface circuits
+- **Filter Design Guidelines** - EMI suppression and noise reduction
+
+## Code Libraries & Snippets
+
+### CAN Bus Interface
+
+```cpp
+// BMW E-series CAN message parsing
+struct CANMessage {
+  uint32_t id;
+  uint8_t data[8];
+  uint8_t length;
+};
+
+bool parseCAS3Message(CANMessage msg) {
+  if (msg.id == 0x130) {
+    // Key status parsing logic
+    return processKeyStatus(msg.data);
+  }
+  return false;
+}
+```
+
+### Database Queries
+
+```sql
+-- Inventory aggregation with source ranking
+SELECT part_number,
+       condition_grade,
+       MIN(price) as best_price,
+       source_priority
+FROM inventory_items
+WHERE availability = 'in_stock'
+GROUP BY part_number, condition_grade
+ORDER BY source_priority ASC;
+```
+
+## Measurement & Testing
+
+### Electrical Testing Procedures
+
+- **Continuity Testing Protocol** - Systematic wire harness validation
+- **Voltage Drop Analysis** - Power distribution troubleshooting
+- **Current Draw Measurement** - Parasitic drain investigation
+- **Insulation Resistance Testing** - High-voltage safety verification
+
+### Software Testing Patterns
+
+```python
+# API endpoint testing template
+def test_inventory_endpoint():
+    response = client.get('/api/inventory/search?part=123')
+    assert response.status_code == 200
+    assert 'results' in response.json()
+    assert len(response.json()['results']) > 0
+```
+
+### Signal Analysis Checklists
+
+- **CAN Bus Signal Integrity** - Eye diagram analysis and timing validation
+- **Power Supply Ripple** - AC coupling and frequency domain analysis
+- **Digital Logic Levels** - Threshold voltage and noise margin verification
+
+## Calibration & Configuration
+
+### BMW Coding Parameters
+
+| Module | Parameter      | Value Range | Description                |
+| ------ | -------------- | ----------- | -------------------------- |
+| CAS3   | Key_Count      | 1-10        | Number of programmed keys  |
+| DME    | Launch_Control | 0/1         | Rev limiter bypass enable  |
+| FRM    | Auto_Window    | 0/1         | One-touch window operation |
+
+### Test Equipment Setup
+
+- **Oscilloscope Probe Compensation** - 1kHz square wave calibration
+- **Multimeter Accuracy Verification** - Known voltage reference check
+- **CAN Bus Termination** - 120Ω resistance validation procedure
+
+## Reference Standards & Specifications
+
+### Automotive Standards
+
+- **ISO 11898** - CAN bus physical and data link layers
+- **ISO 14229** - Unified Diagnostic Services (UDS) protocol
+- **SAE J1939** - Heavy-duty vehicle CAN application layer
+
+### Electronics Standards
+
+- **IPC-A-610** - Acceptability of electronic assemblies
+- **IEC 61000** - Electromagnetic compatibility requirements
+- **MIL-STD-883** - Microelectronics reliability testing
+
+## Pinout References
+
+### BMW E-series Diagnostic Connectors
+
+| Pin | Signal | Voltage | Description         |
+| --- | ------ | ------- | ------------------- |
+| 1   | +12V   | 12V     | Battery positive    |
+| 7   | K-Line | 12V     | ISO 9141 diagnostic |
+| 16  | +12V   | 12V     | Switched positive   |
+
+### ESP32 Development Board
+
+- **GPIO 2** - Built-in LED, CAN TX
+- **GPIO 4** - CAN RX, I2C SDA
+- **GPIO 5** - SPI SS, I2C SCL
+- **EN** - Reset pin (active low)
+
+## Formulas & Calculations
+
+### Electrical Engineering
+
+- **Ohm's Law**: `V = I × R`
+- **Power**: `P = V × I = V²/R = I²R`
+- **Wire Size**: `AWG = -39 × log₁₀(d) + 36` (d in inches)
+- **Voltage Drop**: `Vd = I × R × 2L` (for round trip)
+
+### CAN Bus Timing
+
+- **Bit Time**: `1 / Baud Rate` (e.g., 1/500kbps = 2μs)
+- **Sample Point**: Typically 75-87.5% of bit time
+- **Propagation Delay**: ~5ns/meter for twisted pair
+
+---
+
+_Technical reference updated continuously with field-tested procedures and validated measurements._

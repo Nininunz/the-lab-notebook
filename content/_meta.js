@@ -9,7 +9,7 @@ const meta = {
   },
   projects: { title: 'Projects & Write-ups' },
   shortcuts: { title: 'Shortcuts & Quick Links' },
-  docs: { title: 'Technical Documentation', display: 'hidden' },
+  docs: { title: 'Technical Documentation' },
   playground: { title: 'Playground', display: 'hidden' },
   project: { title: 'All Projects' },
   changelog: { title: 'Changelog' },
