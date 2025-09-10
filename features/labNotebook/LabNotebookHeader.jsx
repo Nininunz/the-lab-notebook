@@ -10,5 +10,3 @@ export default function LabNotebookHeader() {
     />
   )
 }
-
-// Attributes work here as this won't be dynamic elsewhere
