@@ -1,32 +1,28 @@
 import FeatureCard from '@/components/FeatureCard'
 import SectionTitle from '@/components/SectionTitle'
+import { projects } from '@/lib/project-directory.js'
 
 export default function LabNotebookFeatured() {
+  // List of project ids to feature
+  const featuredIds = [1, 2]
+  const featuredProjects = projects.filter(p => featuredIds.includes(p.id))
+
   return (
     <div>
       <SectionTitle title='Featured Projects' />
-      <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-        <FeatureCard
-          title='ha-smarthub: Energy Data Import for Home Assistant'
-          summary='Imports daily SmartHub energy usage into InfluxDB and Home Assistant, enabling simple monitoring via MQTT and Node-RED.'
-          tags={['MQTT', 'InfluxDB', 'Node-RED']}
-          href='/future'
-          image='/images/featured/influx-db-energy-dash_full_16x9.png'
-        />
-        <FeatureCard
-          title='Feature Project Beta'
-          summary='blah blah blah'
-          tags={['Tag 1', 'Tag 2', 'Tag 3']}
-          href='/future'
-          image='/images/placeholders/placeholder-5-3.svg'
-        />
-        <FeatureCard
-          title='Feature Project Gamma'
-          summary='blah blah blah'
-          tags={['Tag 1', 'Tag 2', 'Tag 3']}
-          href='/future'
-          image='/images/placeholders/placeholder-5-3.svg'
-        />
+      <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3'>
+        {featuredProjects.map(project =>
+          project.feature.map((feature, idx) => (
+            <FeatureCard
+              key={project.id + '-' + idx}
+              title={feature.title}
+              summary={feature.summary}
+              tags={feature.tags}
+              href={feature.href}
+              image={feature.image}
+            />
+          ))
+        )}
       </div>
     </div>
   )

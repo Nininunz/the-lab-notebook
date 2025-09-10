@@ -1,7 +1,7 @@
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
-import { Logo } from '@/components/Logo'
+import { Logo } from '@/app/Logo'
 import 'nextra-theme-docs/style.css'
 import './global.css'
 

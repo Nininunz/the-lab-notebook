@@ -6,7 +6,6 @@ const updates = [
     date: '2025-09-06',
     text: 'Completed N52 engine teardown and cylinder head inspection analysis.',
   },
-  { date: '2025-07-06', text: 'Earlier update...' },
 ]
 
 // Sort by date descending
