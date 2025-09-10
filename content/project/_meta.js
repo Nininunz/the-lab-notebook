@@ -7,6 +7,7 @@ const meta = {
   'mysterious-n52-carbon-valves': 'N52 Engine Carbon Valve Failure Analysis',
   'junkyard-intelligence-platform': 'Junkyard Intelligence Platform',
   'homelink-retrofit': 'HomeLink Retrofit',
+  'gpt-electron': 'gpt-electron',
 }
 
 export default withTodos(meta, import.meta.url)

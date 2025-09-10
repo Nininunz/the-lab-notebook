@@ -1,7 +1,7 @@
 import { withTodos } from '@/lib/meta-utils.js'
 
 const meta = {
-  index: 'Case Study',
+  index: 'Introduction',
 }
 
 export default withTodos(meta, import.meta.url)

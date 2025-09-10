@@ -4,7 +4,7 @@ import { projects } from '@/lib/project-directory.js'
 
 export default function LabNotebookFeatured() {
   // List of project ids to feature
-  const featuredIds = [1, 2]
+  const featuredIds = [1, 2, 6] // e83-cas3-retrofit, ha-smarthub, gpt-electron
   const featuredProjects = projects.filter(p => featuredIds.includes(p.id))
 
   return (
