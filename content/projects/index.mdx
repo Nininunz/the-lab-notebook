@@ -1,6 +1,8 @@
 import ProjectCardActive from '@/components/ProjectCardActive'
 import ProjectCardCompleted from '@/components/ProjectCardCompleted'
 import ProjectDomainTabs from '@/components/ProjectDomainTabs'
+import AllProjectsActive from '@/features/allProjects/AllProjectsActive'
+import AllProjectsCompleted from '@/features/allProjects/AllProjectsCompleted'
 
 # All Projects
 
@@ -8,59 +10,11 @@ Project portfolio organized by status, domain, and completion timeline.
 
 ## Currently Active
 
-<div className="grid gap-6 mt-10 md:grid-cols-2">
-
-<ProjectCardActive
-  title='Junkyard Intelligence Platform'
-  timeline='Ongoing'
-  progress={45}
-  description='Next-generation salvage yard inventory system with AI-powered part identification, predictive availability modeling, real-time multi-yard aggregation, and a low-latency search interface—built for accuracy, scalability, and actionable insights.'
-  nextMilestones='Computer vision training, cross-platform mobile app development, MVP development'
-  href='/future'
-  status='Active'
-  color='purple'
-  disabled={true}
-/>
-
-<ProjectCardActive
-  title='Project Alpha'
-  timeline='2035 Q1-Q4'
-  progress={60}
-  description='blah blah blah'
-  nextMilestones='blah blah blah'
-  href='/future'
-  status='active'
-  color='blue'
-  disabled={true}
-/>
-
-<ProjectCardActive
-  title='Project Beta'
-  timeline='2035 Q1-Q4'
-  progress={60}
-  description='blah blah blah'
-  nextMilestones='blah blah blah'
-  href='/future'
-  status='active'
-  color='green'
-  disabled={true}
-/>
-
-</div>
+<AllProjectsActive />
 
 ## Recently Completed
 
-<div className="mt-10 space-y-3">
-
-<ProjectCardCompleted
-  title='CAS3 Retrofit & Comfort Access'
-  description='Push-button start and keyless entry retrofit with full OEM integration.'
-  completedDate='2025 Q1'
-  domain='Automotive'
-  href='/projects/e83-cas3-retrofit'
-/>
-
-</div>
+<AllProjectsCompleted />
 
 ## Project Timeline
 

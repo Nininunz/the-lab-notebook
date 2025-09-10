@@ -1,4 +1,4 @@
-export default function ProjectCardCompleted({
+export default function ProjectCardSmall({
   title,
   description,
   completedDate,

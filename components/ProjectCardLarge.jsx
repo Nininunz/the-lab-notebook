@@ -1,4 +1,4 @@
-export default function ProjectCardActive({
+export default function ProjectCardLarge({
   title,
   timeline,
   progress,
@@ -63,24 +63,6 @@ export default function ProjectCardActive({
         : 'Active'
   const shouldAnimate = status === 'active' || status === 'planning'
 
-  // Domain color mappings
-  const domainColors = {
-    Automotive: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
-    Software:
-      'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
-    Mechanical:
-      'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
-    Electronics:
-      'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
-  }
-
-  const domainEmojis = {
-    Automotive: '🚗',
-    Software: '💻',
-    Mechanical: '🔧',
-    Electronics: '⚡',
-  }
-
   return (
     <div
       className={`group relative rounded-2xl border ${colors.border} bg-gradient-to-br ${colors.bg} p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md`}
@@ -132,10 +114,8 @@ export default function ProjectCardActive({
       {/* Domain badge for completed projects */}
       {domain && status === 'completed' && (
         <div className='mb-4'>
-          <span
-            className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium ${domainColors[domain] || domainColors.Software}`}
-          >
-            {domainEmojis[domain]} {domain}
+          <span className='inline-flex items-center rounded-full px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'>
+            {domain}
           </span>
         </div>
       )}
