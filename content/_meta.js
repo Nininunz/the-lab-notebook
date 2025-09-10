@@ -8,11 +8,11 @@ const meta = {
     },
   },
   projects: { title: 'Projects & Write-ups' },
-  shortcuts: { title: 'Shortcuts & Quick Links', display: 'hidden' },
+  shortcuts: { title: 'Shortcuts & Quick Links' },
   docs: { title: 'Technical Documentation', display: 'hidden' },
-  changelog: { title: 'Changelog', display: 'hidden' },
   playground: { title: 'Playground', display: 'hidden' },
   project: { title: 'All Projects' },
+  changelog: { title: 'Changelog' },
 }
 
 export default withTodos(meta, import.meta.url)

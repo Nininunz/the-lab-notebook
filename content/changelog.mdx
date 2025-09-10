@@ -1,80 +1,47 @@
 # Changelog
 
-All notable changes to The Lab Notebook are documented on this page.
+## 1.0.0 — 2025-09-10
 
-## Recent Updates
+**Initial public release.**
 
-### 2025-01-09
+**Stack**
 
-#### Major Refactor: Project Structure & Component System
-- **Complete site architecture overhaul** - Moved from monolithic landing page to modular component system
-- **New project card system** - Created reusable `ProjectCard` and `CompletedProjectCard` components with flexible color schemes
-- **Content reorganization** - Restructured navigation with dedicated pages for Projects, Docs & Guides, and Shortcuts
-- **Component templates** - Added usage documentation and examples for all reusable components
+- Next.js 15.5.2 (React 19), Nextra 4.4.0, Tailwind 4.1.13.
 
-#### Navigation & Content
-- **Separated project portfolio** - Distinguished between active projects and completed case studies
-- **Enhanced Quick Links** - Reorganized shortcuts into Development Tools, Automotive Resources, and Electronics sections
-- **Documentation restructure** - Moved technical guides to `/docs-guides/` with better categorization
-- **Improved visual hierarchy** - Consistent styling across project cards with hover effects and responsive design
+**UX**
 
-#### Component Features
-- **Flexible color schemes** - Decoupled colors from domain categories for better design control
-- **Status indicators** - Added animated status badges for active/planning/completed projects
-- **Progress tracking** - Visual progress bars for active projects
-- **Domain categorization** - Clean domain badges without emoji clutter
-- **Responsive layouts** - Grid and list layouts that adapt to screen size
+- Responsive layout, dark/light (prefers-color-scheme).
+- Project filters: Software / Automotive / Embedded / Electronics.
 
-### 2024-12-15
+**Content**
 
-#### Content Updates
-- **N52 Engine Analysis** - Documented mysterious carbon valve failure investigation
-- **CAS3 Retrofit project** - Added comprehensive case study with technical details
-- **HomeLink installation guide** - Created detailed multi-page installation documentation
+- Unified project structure + metadata.
+- MDX with code highlighting, image galleries (lazy-load/lightbox), responsive grids.
+- Featured projects on home; status tags (Active/Completed/Planning).
 
-#### Visual Improvements  
-- **Dark mode refinements** - Improved color contrast and readability
-- **Image optimization** - Added lightbox functionality with WebP compression
-- **Grid layouts** - Enhanced photo galleries with consistent aspect ratios
+**Tooling / QA**
 
-### 2024-11-20
+- ESLint + Prettier; Husky + lint-staged.
+- **Link verifier**: scans MDX/JSX/template literals; validates routes, anchors, and assets; CI fails on hard breaks.
+- Static builds, Pagefind search, asset/image optimization, error boundaries.
 
-#### Initial Launch
-- **Lab Notebook foundation** - Established Next.js documentation site with MDX support
-- **Basic navigation** - Implemented header with project and miscellaneous sections  
-- **Core styling** - Set up Tailwind CSS with dark mode support
-- **Project structure** - Created initial content organization system
+**Projects**
 
-## Upcoming Features
+- E83 CAS3 Retrofit & Comfort Access — OEM-clean retrofit (_case study_).
+- BMW HomeLink Mirror Retrofit — **complete**.
+- N52 Valve Failure Analysis — **complete**.
+- ha-smarthub (SmartHub → HA) — **released**.
+- gpt-electron (ChatGPT for Intel Macs) — **released**.
+- Junkyard Intelligence Platform — **in progress**.
 
-### Planned Improvements
-- **Search functionality** - Global search across projects and documentation
-- **Tag system** - Categorize content with searchable tags
-- **Project timeline** - Interactive timeline view of all projects
-- **RSS feed** - Subscribe to project updates and new documentation
-- **Mobile optimization** - Enhanced mobile experience with better touch interactions
+**Media**
 
-### Content Pipeline
-- **Smart Grid Monitor V2** - Documentation for enhanced energy monitoring system
-- **Junkyard Intelligence Platform** - AI-powered inventory system development log
-- **BMW diagnostic tools** - Collection of custom diagnostic utilities and procedures
-- **Electronics projects** - ESP32 and embedded system project documentation
+- WebP + originals, multiple aspect ratios, lightbox.
 
-## Technical Notes
+**Roadmap**
 
-### Build System
-- **Next.js 14** - App router with MDX support
-- **Tailwind CSS** - Utility-first styling with dark mode
-- **Component architecture** - Reusable React components for consistent UI
-- **Image optimization** - Automatic WebP conversion and responsive images
+- Project RSS, public API, advanced multi-filter search.
 
-### Content Management
-- **MDX format** - Markdown with embedded React components
-- **Git-based workflow** - Version controlled content with automated deployments
-- **Component templates** - Documented usage patterns for maintainable content creation
+**Stats**
 
----
-
-**Last Updated**: January 9, 2025  
-**Site Version**: 2.0.0  
-**Total Projects Documented**: 8 active + 15 completed
+- 6 projects (4 completed, 1 active, 1 planning); 4 domains; 3 featured.
