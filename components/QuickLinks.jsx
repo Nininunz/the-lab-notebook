@@ -1,27 +1,12 @@
-import {
-  Sparkles,
-  FileText,
-  GitBranch,
-  CalendarClock,
-  Link,
-  ArrowRight,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
-export default function LabNotebookQuickLinks() {
-  const quickLinks = [
-    { label: 'All Projects', href: '/projects', icon: Sparkles },
-    { label: 'Docs Index', href: '/docs', icon: FileText },
-    { label: 'Portfolio', href: 'https://nininunz.dev', icon: GitBranch },
-    { label: 'Changelog', href: '/changelog', icon: CalendarClock },
-    { label: 'Shortcuts', href: '/shortcuts', icon: Link },
-  ]
-
+export default function QuickLinks({ quickLinksTitle, quickLinks }) {
   return (
     <div>
       {/* Quick Links */}
       <div className='mt-12 mb-3 flex items-center gap-3'>
         <h2 className='text-xl font-semibold tracking-tight text-slate-900 dark:text-white'>
-          Quick Links
+          {quickLinksTitle}
         </h2>
         <div className='h-px flex-1 bg-gradient-to-r from-slate-200 to-transparent dark:from-white/10' />
       </div>

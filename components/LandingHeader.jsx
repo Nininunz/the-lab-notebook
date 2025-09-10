@@ -1,4 +1,9 @@
-export default function LabNotebookHeader() {
+export default function LandingHeader({
+  mainTitle,
+  subTitle,
+  mainDesc,
+  subDesc,
+}) {
   return (
     <div className='w-full'>
       <div className='mx-auto max-w-6xl mt-7'>
@@ -12,23 +17,20 @@ export default function LabNotebookHeader() {
 
             {/* Main title */}
             <h1 className='mb-4 text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl dark:text-white'>
-              The Lab
+              {mainTitle}
               <br />
               <span className='text-slate-600 dark:text-slate-400'>
-                Notebook
+                {subTitle}
               </span>
             </h1>
 
             {/* Description */}
             <div className='max-w-2xl space-y-3'>
               <p className='text-xl text-slate-600 dark:text-slate-300'>
-                A curated portfolio of engineering writeups and project
-                documentation spanning software, electronics, and mechanical
-                systems.
+                {mainDesc}
               </p>
               <p className='text-base text-slate-500 dark:text-slate-400'>
-                A small window into my work — the rest remains confidential or
-                not publicly documented.
+                {subDesc}
               </p>
             </div>
 

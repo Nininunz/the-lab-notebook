@@ -1,14 +1,6 @@
 import { FileText, CalendarClock } from 'lucide-react'
 
-export default function LabNotebookWriteups() {
-  const writeups = [
-    {
-      title: 'The Mysterious BMW N52 Engine Failure',
-      date: '2025-09-06',
-      href: '/miscellaneous/mysterious-n52-carbon-valves',
-    },
-  ]
-
+export default function ListLinks({ listLinks }) {
   return (
     <div>
       {/* Recent Writeups */}
@@ -19,7 +11,7 @@ export default function LabNotebookWriteups() {
         <div className='h-px flex-1 bg-gradient-to-r from-slate-200 to-transparent dark:from-white/10' />
       </div>
       <ul className='divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white/70 dark:divide-white/10 dark:border-white/10 dark:bg-white/5'>
-        {writeups.map(w => (
+        {listLinks.map(w => (
           <li
             key={w.title}
             className='flex items-center justify-between gap-4 p-4'
