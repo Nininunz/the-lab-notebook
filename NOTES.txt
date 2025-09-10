@@ -26,3 +26,11 @@ SCATTERED:
 - Auto-lint potentially not running
 - Explore ignoring todos.md globally for organized in dir notes
 - Todos will still be publicly accessible through public url, but not in sidebar - check sitemap
+
+
+
+
+Changelogs mdx is placeholder is context based ai gen text
+Project structure is unverified context based ai gen structure
+Technical documentation context based ai gen
+Shortcuts & quick links is ai gen placeholder for visualization

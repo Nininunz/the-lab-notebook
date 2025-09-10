@@ -13,6 +13,7 @@ const meta = {
   docs: 'Technical Documentation',
   PROJECT_STRUCTURE: 'Project Structure',
   changelog: 'Changelog',
+  future: { display: 'hidden' },
 }
 
 export default withTodos(meta, import.meta.url)

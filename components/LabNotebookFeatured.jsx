@@ -35,28 +35,26 @@ export default function LabNotebookFeatured() {
   // Additional content data
   const featured = [
     {
-      title: 'CAS3 Retrofit & Comfort Access',
+      title: 'ha-smarthub: Energy Data Import for Home Assistant',
       summary:
-        'Brought push-button start and keyless entry to an E83 platform with OEM-level integration (CAN, EEPROM, DME pairing).',
-      tags: ['BMW', 'CAN', 'Immobilizer'],
-      href: '#/projects/cas3-retrofit',
-      image: '/images/temp/cas3-retrofit.png',
+        'Imports daily SmartHub energy usage into InfluxDB and Home Assistant, enabling simple monitoring via MQTT and Node-RED.',
+      tags: ['MQTT', 'InfluxDB', 'Node-RED'],
+      href: '/future',
+      image: '/images/featured/influx-db-energy-dash_full_16x9.png',
     },
     {
-      title: 'Smart Grid Monitor',
-      summary:
-        'Home energy telemetry with Grafana + InfluxDB, Ecobee integration, and demand response experiments.',
-      tags: ['Grafana', 'InfluxDB', 'IoT'],
-      href: '#/projects/smart-grid-monitor',
-      image: '/images/temp/smart-grid-monitor.png',
+      title: 'Feature Project Beta',
+      summary: 'blah blah blah',
+      tags: ['Tag 1', 'Tag 2', 'Tag 3'],
+      href: '/future',
+      image: '/images/placeholders/placeholder-5-3.svg',
     },
     {
-      title: 'Salvage-Yard Inventory Platform',
-      summary:
-        'Node + Angular system aggregating PNP/LKQ/WAP inventory with scheduled scrapers and unified models.',
-      tags: ['Node', 'Angular', 'SQLite'],
-      href: '#/projects/dumpyard',
-      image: '/images/temp/dumpyard.png',
+      title: 'Feature Project Gamma',
+      summary: 'blah blah blah',
+      tags: ['Tag 1', 'Tag 2', 'Tag 3'],
+      href: '/future',
+      image: '/images/placeholders/placeholder-5-3.svg',
     },
   ]
 

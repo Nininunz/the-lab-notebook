@@ -10,14 +10,14 @@ import ProjectCard from '@/components/ProjectCard'
 
 ```jsx
 <ProjectCard
-  title="HomeLink Retrofit"
-  timeline="2025 Q3-Q4"
+  title='HomeLink Retrofit'
+  timeline='2025 Q3-Q4'
   progress={60}
-  description="Retrofitting garage door integration into E83 platform. Working on CAN message decoding and module programming."
-  nextMilestones="Module installation, CAN gateway configuration, testing"
-  href="/projects/homelink-retrofit"
-  status="active"
-  color="blue"
+  description='Retrofitting garage door integration into E83 platform. Working on CAN message decoding and module programming.'
+  nextMilestones='Module installation, CAN gateway configuration, testing'
+  href='/future'
+  status='active'
+  color='blue'
 />
 ```
 
@@ -25,14 +25,14 @@ import ProjectCard from '@/components/ProjectCard'
 
 ```jsx
 <ProjectCard
-  title="Junkyard Intelligence Platform"
-  timeline="2025 Q4-2026 Q1"
+  title='Junkyard Intelligence Platform'
+  timeline='2025 Q4-2026 Q1'
   progress={15}
-  description="Next-generation salvage yard inventory system with AI-powered part identification and predictive availability modeling."
-  nextMilestones="Computer vision training, database architecture, MVP development"
-  href="/projects/junkyard-intelligence"
-  status="planning"
-  color="purple"
+  description='Next-generation salvage yard inventory system with AI-powered part identification and predictive availability modeling.'
+  nextMilestones='Computer vision training, database architecture, MVP development'
+  href='/future'
+  status='planning'
+  color='purple'
 />
 ```
 
@@ -40,23 +40,25 @@ import ProjectCard from '@/components/ProjectCard'
 
 ```jsx
 <ProjectCard
-  title="CAS3 Retrofit & Comfort Access"
-  description="Push-button start and keyless entry retrofit with full OEM integration."
-  href="/projects/cas3-retrofit"
-  status="completed"
-  domain="Automotive"
-  completedDate="2025 Q2"
-  color="emerald"
+  title='CAS3 Retrofit & Comfort Access'
+  description='Push-button start and keyless entry retrofit with full OEM integration.'
+  href='/future'
+  status='completed'
+  domain='Automotive'
+  completedDate='2025 Q2'
+  color='emerald'
 />
 ```
 
 ## Props Reference
 
 ### Required Props
+
 - `title` (string) - Project name
 - `description` (string) - Brief project description
 
 ### Optional Props
+
 - `timeline` (string) - Project timeline (e.g., "2025 Q3-Q4")
 - `progress` (number) - Completion percentage (0-100)
 - `nextMilestones` (string) - Upcoming milestones or next steps
@@ -69,16 +71,18 @@ import ProjectCard from '@/components/ProjectCard'
 ## Usage in Grid Layouts
 
 ### 2-Column Grid
+
 ```jsx
-<div className="grid gap-6 md:grid-cols-2">
+<div className='grid gap-6 md:grid-cols-2'>
   <ProjectCard {...activeProject1} />
   <ProjectCard {...activeProject2} />
 </div>
 ```
 
 ### 3-Column Grid
+
 ```jsx
-<div className="grid gap-6 md:grid-cols-3">
+<div className='grid gap-6 md:grid-cols-3'>
   <ProjectCard {...completedProject1} />
   <ProjectCard {...completedProject2} />
   <ProjectCard {...completedProject3} />
@@ -89,7 +93,7 @@ import ProjectCard from '@/components/ProjectCard'
 
 - **Blue**: General active projects, software-focused
 - **Green**: High-progress projects, system monitoring
-- **Purple**: Planning/research phase, AI/ML projects  
+- **Purple**: Planning/research phase, AI/ML projects
 - **Emerald**: Completed projects (consistent theming)
 
 ## Status Badge Behavior

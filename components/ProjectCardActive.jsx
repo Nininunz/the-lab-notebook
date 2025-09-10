@@ -1,4 +1,4 @@
-export default function ProjectCard({
+export default function ProjectCardActive({
   title,
   timeline,
   progress,

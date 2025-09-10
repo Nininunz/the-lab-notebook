@@ -2,42 +2,42 @@
 
 Project portfolio organized by status, domain, and completion timeline.
 
-import ProjectCard from '@/components/ProjectCard'
-import CompletedProjectCard from '@/components/CompletedProjectCard'
+import ProjectCardActive from '@/components/ProjectCardActive'
+import ProjectCardCompleted from '@/components/ProjectCardCompleted'
 
 ## Currently Active
 
-<div className="grid gap-6 mt-5 md:grid-cols-2">
+<div className="grid gap-6 mt-10 md:grid-cols-2">
 
-<ProjectCard
+<ProjectCardActive
   title='HomeLink Retrofit'
   timeline='2025 Q3-Q4'
   progress={60}
   description='Retrofitting garage door integration into E83 platform. Working on CAN message decoding and module programming.'
   nextMilestones='Module installation, CAN gateway configuration, testing'
-  href='/projects/homelink-retrofit'
+  href='/docs-guides/homelink-retrofit'
   status='active'
   color='blue'
 />
 
-<ProjectCard
+<ProjectCardActive
   title='Smart Grid Monitor V2'
   timeline='Ongoing'
   progress={85}
   description='Enhanced energy monitoring with predictive analytics and automated demand response.'
   nextMilestones='ML model training, alert system, mobile app'
-  href='/projects/smart-grid-monitor'
+  href='/future'
   status='active'
   color='green'
 />
 
-<ProjectCard
+<ProjectCardActive
   title='Junkyard Intelligence Platform'
   timeline='2025 Q4-2026 Q1'
   progress={15}
   description='Next-generation salvage yard inventory system with AI-powered part identification and predictive availability modeling.'
   nextMilestones='Computer vision training, database architecture, MVP development'
-  href='/projects/junkyard-intelligence'
+  href='/future'
   status='planning'
   color='purple'
 />
@@ -46,14 +46,14 @@ import CompletedProjectCard from '@/components/CompletedProjectCard'
 
 ## Recently Completed
 
-<div className="mt-5 space-y-3">
+<div className="mt-10 space-y-3">
 
-<CompletedProjectCard
+<ProjectCardCompleted
   title='CAS3 Retrofit & Comfort Access'
   description='Push-button start and keyless entry retrofit with full OEM integration.'
   completedDate='2025 Q2'
   domain='Automotive'
-  href='/projects/cas3-retrofit'
+  href='/future'
 />
 
 </div>

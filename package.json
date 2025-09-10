@@ -11,6 +11,8 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "verify-links": "node scripts/verify-links.js",
+    "check": "npm run lint && npm run verify-links",
     "prepare": "husky"
   },
   "keywords": [],
@@ -35,6 +37,7 @@
     "eslint-config-next": "^15.5.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "glob": "^11.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
     "pagefind": "^1.4.0",
@@ -46,6 +49,9 @@
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix"
+    ],
+    "*.{mdx,md}": [
+      "npm run verify-links"
     ]
   }
 }

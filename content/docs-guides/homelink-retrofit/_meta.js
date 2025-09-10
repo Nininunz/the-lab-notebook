@@ -1,7 +1,7 @@
 import { withTodos } from '@/lib/meta-utils.js'
 
 const meta = {
-  introduction: 'Introduction',
+  index: 'Introduction',
   'choosing-the-right-mirror': 'Choosing the Right Mirror',
   'mirror-removal-and-installation': 'Mirror Removal and Installation',
   'wiring-the-new-harness': 'Wiring The New Harness',
