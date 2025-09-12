@@ -1,4 +1,18 @@
-export default function InfoCard({ title, desc, icon: Icon, style }) {
+import React from 'react'
+
+interface InfoCardProps {
+  title: string
+  desc: string
+  icon: React.ComponentType<{ className?: string }>
+  style?: string
+}
+
+const InfoCard: React.FC<InfoCardProps> = ({
+  title,
+  desc,
+  icon: Icon,
+  style,
+}) => {
   return (
     <article
       className={`group relative rounded-2xl border bg-gradient-to-br ${style} p-5 shadow-sm transition will-change-transform hover:-translate-y-0.5 hover:shadow-md`}
@@ -17,3 +31,5 @@ export default function InfoCard({ title, desc, icon: Icon, style }) {
     </article>
   )
 }
+
+export default InfoCard

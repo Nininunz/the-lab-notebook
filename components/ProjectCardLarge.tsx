@@ -1,4 +1,20 @@
-export default function ProjectCardLarge({
+import React from 'react'
+
+export interface ProjectCardLargeProps {
+  title: string
+  timeline?: string
+  progress?: number
+  description?: string
+  nextMilestones?: string
+  href?: string
+  status?: string
+  domain?: string
+  completedDate?: string
+  color?: string
+  disabled?: boolean
+}
+
+const ProjectCardLarge: React.FC<ProjectCardLargeProps> = ({
   title,
   timeline,
   progress,
@@ -10,9 +26,9 @@ export default function ProjectCardLarge({
   completedDate,
   color = 'blue',
   disabled = false,
-}) {
+}) => {
   // Color mappings for different project statuses/types
-  const colorSchemes = {
+  const colorSchemes: Record<string, any> = {
     blue: {
       border: 'border-blue-200 dark:border-blue-800/50',
       bg: 'from-blue-50 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/20',
@@ -189,3 +205,5 @@ export default function ProjectCardLarge({
     </div>
   )
 }
+
+export default ProjectCardLarge

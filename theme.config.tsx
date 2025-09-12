@@ -1,4 +1,10 @@
 import { useRouter } from 'next/router'
+import React, { ReactNode } from 'react'
+
+interface SidebarTitleComponentProps {
+  title: string
+  type: string
+}
 
 const config = {
   logo: <span>The Lab Notebook</span>,
@@ -32,7 +38,7 @@ const config = {
     </>
   ),
   sidebar: {
-    titleComponent({ title, type }) {
+    titleComponent({ title, type }: SidebarTitleComponentProps): ReactNode {
       if (type === 'separator') {
         return <span className='cursor-default'>{title}</span>
       }

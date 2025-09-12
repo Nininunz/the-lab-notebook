@@ -1,9 +1,18 @@
-export default function LandingHeader({
+import React from 'react'
+
+interface LandingHeaderProps {
+  mainTitle: string
+  subTitle: string
+  mainDesc: string
+  subDesc: string
+}
+
+const LandingHeader: React.FC<LandingHeaderProps> = ({
   mainTitle,
   subTitle,
   mainDesc,
   subDesc,
-}) {
+}) => {
   return (
     <div className='w-full'>
       <div className='mx-auto max-w-6xl mt-7'>
@@ -47,3 +56,5 @@ export default function LandingHeader({
     </div>
   )
 }
+
+export default LandingHeader

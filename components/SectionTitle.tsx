@@ -1,4 +1,10 @@
-export default function SectionTitle({ title }) {
+import React from 'react'
+
+interface SectionTitleProps {
+  title: string
+}
+
+const SectionTitle: React.FC<SectionTitleProps> = ({ title }) => {
   return (
     <div className='mt-12 mb-3 flex items-center gap-3'>
       <h2 className='text-xl font-semibold tracking-tight text-slate-900 dark:text-white'>
@@ -8,3 +14,5 @@ export default function SectionTitle({ title }) {
     </div>
   )
 }
+
+export default SectionTitle

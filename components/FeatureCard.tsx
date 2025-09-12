@@ -1,37 +1,56 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import Image from 'next/image'
 import { Sparkles } from 'lucide-react'
 
-export default function FeatureCard({ title, summary, tags, href, image }) {
-  // Image component with fallback
-  const ProjectImage = ({ src, alt, title }) => {
-    const [imageError, setImageError] = useState(false)
+interface FeatureCardProps {
+  title: string
+  summary: string
+  tags: string[]
+  href: string
+  image?: string
+}
 
-    const handleImageError = useCallback(() => {
-      setImageError(true)
-    }, [])
+interface ProjectImageProps {
+  src?: string
+  alt?: string
+  title: string
+}
 
-    if (imageError || !src) {
-      return (
-        <div className='absolute inset-0 grid place-items-center text-slate-400 dark:text-slate-500'>
-          <Sparkles className='h-8 w-8' />
-        </div>
-      )
-    }
+const ProjectImage: React.FC<ProjectImageProps> = ({ src, alt, title }) => {
+  const [imageError, setImageError] = useState(false)
 
+  const handleImageError = useCallback(() => {
+    setImageError(true)
+  }, [])
+
+  if (imageError || !src) {
     return (
-      <Image
-        src={src}
-        alt={alt || title}
-        fill
-        className='object-cover'
-        onError={handleImageError}
-      />
+      <div className='absolute inset-0 grid place-items-center text-slate-400 dark:text-slate-500'>
+        <Sparkles className='h-8 w-8' />
+      </div>
     )
   }
 
+  return (
+    <Image
+      src={src}
+      alt={alt || title}
+      fill
+      className='object-cover'
+      onError={handleImageError}
+    />
+  )
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({
+  title,
+  summary,
+  tags,
+  href,
+  image,
+}) => {
   return (
     <a
       href={href}
@@ -59,3 +78,5 @@ export default function FeatureCard({ title, summary, tags, href, image }) {
     </a>
   )
 }
+
+export default FeatureCard
