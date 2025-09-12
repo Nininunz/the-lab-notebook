@@ -13,6 +13,8 @@ const AllProjectsActive: React.FC = () => {
         href='/project/junkyard-intelligence-platform'
         status='Active'
         color='purple'
+        domain=''
+        completedDate=''
       />
 
       <ProjectCardLarge
@@ -24,6 +26,8 @@ const AllProjectsActive: React.FC = () => {
         href='/project/the-lab-notebook'
         status='active'
         color='blue'
+        domain=''
+        completedDate=''
       />
     </div>
   )
