@@ -1,7 +1,8 @@
+import React from 'react'
 import ProjectCardSmall from '@/components/ProjectCardSmall'
 import { projects } from '@/lib/project-directory'
 
-export default function AllProjectsCompleted() {
+const AllProjectsCompleted: React.FC = () => {
   // Specify completed project IDs here
   const completedIds = [2]
   const completedProjects = projects.filter(
@@ -23,3 +24,5 @@ export default function AllProjectsCompleted() {
     </div>
   )
 }
+
+export default AllProjectsCompleted

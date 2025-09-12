@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Sparkles,
   FileText,
@@ -9,7 +10,7 @@ import {
 import QuickLinkCard from '@/components/QuickLinkCard'
 import SectionTitle from '@/components/SectionTitle'
 
-export default function LabNotebookQuickLinks() {
+const LabNotebookQuickLinks: React.FC = () => {
   return (
     <div>
       <SectionTitle title='Quick Links' />
@@ -36,3 +37,5 @@ export default function LabNotebookQuickLinks() {
     </div>
   )
 }
+
+export default LabNotebookQuickLinks

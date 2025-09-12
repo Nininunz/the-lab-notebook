@@ -1,6 +1,7 @@
 import Script from 'next/script'
+import React from 'react'
 
-export default function Analytics() {
+const Analytics: React.FC = () => {
   const umamiUrl = process.env.NEXT_PUBLIC_UMAMI_URL
   const websiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
 
@@ -18,3 +19,5 @@ export default function Analytics() {
     />
   )
 }
+
+export default Analytics

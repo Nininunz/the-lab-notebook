@@ -1,6 +1,7 @@
+import React from 'react'
 import ProjectCardLarge from '@/components/ProjectCardLarge'
 
-export default function AllProjectsActive() {
+const AllProjectsActive: React.FC = () => {
   return (
     <div className='grid gap-6 mt-10 md:grid-cols-2'>
       <ProjectCardLarge
@@ -27,5 +28,7 @@ export default function AllProjectsActive() {
     </div>
   )
 }
+
+export default AllProjectsActive
 
 // Note: keep this list manually curated for now, as projects are not directly tied to project-directory entries

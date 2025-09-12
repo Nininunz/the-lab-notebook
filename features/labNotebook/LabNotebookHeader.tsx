@@ -1,6 +1,7 @@
+import React from 'react'
 import LandingHeader from '@/components/LandingHeader'
 
-export default function LabNotebookHeader() {
+const LabNotebookHeader: React.FC = () => {
   return (
     <LandingHeader
       mainTitle='The Lab'
@@ -10,3 +11,5 @@ export default function LabNotebookHeader() {
     />
   )
 }
+
+export default LabNotebookHeader

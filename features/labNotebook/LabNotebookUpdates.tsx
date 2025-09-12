@@ -1,3 +1,4 @@
+import React from 'react'
 import SectionTitle from '@/components/SectionTitle'
 import UpdateCard from '@/components/UpdateCard'
 
@@ -14,10 +15,10 @@ const updates = [
 
 // Sort by date descending
 const sortedUpdates = updates.sort(
-  (a, b) => new Date(b.date) - new Date(a.date)
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 )
 
-export default function LabNotebookUpdates() {
+const LabNotebookUpdates: React.FC = () => {
   return (
     <>
       <SectionTitle title='Updates' />
@@ -31,3 +32,5 @@ export default function LabNotebookUpdates() {
     </>
   )
 }
+
+export default LabNotebookUpdates

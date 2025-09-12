@@ -1,4 +1,12 @@
-export default function StatusLink({ name, href, status }) {
+import React from 'react'
+
+interface StatusLinkProps {
+  name: string
+  href: string
+  status: string
+}
+
+const StatusLink: React.FC<StatusLinkProps> = ({ name, href, status }) => {
   return (
     <a
       href={href}
@@ -36,3 +44,5 @@ export default function StatusLink({ name, href, status }) {
     </a>
   )
 }
+
+export default StatusLink
