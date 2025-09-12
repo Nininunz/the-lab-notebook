@@ -1,0 +1,34 @@
+# Script Documentation
+
+This section documents the build and maintenance scripts used in The Lab Notebook project.
+
+## Available Scripts
+
+- [Create Placeholders Script](/project/the-lab-notebook/docs/scripts/create-placeholders) - Generate SVG placeholder images
+- [Verify Links Script](/project/the-lab-notebook/docs/scripts/verify-links) - Check internal links and assets
+
+## Running Scripts
+
+All scripts are located in the `scripts/` directory and can be run from the project root:
+
+```bash
+# Generate placeholder images
+node scripts/create-placeholders.js
+
+# Verify all internal links
+node scripts/verify-links.js
+# or
+npm run verify-links
+```
+
+## Development Scripts
+
+Common npm scripts for development:
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run check        # Run lint + verify-links
+```

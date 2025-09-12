@@ -1,0 +1,284 @@
+# Development Guide
+
+This guide covers the development workflow, coding standards, and best practices for The Lab Notebook project.
+
+## Development Workflow
+
+### Setting Up Your Environment
+
+1. **Fork and clone the repository**
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+4. **Open browser:** http://localhost:3000
+
+### Branch Strategy
+
+- `main` - Main branch for production
+- `dev` - Development branch for ongoing work
+- Feature branches: `feature/your-feature-name`
+
+### Making Changes
+
+1. **Create a feature branch:**
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Make your changes** following coding standards
+
+3. **Run quality checks:**
+
+   ```bash
+   npm run check  # Runs lint + verify-links
+   ```
+
+4. **Commit your changes:**
+
+   ```bash
+   git add .
+   git commit -m "feat: describe your changes"
+   ```
+
+5. **Push and create a pull request**
+
+## Coding Standards
+
+### JavaScript/JSX
+
+- Use **ES6+ features** and modern JavaScript
+- Follow **ESLint configuration** (see `.eslintrc.js`)
+- Use **Prettier** for consistent formatting
+- Prefer **functional components** and hooks
+
+### MDX Content
+
+- Use **semantic Markdown** structure (proper heading hierarchy)
+- Embed **React components** when interactive elements are needed
+- Include **alt text** for all images
+- Use **relative paths** for internal links
+
+### File Organization
+
+```
+content/
+├── index.mdx                    # Homepage
+├── projects.mdx                 # Projects listing
+└── project/
+    ├── project-name/
+    │   ├── _meta.js            # Navigation metadata
+    │   ├── index.mdx           # Project overview
+    │   └── additional-pages.mdx
+    └── the-lab-notebook/
+        └── docs/               # Project documentation
+```
+
+### Component Development
+
+Components should be:
+
+- **Reusable** and well-documented
+- **Accessible** (proper ARIA labels, keyboard navigation)
+- **Responsive** (mobile-first design)
+- **Typed** with PropTypes or TypeScript interfaces
+
+Example component structure:
+
+```jsx
+import React from 'react'
+
+const MyComponent = ({ title, children, className = '' }) => {
+  return (
+    <div className={`base-styles ${className}`}>
+      <h2>{title}</h2>
+      {children}
+    </div>
+  )
+}
+
+export default MyComponent
+```
+
+## Key Files and Directories
+
+### Configuration Files
+
+- **`next.config.mjs`** - Next.js configuration
+- **`theme.config.jsx`** - Nextra theme configuration
+- **`tailwind.config.js`** - Tailwind CSS settings
+- **`eslint.config.js`** - Linting rules
+- **`tsconfig.json`** - TypeScript configuration and path aliases
+- **`layout.jsx`** – Root layout for Next.js App Router
+- **`global.css`** – Global styles for the application
+- **`package.json`** - Dependencies and scripts
+
+### Core Directories
+
+- **`app/`** - Next.js App Router pages
+- **`components/`** - Reusable React components
+- **`content/`** - MDX content files
+- **`lib/`** - Utility functions and helpers
+- **`public/`** - Static assets
+- **`scripts/`** - Build and maintenance scripts
+
+## Development Scripts
+
+```bash
+# Development
+npm run dev          # Start dev server with Turbopack
+npm run build        # Build for production
+npm run start        # Start production server
+
+# Code Quality
+npm run lint         # Run ESLint
+npm run lint:fix     # Fix ESLint errors automatically
+npm run verify-links # Check internal links
+npm run check        # Run lint + verify-links
+
+# Maintenance
+node scripts/create-placeholders.js  # Generate placeholder images
+```
+
+## Content Creation Guidelines
+
+### Adding New Projects
+
+1. **Create project directory:**
+
+   ```bash
+   mkdir content/project/your-project-name
+   ```
+
+2. **Add metadata file:**
+
+   ```javascript
+   // content/project/your-project-name/_meta.js
+   const meta = {
+     index: 'Project Overview',
+     'section-1': 'First Section',
+     'section-2': 'Second Section',
+   }
+
+   export default meta
+   ```
+
+3. **Create content files:**
+
+   ```mdx
+   # Your Project Name
+
+   Project description and content here.
+
+   <FeatureCard
+     title='Key Feature'
+     summary='Description of the feature'
+     tags={['tag1', 'tag2']}
+     href='/link-to-more-info'
+   />
+   ```
+
+### Working with Images
+
+1. **Place images in `public/images/`**
+2. **Use descriptive filenames**
+3. **Optimize images** (use `Sharp` for processing)
+4. **Include alt text** for accessibility
+
+Example:
+
+```mdx
+export const IMAGE_DIR = '/images/placeholders'
+
+<LightboxImage
+  src={`${IMAGE_DIR}/widescreen-placeholder_4x3.webp`}
+  largeSrc={`${IMAGE_DIR}/widescreen-placeholder_full_4x3.jpg`}
+  alt='4:3 Widescreen placeholder'
+  aspectRatio='4/3'
+/>
+```
+
+### Using Components
+
+Import and use project components:
+
+```mdx
+import FeatureCard from '@/components/FeatureCard'
+export const IMAGE_DIR = '/images/placeholders'
+
+<FeatureCard
+  title='Component Feature'
+  summary='Brief description'
+  tags={['react', 'component']}
+  href='/docs/components'
+  image={`${IMAGE_DIR}/component-preview_16x9.webp`}
+/>
+```
+
+## Testing and Quality Assurance
+
+### Before Committing
+
+Always run these checks:
+
+```bash
+npm run check  # Linting and link verification
+```
+
+### Link Verification
+
+The project includes automated link checking:
+
+- **Internal links** are verified against existing content
+- **Asset links** are checked for file existence
+- **Broken links** are reported with file locations
+
+### Pre-commit Hooks
+
+The project uses Husky for pre-commit hooks that:
+
+- **Format** code with Prettier
+- **Fix** ESLint errors
+- **Verify** links in MDX files
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Build errors** - Check console for specific error messages
+2. **Link verification failures** - Ensure all referenced files exist
+3. **Component not found** - Check import paths and exports
+4. **Styling issues** - Verify Tailwind classes and responsive design
+
+### Getting Help
+
+1. Check existing documentation in `/docs`
+2. Look at similar implementations in the codebase
+3. Run `npm run check` to identify issues
+4. Check the browser console for runtime errors
+
+## Performance Considerations
+
+- Use **Next.js Image component** for optimized images
+- Implement **lazy loading** for heavy components
+- Minimize **bundle size** by avoiding unnecessary dependencies
+- Use **static generation** where possible
+
+## Deployment
+
+The project is configured for:
+
+- **Automatic builds** on push to main branch
+- **Static site generation** for optimal performance
+- **CDN deployment** for global distribution
+
+Before deploying:
+
+1. Run `npm run build` locally to test
+2. Verify all links work in production build
+3. Test responsive design on multiple devices

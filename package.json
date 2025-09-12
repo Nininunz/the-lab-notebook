@@ -1,0 +1,77 @@
+{
+  "name": "the-lab-notebook",
+  "version": "1.1.0",
+  "description": "Engineering documentation and project notes",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
+    "dev": "next --turbopack",
+    "prebuild": "npm run verify-projects && npm run verify-meta",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "verify-links": "node scripts/verify-links.js",
+    "verify-projects": "node scripts/verify-projects.js",
+    "verify-meta": "node scripts/verify-meta.js",
+    "check": "npm run lint && npm run verify-links && npm run verify-projects && npm run verify-meta",
+    "analyze": "ANALYZE=true npm run build",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "Nininunz",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "lucide-react": "^0.543.0",
+    "next": "^15.5.2",
+    "next-themes": "^0.4.6",
+    "nextra": "^4.4.0",
+    "nextra-theme-docs": "^4.4.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "yet-another-react-lightbox": "^3.25.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@next/bundle-analyzer": "^15.5.3",
+    "@types/node": "24.3.1",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.34.0",
+    "eslint-config-next": "^15.5.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "glob": "^11.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "pagefind": "^1.4.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.13",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{mdx,md}": [
+      "npm run verify-links"
+    ],
+    "lib/project-directory.{ts,d.ts}": [
+      "npm run verify-projects"
+    ],
+    "**/_meta.js": [
+      "npm run verify-meta"
+    ]
+  }
+}

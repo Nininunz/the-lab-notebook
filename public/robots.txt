@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://docs.nininunz.dev/sitemap.xml
+
+# Block crawling of build artifacts
+Disallow: /_next/
+Disallow: /api/
+
+# Block crawling of search index
+Disallow: /_pagefind/

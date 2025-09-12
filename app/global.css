@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+
+/* Optional: import Nextra theme styles */
+@import 'nextra-theme-docs/style.css'; /* or nextra-theme-blog/style.css */
+
+@variant dark (&:where(.dark *));
+
+/* Custom responsive h1 font sizes */
+@media (min-width: 768px) and (max-width: 880px) {
+  .h1-768-880 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .h1-400-600 {
+    font-size: 2.625rem;
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .h1-601-767 {
+    font-size: 2.825rem;
+    line-height: 1.1;
+  }
+}
+
+/* Make the whole sidebar wider */
+.nextra-sidebar {
+  width: 18rem !important; /* default is 16rem (64 * 4px = 256px), yours shows ~324px */
+}
+
+/* Normalize transition speed (override inline 500ms) */
+.nextra-sidebar .x\:transform-gpu {
+  transition-duration: 300ms !important;
+}

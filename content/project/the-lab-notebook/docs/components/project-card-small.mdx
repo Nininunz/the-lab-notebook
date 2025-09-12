@@ -1,0 +1,120 @@
+import ProjectCardSmall from '@/components/ProjectCardSmall'
+
+# ProjectCardSmall Component
+
+A compact card component for displaying completed projects with essential information in a clean, horizontal layout.
+
+## Import
+
+```jsx
+import ProjectCardSmall from '@/components/ProjectCardSmall'
+```
+
+## Props
+
+| Prop            | Type           | Default            | Required            | Description                               |
+| --------------- | -------------- | ------------------ | ------------------- | ----------------------------------------- |
+| `title`         | `string`       | <center>-</center> | <center>✔</center> | The project title                         |
+| `description`   | `string`       | <center>-</center> | <center>✔</center> | A brief description of the project        |
+| `completedDate` | `string`       | <center>-</center> | <center>-</center>  | Completion date (e.g., "2024", "Q2 2024") |
+| `domain`        | `string`       | <center>-</center> | <center>-</center>  | Project domain/category                   |
+| `href`          | `string`       | <center>-</center> | <center>-</center>  | URL to the project details page           |
+| `linkText`      | `string`       | <center>-</center> | <center>-</center>  | Accessible text for the navigation link   |
+| `color`         | `ProjectColor` | `"emerald"`        | <center>-</center>  | Color theme for the card                  |
+
+### Color Options
+
+Available color themes: `emerald`, `blue`, `green`, `purple`, `red`, `orange`, `yellow`, `slate`
+
+## Usage Examples
+
+### Basic Example
+
+```jsx
+<ProjectCardSmall
+  title='Lunar Garden'
+  description='An experiment in cultivating moss and bonsai under simulated low-gravity conditions with artificial moonlight.'
+  completedDate='2024'
+  domain='AstroBotany'
+  href='/project/lunar-garden'
+  color='emerald'
+/>
+```
+
+### Minimal Example
+
+```jsx
+<ProjectCardSmall
+  title='Echo Jar'
+  description='A glass vessel designed to capture and replay whispers as faint resonances hours after they were spoken.'
+/>
+```
+
+### Multiple Cards
+
+```jsx
+<div className='space-y-3'>
+  <ProjectCardSmall
+    title='Nebula Loom'
+    description='A weaving device that threads starlight into shimmering fabrics, rumored to change patterns with cosmic events.'
+    completedDate='2026'
+    domain='Cosmic Textiles'
+    color='blue'
+  />
+
+  <ProjectCardSmall
+    title='Chrono Compass'
+    description='An instrument that doesn’t point north, but instead aligns with the strongest timeline nearby.'
+    completedDate='2032'
+    domain='Temporal Navigation'
+    color='purple'
+  />
+</div>
+```
+
+## Design Features
+
+- **Horizontal Layout**: Optimized for displaying multiple projects in a list
+- **Completion Indicator**: Checkmark icon shows project status
+- **Responsive Design**: Adapts to different screen sizes
+- **Hover Effects**: Subtle lift and shadow on hover
+- **Dark Mode Support**: Full dark mode compatibility
+- **Color Theming**: Multiple color schemes with consistent styling
+- **Accessibility**: Proper ARIA labels and keyboard navigation
+
+## Visual Structure
+
+<div className='mt-5'>
+  <ProjectCardSmall
+    title='Temporal Toaster'
+    description='A kitchen appliance that lightly browns bread by borrowing residual heat from alternate timelines.'
+    completedDate='2024'
+    domain='Kitchenware'
+    color='emerald'
+    href='/project/the-lab-notebook/docs/components/project-card-small'
+  />
+</div>
+
+The card displays a completion checkmark, project information on the left, completion details and domain on the right, with an optional navigation arrow when `href` is provided.
+
+## TypeScript Interface
+
+```tsx
+interface ProjectCardSmallProps {
+  title: string
+  description: string
+  completedDate?: string
+  domain?: string
+  href?: string
+  linkText?: string
+  color?:
+    | 'emerald'
+    | 'blue'
+    | 'green'
+    | 'purple'
+    | 'red'
+    | 'orange'
+    | 'yellow'
+    | 'slate'
+}
+```

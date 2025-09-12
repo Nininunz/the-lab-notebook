@@ -1,0 +1,236 @@
+import { Callout } from 'nextra/components'
+import { Steps } from 'nextra/components'
+import PhotoGrid from '@/components/PhotoGrid'
+import LightboxImage from '@/components/LightboxImage'
+
+export const IMAGE_DIR = '/images/homelink-retrofit'
+
+# Choosing the Right Mirror
+
+<div className='mt-5'>
+  BMW offered a wide range of rearview mirror configurations during the E83 era
+  (and across many other E-chassis vehicles). These spanned from basic,
+  non-wired mirrors to advanced versions with features like auto-dimming,
+  HomeLink garage integration, digital compass, and even rarer options such as
+  high-beam assist or lane-departure warning.
+</div>
+
+## Functional Variations
+
+<div className='mt-5'>
+  Part numbers vary widely — there are dozens of mirror variants across model
+  years and trims. For more information on what exists, consult
+  [RealOEM](https://www.realoem.com/bmw/enUS/select) or a similar dealer parts
+  catalog.
+</div>
+
+<div className='mt-5'>
+  **The terms you will see in the parts catalog are as follows:**
+</div>
+
+- **EC** = Electrochromic (auto-dimming)
+- **GTO** = HomeLink (garage door opener)
+- **TLC** = Lane departure warning
+- **FLA** = High-beam assistant
+- **ETC** = Electronic Toll Collection
+- **Radio** = Radio-wave remote control (believed to be convertible-exclusive)
+- **Remote** = (same as radio)
+- **LED** = Alarm system LED
+- **Compass** = Digital compass
+
+<Callout>
+  All electrochromic mirrors include the LED for the alarm system.
+</Callout>
+
+<Callout type='info'>
+  There are probably other variations I haven't encountered, but these are the
+  main ones.
+</Callout>
+
+---
+
+### Common Configurations
+
+<div className='mt-5'>
+  **These are typical configurations you will encounter:**
+</div>
+
+- **EC** — auto-dimming only
+- **EC/GTO** — auto-dimming with integrated garage door opener
+- **EC/Compass** — auto-dimming with digital compass
+- **EC/GTO/Compass** — auto-dimming with opener and compass
+- **Manual** — standard mirror - no wires, no auto-dimming
+
+---
+
+## Styling Variations
+
+<br />
+<LightboxImage
+  src={`${IMAGE_DIR}/mirror-highlight_edit_10x3.5.webp`}
+  largeSrc={`${IMAGE_DIR}/mirror-highlight_edit_full_10x3.5.jpg`}
+  alt='Mirror highlighting styling differences'
+  aspectRatio='10x3.5'
+/>
+
+<Callout>
+  These areas will have varied styling differences across different years and
+  models.
+</Callout>
+
+<br />
+
+### Compass Styles
+
+<div className='mt-5'>
+  Compass mirrors came in two versions: early models with a visible cutout, and
+  post-2006 versions with a hidden display.
+</div>
+
+<br />
+<PhotoGrid columns={2} className='mt-6'>
+  <div>
+    <LightboxImage
+      src={`${IMAGE_DIR}/compass-cutout_16x9.webp`}
+      largeSrc={`${IMAGE_DIR}/compass-cutout_full_16x9.png`}
+      alt="Compass with cutout"
+      aspectRatio="16/9"
+    />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      Early compass mirror with visible cutout
+    </div>
+
+  </div>
+
+  <div>
+    <LightboxImage
+      src={`${IMAGE_DIR}/compass-hidden_16x9.webp`}
+      largeSrc={`${IMAGE_DIR}/compass-hidden_full_16x9.png`}
+      alt="Compass with hidden display"
+      aspectRatio="16/9"
+    />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      Later compass mirror with hidden display
+    </div>
+  </div>
+</PhotoGrid>
+
+### Other Styles
+
+<PhotoGrid columns={2} className='mt-6'>
+  <div>
+    <LightboxImage
+      src={`${IMAGE_DIR}/mirror-toll_16x9.webp`}
+      largeSrc={`${IMAGE_DIR}/mirror-toll_full_16x9.png`}
+      alt='Electronic toll collection'
+      aspectRatio='16/9'
+    />
+    <div
+      style={{
+        marginTop: '0.5rem',
+        fontSize: '0.875rem',
+        color: '#6b7280',
+        textAlign: 'center',
+        fontStyle: 'italic',
+      }}
+    >
+      Electronic toll collection (ETC) - possibly Japan-only
+    </div>
+  </div>
+</PhotoGrid>
+
+---
+
+## Some Important Things to Note
+
+<div className='mt-5'>
+  If your car came with a **basic electrochromic mirror** (auto-dimming only),
+  you can swap in essentially any upgraded mirror — even ones with additional
+  features you don't plan to use. Extra functions that aren't supported by your
+  car's wiring will simply remain inactive, and they won't cause problems.
+</div>
+
+<div className='mt-5'>
+  That said, installing a mirror pulled from a car with **driver-assistance
+  features like Lane Departure Warning or High Beam Assistant** won't magically
+  add those functions to your vehicle. Those systems require dedicated sensors,
+  wiring, and module integration beyond the mirror itself. The only exceptions
+  are **HomeLink** and the **digital compass** — and likely **Electronic Toll
+  Collection**, though unverified — since these operate independently of the
+  car's electronics and will work as standalone features once powered.
+</div>
+
+<div className='mt-5'>
+  Some mirrors also came with an **SOS / BMW Assist button** integrated into the
+  housing. Swapping one of these into your car won't magically provide SOS
+  functionality — the system relied on separate telematics hardware, an active
+  subscription, and a backend service that has **long since been discontinued**.
+  Today, those buttons are purely cosmetic — **and an eyesore at that**.
+</div>
+
+---
+
+### General Notes
+
+- **All electrochromic mirrors** include the **LED for the alarm system**,
+  even if the vehicle is not equipped with an alarm.
+- **Mirror housings differ** — a standard mirror housing will not always fit
+  an electrochromic mirror and vice versa.
+- **HomeLink and compass functions are independent** of the vehicle's CAN/K-Bus
+  systems; they only require power and ground. This means if you already have
+  an electrochromic mirror, you can often add HomeLink or compass simply by
+  swapping in the upgraded mirror.
+- **If your car is not pre-wired** for an electrochromic mirror, any EC mirror
+  can be used to add the function — wiring just needs to be supplied.
+
+---
+
+### Market-Specific Features
+
+- **ETC** is possibly exclusive to the Japanese market.
+- **Radio-wave remote control** appears to have been limited to convertibles
+  (though this may not be true).
+- **Lane assist (TLC)** has not been observed on North American E-chassis
+  models, though it likely existed elsewhere.
+
+---
+
+### Part Numbers
+
+<div className='mt-5'>
+  These are factory mirror options for a **pre-LCI E83**:
+</div>
+
+- `51169218046` — Basic mirror (non-EC)
+- `51169134459` — Electrochromic mirror (EC) only
+- `51169134458` — Electrochromic mirror with HomeLink (GTO) - no compass
+
+<div className='mt-5'>
+  Keep in mind these are only a few examples. BMW offered many variations across
+  different models and markets.
+</div>
+
+<Callout type='info'>
+  The mirror I used was pulled out of my blown up donor LCI E90.
+</Callout>
+<Callout>
+  You don't need to source a mirror from the same chassis. Mirrors from other
+  E-chassis vehicles of this era are interchangeable as long as the connector
+  matches.
+</Callout>
