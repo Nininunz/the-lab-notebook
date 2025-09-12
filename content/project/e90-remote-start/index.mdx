@@ -1,0 +1,49 @@
+import { Callout } from 'nextra/components'
+
+# Remote Start Adaptation
+
+This write-up documents my effort to **adapt Alberto Marziali's remote start
+project** (originally intended for F-chassis cars with BDC/FEM) to work on
+earlier BMW platforms. My primary testbed is an **E90 with CAS3+**, but the
+scope includes other CAS variants such as **CAS4 in the F10** and potentially
+**CAS1 and CAS2 systems found in early-2000s 5/7 Series models _and possibly very early
+E90s_**. I will also be using one of my F10s to validate CAS4 support, and
+eventually porting the system to my **E83 X3 daily driver**, which I
+previously retrofitted with CAS3.
+
+## Scope
+
+While the original project was tied to **KCAN2-equipped F-series**, this work
+expands support to:
+
+- `CAS1` based platforms (7 series)
+- `CAS2` based platforms (1/3/5/6 series)
+- `CAS3(+)` based platforms (1/3/5/6 series, X1/X5/X6/Z4)
+- `CAS4` based platforms (5/6/7 series, X3/X4)
+- Vehicles without Comfort Access (non-CA)
+- Manual transmission vehicles
+
+If you are unsure what CAS version your vehicle has, you can find what you have [here](https://www.transpondery.com/vehicle-security-systems/bmw-cas_fem_bdc-list.html).
+
+<div className='mt-5'>
+  The project goal is to bring OEM-style **remote start functionality** to
+  chassis that never supported it, while maintaining factory-level safety and
+  immobilizer integrity.
+</div>
+
+<Callout type='info'>
+  Current progress: **~75% hardware complete** (relays, wiring, CAN taps).
+  Software and CAN message adaptation remain in progress.
+</Callout>
+
+<Callout type='important'>
+  **WIP:** This is an active project. Documentation will be expanded as
+  cross-platform support (non-CA, KCAN, manual gearbox) is validated.
+</Callout>
+
+## Future Roadmap
+
+- IoT integration (Home Assistant, etc.)
+
+**Credits:**
+[Alberto Marziali's project](https://github.com/AlbertoMarziali/bmw_remote_start)
