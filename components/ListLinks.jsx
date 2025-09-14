@@ -7,7 +7,7 @@ export default function ListLinks({ listLinks }) {
         {listLinks.map(w => (
           <li
             key={w.title}
-            className='flex items-center justify-between gap-4 p-4'
+            className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 p-4'
           >
             <div className='flex items-center gap-3'>
               <FileText className='h-4 w-4 text-slate-400' />
@@ -18,7 +18,7 @@ export default function ListLinks({ listLinks }) {
                 {w.title}
               </a>
             </div>
-            <div className='flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400'>
+            <div className='flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 sm:flex-shrink-0'>
               <CalendarClock className='h-4 w-4' />
               <time>{w.date}</time>
             </div>
