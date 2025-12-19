@@ -1,24 +1,48 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { FlatCompat } from '@eslint/eslintrc'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
+import eslintConfigPrettier from 'eslint-config-prettier'
+import nextPlugin from '@next/eslint-plugin-next'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+import importPlugin from 'eslint-plugin-import'
+import tsParser from '@typescript-eslint/parser'
+import tsPlugin from '@typescript-eslint/eslint-plugin'
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals'),
-  ...compat.extends('prettier'),
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    ignores: [
+      '.next/**/*',
+      'node_modules/**/*',
+      'out/**/*',
+      'public/**/*',
+      '*.config.js',
+    ],
+  },
+  {
+    files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
     plugins: {
+      '@next/next': nextPlugin,
+      '@typescript-eslint': tsPlugin,
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin,
+      'jsx-a11y': jsxA11yPlugin,
+      import: importPlugin,
       prettier: eslintPluginPrettier,
     },
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
     settings: {
+      react: {
+        version: 'detect',
+      },
       'import/resolver': {
         node: {
           paths: ['.'],
@@ -27,6 +51,10 @@ const eslintConfig = [
       },
     },
     rules: {
+      ...eslintConfigPrettier.rules,
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+
       // Prettier integration
       'prettier/prettier': 'warn',
 
@@ -69,15 +97,6 @@ const eslintConfig = [
       // Performance
       'react-hooks/exhaustive-deps': 'warn',
     },
-  },
-  {
-    ignores: [
-      '.next/**/*',
-      'node_modules/**/*',
-      'out/**/*',
-      'public/**/*',
-      '*.config.js',
-    ],
   },
 ]
 
