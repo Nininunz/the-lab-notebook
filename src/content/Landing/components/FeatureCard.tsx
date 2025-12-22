@@ -43,22 +43,14 @@ const ProjectImage: React.FC<ProjectImageProps> = ({ src, alt, title }) => {
   )
 }
 
-export const FeatureCard: React.FC<FeatureCardProps> = ({
-  title,
-  summary,
-  tags,
-  href,
-  image,
-}) => {
+export const FeatureCard: React.FC<FeatureCardProps> = ({ title, summary, tags, href, image }) => {
   const isExternal = href.startsWith('http')
 
   const Wrapper = isExternal ? 'a' : Link
 
   return (
     <Wrapper
-      {...(isExternal
-        ? { href, target: '_blank', rel: 'noopener noreferrer' }
-        : { href })}
+      {...(isExternal ? { href, target: '_blank', rel: 'noopener noreferrer' } : { href })}
       className='group block overflow-hidden rounded-2xl border border-slate-200 bg-white/70 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-white/5'
     >
       <div className='relative aspect-video w-full overflow-hidden bg-linear-to-br from-slate-100 to-slate-50 dark:from-white/10 dark:to-white/5'>
@@ -66,9 +58,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
       </div>
 
       <div className='p-5'>
-        <h3 className='mb-2 text-sm font-semibold text-slate-900 dark:text-white'>
-          {title}
-        </h3>
+        <h3 className='mb-2 text-sm font-semibold text-slate-900 dark:text-white'>{title}</h3>
         <p className='text-sm text-slate-700 dark:text-slate-300'>{summary}</p>
 
         <div className='mt-3 flex flex-wrap gap-2'>

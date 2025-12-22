@@ -27,14 +27,8 @@ const config = {
     <>
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <meta property='og:title' content='The Lab Notebook' />
-      <meta
-        property='og:description'
-        content='Engineering documentation and project notes'
-      />
-      <meta
-        property='og:image'
-        content='https://docs.nininunz.dev/images/meta.png'
-      />
+      <meta property='og:description' content='Engineering documentation and project notes' />
+      <meta property='og:image' content='https://docs.nininunz.dev/images/meta.png' />
     </>
   ),
   sidebar: {

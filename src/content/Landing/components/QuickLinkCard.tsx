@@ -7,11 +7,7 @@ export interface QuickLinkCardProps {
   icon: React.ComponentType<{ className?: string }>
 }
 
-export const QuickLinkCard: React.FC<QuickLinkCardProps> = ({
-  label,
-  href,
-  icon: Icon,
-}) => {
+export const QuickLinkCard: React.FC<QuickLinkCardProps> = ({ label, href, icon: Icon }) => {
   return (
     <a
       href={href}

@@ -35,10 +35,7 @@ export const Logo = () => {
           <path d='M5564 2686 c-3 -13 -4 -131 -2 -262 4 -223 5 -243 28 -299 32 -82 123 -173 205 -206 l60 -24 1220 -3 c910 -2 1234 0 1275 9 117 25 215 97 268 196 47 90 54 143 50 388 l-3 220 -1547 3 -1548 2 -6 -24z' />
         </g>
       </svg>
-      <span
-        className={kanit.className}
-        style={{ fontSize: '1.25rem', fontWeight: 500 }}
-      >
+      <span className={kanit.className} style={{ fontSize: '1.25rem', fontWeight: 500 }}>
         The Lab Notebook
       </span>
     </span>

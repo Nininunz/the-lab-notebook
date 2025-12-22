@@ -17,12 +17,7 @@ import React from 'react'
  * </PhotoGrid>
  * ```
  */
-export default function PhotoGrid({
-  children,
-  columns = 3,
-  gap = '1rem',
-  className = '',
-}) {
+export default function PhotoGrid({ children, columns = 3, gap = '1rem', className = '' }) {
   // photoStyle removed (was unused)
 
   const responsiveStyle = `

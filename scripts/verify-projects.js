@@ -36,8 +36,7 @@ function getUnionTypeValues(typePath, typeName) {
   const typeNode = typeAlias.getTypeNode()
   if (
     !typeNode ||
-    (typeNode.getKindName() !== 'UnionTypeNode' &&
-      typeNode.getKindName() !== 'UnionType')
+    (typeNode.getKindName() !== 'UnionTypeNode' && typeNode.getKindName() !== 'UnionType')
   )
     return []
 
@@ -45,9 +44,7 @@ function getUnionTypeValues(typePath, typeName) {
 
   return typeNodes
     .filter(
-      node =>
-        node.getKindName() === 'LiteralType' ||
-        node.getKindName() === 'LiteralTypeNode'
+      node => node.getKindName() === 'LiteralType' || node.getKindName() === 'LiteralTypeNode'
     )
     .map(node => {
       const literal = node.getLiteral()
@@ -69,12 +66,7 @@ function getProjectEntries(projectsPath) {
   const exportVar = sourceFile.getVariableDeclaration('projects')
   if (!exportVar) return []
   const arr = exportVar.getInitializer()
-  if (
-    !arr ||
-    !arr.getKindName ||
-    arr.getKindName() !== 'ArrayLiteralExpression'
-  )
-    return []
+  if (!arr || !arr.getKindName || arr.getKindName() !== 'ArrayLiteralExpression') return []
   return arr
     .getElements()
     .map(e => {
@@ -96,18 +88,12 @@ function main() {
   const entries = getProjectEntries(PROJECTS_PATH)
 
   if (!entries.length) {
-    console.log(
-      `${colors.red}ERROR:${colors.reset} Could not parse project entries.`
-    )
+    console.log(`${colors.red}ERROR:${colors.reset} Could not parse project entries.`)
     process.exit(1)
   }
 
-  console.log(
-    `${colors.cyan}${colors.bold}Scanning project directory entries...${colors.reset}\n`
-  )
-  console.log(
-    `${colors.blue}Expected keys:${colors.reset} ${typeKeys.join(', ')}\n`
-  )
+  console.log(`${colors.cyan}${colors.bold}Scanning project directory entries...${colors.reset}\n`)
+  console.log(`${colors.blue}Expected keys:${colors.reset} ${typeKeys.join(', ')}\n`)
   console.log(
     `${colors.blue}Valid statuses:${colors.reset} ${Array.from(validStatuses).join(', ')}\n`
   )
@@ -163,16 +149,10 @@ function main() {
     }
 
     // If project has features, treat feature fields as critical
-    if (
-      entry.feature &&
-      Array.isArray(entry.feature) &&
-      entry.feature.length > 0
-    ) {
+    if (entry.feature && Array.isArray(entry.feature) && entry.feature.length > 0) {
       entry.feature.forEach((feature, featureIdx) => {
         if (feature && typeof feature === 'object') {
-          const featureMissing = Array.from(featureKeys).filter(
-            k => !(k in feature)
-          )
+          const featureMissing = Array.from(featureKeys).filter(k => !(k in feature))
           featureMissing.forEach(key => {
             const featureKey = `feature[${featureIdx}].${key}`
             if (!missingCritical[featureKey]) missingCritical[featureKey] = []
@@ -198,12 +178,7 @@ function main() {
       Array.isArray(entry.domains) &&
       entry.domains.some(domain => !validDomains.has(domain))
 
-    if (
-      missingCriticalKeys.length ||
-      extra.length ||
-      hasInvalidStatus ||
-      hasInvalidDomain
-    ) {
+    if (missingCriticalKeys.length || extra.length || hasInvalidStatus || hasInvalidDomain) {
       errorCount++
     }
 
@@ -216,9 +191,7 @@ function main() {
       missingCriticalKeys.length +
       extra.length +
       (hasInvalidStatus ? 1 : 0) +
-      (hasInvalidDomain
-        ? entry.domains.filter(d => !validDomains.has(d)).length
-        : 0)
+      (hasInvalidDomain ? entry.domains.filter(d => !validDomains.has(d)).length : 0)
 
     // Count total warnings (individual missing optional fields)
     totalWarnings += missingWarningKeys.length
@@ -262,9 +235,7 @@ function main() {
     )
   } else {
     if (Object.keys(missingCritical).length > 0) {
-      console.log(
-        `${colors.red}${colors.bold}ERRORS - Missing Critical Keys:${colors.reset}\n`
-      )
+      console.log(`${colors.red}${colors.bold}ERRORS - Missing Critical Keys:${colors.reset}\n`)
       Object.entries(missingCritical).forEach(([key, entryList]) => {
         console.log(
           `  ${colors.red}${colors.bold}"${key}"${colors.reset} missing in ${colors.bold}${entryList.length}${colors.reset} entries:`
@@ -279,9 +250,7 @@ function main() {
     }
 
     if (Object.keys(extraByKey).length > 0) {
-      console.log(
-        `${colors.red}${colors.bold}ERRORS - Extra Keys:${colors.reset}\n`
-      )
+      console.log(`${colors.red}${colors.bold}ERRORS - Extra Keys:${colors.reset}\n`)
       Object.entries(extraByKey).forEach(([key, entryList]) => {
         console.log(
           `  ${colors.red}${colors.bold}"${key}"${colors.reset} found in ${colors.bold}${entryList.length}${colors.reset} entries:`
@@ -296,16 +265,13 @@ function main() {
     }
 
     if (Object.keys(invalidValues).length > 0) {
-      console.log(
-        `${colors.red}${colors.bold}ERRORS - Invalid Values:${colors.reset}\n`
-      )
+      console.log(`${colors.red}${colors.bold}ERRORS - Invalid Values:${colors.reset}\n`)
       Object.entries(invalidValues).forEach(([key, entryList]) => {
         console.log(
           `  ${colors.red}${colors.bold}"${key}"${colors.reset} has invalid values in ${colors.bold}${entryList.length}${colors.reset} entries:`
         )
         entryList.forEach(entry => {
-          const arrayInfo =
-            entry.arrayIndex !== undefined ? `[${entry.arrayIndex}]` : ''
+          const arrayInfo = entry.arrayIndex !== undefined ? `[${entry.arrayIndex}]` : ''
           console.log(
             `    ${colors.gray}•${colors.reset} Entry ${colors.blue}${entry.index}${colors.reset}: "${entry.name}" (${colors.gray}${entry.id}${colors.reset})${arrayInfo} - value: ${colors.red}"${entry.value}"${colors.reset}`
           )

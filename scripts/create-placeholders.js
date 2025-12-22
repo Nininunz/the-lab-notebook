@@ -68,9 +68,7 @@ ratios.forEach((ratio, index) => {
 })
 
 // eslint-disable-next-line no-console
-console.log(
-  `\nCreated ${ratios.length} placeholder images in public/images/placeholders/`
-)
+console.log(`\nCreated ${ratios.length} placeholder images in public/images/placeholders/`)
 // eslint-disable-next-line no-console
 console.log('\nUsage examples:')
 ratios.forEach(ratio => {

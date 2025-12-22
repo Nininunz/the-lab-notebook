@@ -28,19 +28,13 @@ export const Hero: React.FC<HeroProps> = ({
             <h1 className='mb-4 text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl dark:text-white'>
               {mainTitle}
               <br />
-              <span className='text-slate-600 dark:text-slate-400'>
-                {subTitle}
-              </span>
+              <span className='text-slate-600 dark:text-slate-400'>{subTitle}</span>
             </h1>
 
             {/* Description */}
             <div className='max-w-2xl space-y-3'>
-              <p className='text-xl text-slate-600 dark:text-slate-300'>
-                {mainDesc}
-              </p>
-              <p className='text-base text-slate-500 dark:text-slate-400'>
-                {subDesc}
-              </p>
+              <p className='text-xl text-slate-600 dark:text-slate-300'>{mainDesc}</p>
+              <p className='text-base text-slate-500 dark:text-slate-400'>{subDesc}</p>
             </div>
           </div>
         </div>

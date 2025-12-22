@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Sparkles,
-  FileText,
-  GitBranch,
-  CalendarClock,
-  Link,
-  Contact,
-} from 'lucide-react'
+import { Sparkles, FileText, GitBranch, CalendarClock, Link, Contact } from 'lucide-react'
 import { SectionTitle, QuickLinkCard } from './components'
 
 const LINKS = [

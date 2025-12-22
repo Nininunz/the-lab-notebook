@@ -6,10 +6,7 @@ export interface SectionTitleProps {
 }
 
 // Wrapper component: renders a section title and any nested children below it.
-export const SectionTitle: React.FC<SectionTitleProps> = ({
-  title,
-  children,
-}) => {
+export const SectionTitle: React.FC<SectionTitleProps> = ({ title, children }) => {
   return (
     <section className='mt-12 mb-3'>
       <div className='flex items-center gap-3'>

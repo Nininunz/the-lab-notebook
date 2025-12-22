@@ -5,10 +5,7 @@ export function ListLinks({ listLinks }) {
     <div>
       <ul className='divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white/70 dark:divide-white/10 dark:border-white/10 dark:bg-white/5'>
         {listLinks.map(w => (
-          <li
-            key={w.title}
-            className='flex items-center justify-between gap-4 p-4'
-          >
+          <li key={w.title} className='flex items-center justify-between gap-4 p-4'>
             <div className='flex items-center gap-3'>
               <FileText className='h-4 w-4 text-slate-400' />
               <a
