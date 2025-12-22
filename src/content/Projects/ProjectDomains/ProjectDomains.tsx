@@ -41,7 +41,7 @@ export function ProjectDomains() {
   return (
     <div className='mt-8'>
       {/* Tabs */}
-      <div className='border-b border-gray-200 dark:border-gray-700 overflow-x-auto'>
+      <div className='border-b border-gray-200 dark:border-gray-700 overflow-x-auto scrollbar-hide'>
         <nav className='flex space-x-8 min-w-max' aria-label='Domains'>
           {domainList.map(domain => (
             <button
