@@ -1,13 +1,13 @@
 import { ArrowRight } from 'lucide-react'
 import React from 'react'
 
-interface QuickLinkCardProps {
+export interface QuickLinkCardProps {
   label: string
   href: string
   icon: React.ComponentType<{ className?: string }>
 }
 
-const QuickLinkCard: React.FC<QuickLinkCardProps> = ({
+export const QuickLinkCard: React.FC<QuickLinkCardProps> = ({
   label,
   href,
   icon: Icon,
@@ -25,5 +25,3 @@ const QuickLinkCard: React.FC<QuickLinkCardProps> = ({
     </a>
   )
 }
-
-export default QuickLinkCard

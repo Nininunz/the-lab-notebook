@@ -1,6 +1,5 @@
 import React from 'react'
-import { UpdateCard } from '@components/UpdateCard'
-import { SectionTitle } from './components/SectionTitle'
+import { SectionTitle, UpdateCard } from './components'
 
 const updates = [
   {

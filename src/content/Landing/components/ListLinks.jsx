@@ -1,6 +1,6 @@
 import { FileText, CalendarClock } from 'lucide-react'
 
-export default function ListLinks({ listLinks }) {
+export function ListLinks({ listLinks }) {
   return (
     <div>
       <ul className='divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white/70 dark:divide-white/10 dark:border-white/10 dark:bg-white/5'>

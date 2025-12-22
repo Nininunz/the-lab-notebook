@@ -81,7 +81,7 @@ const ProjectCardLarge: React.FC<ProjectCardLargeProps> = ({
 
   return (
     <div
-      className={`group relative rounded-2xl border ${colors.border} bg-gradient-to-br ${colors.bg} p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md`}
+      className={`group relative rounded-2xl border ${colors.border} bg-linear-to-br ${colors.bg} p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md`}
     >
       {/* Header with status badge and progress/date */}
       <div className='mb-3 flex items-center justify-between'>

@@ -104,16 +104,16 @@ const ProjectCardSmall: React.FC<ProjectCardSmallProps> = ({
 
   return (
     <div
-      className={`group flex items-center justify-between rounded-lg border ${colors.border} bg-gradient-to-r ${colors.bg} p-4 transition hover:-translate-y-0.5 hover:shadow-md hover:${colors.border}`}
+      className={`group flex items-center justify-between rounded-lg border ${colors.border} bg-linear-to-r ${colors.bg} p-4 transition hover:-translate-y-0.5 hover:shadow-md hover:${colors.border}`}
     >
       {/* Left side: Status badge + Content */}
       <div className='flex items-center gap-4'>
         {/* Completion checkmark icon */}
         <div
-          className={`flex h-10 w-10 items-center justify-center rounded-lg ${colors.badge} shadow-sm flex-shrink-0`}
+          className={`flex h-10 w-10 items-center justify-center rounded-lg ${colors.badge} shadow-sm shrink-0`}
         >
           <svg
-            className='h-5 w-5 flex-shrink-0'
+            className='h-5 w-5 shrink-0'
             fill='none'
             stroke='currentColor'
             viewBox='0 0 24 24'

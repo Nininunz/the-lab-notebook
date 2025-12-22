@@ -102,12 +102,12 @@ export default function LightboxImage({
 
       {open && (
         <div
-          className='fixed inset-0 bg-black/90 flex items-center justify-center z-[1000] cursor-pointer'
+          className='fixed inset-0 bg-black/90 flex items-center justify-center z-1000 cursor-pointer'
           onClick={handleClose}
         >
           <button
             onClick={handleDownload}
-            className='absolute top-5 right-[70px] bg-white/10 border-0 rounded-full w-10 h-10 text-white cursor-pointer flex items-center justify-center z-[1001] hover:bg-white/20 transition-colors'
+            className='absolute top-5 -right-17.5 bg-white/10 border-0 rounded-full w-10 h-10 text-white cursor-pointer flex items-center justify-center z-1001 hover:bg-white/20 transition-colors'
           >
             <svg
               width='16'
@@ -123,7 +123,7 @@ export default function LightboxImage({
           </button>
           <button
             onClick={handleClose}
-            className='absolute top-5 right-5 bg-white/10 border-0 rounded-full w-10 h-10 text-white cursor-pointer flex items-center justify-center z-[1001] hover:bg-white/20 transition-colors'
+            className='absolute top-5 right-5 bg-white/10 border-0 rounded-full w-10 h-10 text-white cursor-pointer flex items-center justify-center z-1001 hover:bg-white/20 transition-colors'
           >
             <svg
               width='16'

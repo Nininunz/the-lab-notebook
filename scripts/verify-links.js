@@ -9,13 +9,13 @@ import { glob } from 'glob'
  * Checks internal links in MDX files and components
  */
 
-const CONTENT_DIR = 'content'
-const COMPONENTS_DIR = 'components'
+const CONTENT_DIR = 'src/content'
+const COMPONENTS_DIR = 'src/components'
 const PUBLIC_DIR = 'public'
-const TEMPLATES_DIR = 'templates'
-const FEATURES_DIR = 'features'
-const LIB_DIR = 'lib'
-const APP_DIR = 'app'
+const TEMPLATES_DIR = 'src/templates'
+const FEATURES_DIR = 'src/features'
+const LIB_DIR = 'src/lib'
+const APP_DIR = 'src/app'
 
 // Colors for console output
 const colors = {

@@ -7,7 +7,7 @@ interface InfoCardProps {
   style?: string
 }
 
-const InfoCard: React.FC<InfoCardProps> = ({
+export const InfoCard: React.FC<InfoCardProps> = ({
   title,
   desc,
   icon: Icon,
@@ -15,7 +15,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
 }) => {
   return (
     <article
-      className={`group relative rounded-2xl border bg-gradient-to-br ${style} p-5 shadow-sm transition will-change-transform hover:-translate-y-0.5 hover:shadow-md`}
+      className={`group relative rounded-2xl border bg-linear-to-br ${style} p-5 shadow-sm transition will-change-transform hover:-translate-y-0.5 hover:shadow-md`}
     >
       <div className='mb-3 inline-flex items-center gap-2'>
         <div className='flex h-9 w-9 items-center justify-center rounded-xl bg-white/70 text-slate-800 shadow-sm ring-1 ring-black/5 dark:bg-white/10 dark:text-white dark:ring-white/10'>
@@ -31,5 +31,3 @@ const InfoCard: React.FC<InfoCardProps> = ({
     </article>
   )
 }
-
-export default InfoCard

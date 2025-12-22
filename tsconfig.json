@@ -20,20 +20,29 @@
       "@/*": [
         "./*"
       ],
-      "@/components/*": [
-        "components/*"
+      "@ui": [
+        "src/ui"
       ],
-      "@/app/*": [
-        "app/*"
+      "@ui/*": [
+        "src/ui/*"
       ],
-      "@/content/*": [
-        "content/*"
+      "@components/*": [
+        "src/components/*"
       ],
-      "@/public/*": [
-        "public/*"
+      "@app/*": [
+        "src/app/*"
       ],
-      "@/lib/*": [
-        "lib/*"
+      "@content/*": [
+        "src/content/*"
+      ],
+      "@public/*": [
+        "src/public/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@features/*": [
+        "src/features/*"
       ]
     },
     "strict": false,
@@ -42,7 +51,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",

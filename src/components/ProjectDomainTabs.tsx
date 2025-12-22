@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import StatusLink from '@/components/StatusLink'
-import { projects } from '@/lib/project-directory'
-import type { ProjectDomain } from '@/lib/project-directory.d'
+import StatusLink from '@components/StatusLink'
+import { projects } from '@lib/project-directory'
+import type { ProjectDomain } from '@lib/project-directory.d'
 
 interface DomainTab {
   id: string

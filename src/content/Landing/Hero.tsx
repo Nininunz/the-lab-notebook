@@ -1,24 +1,24 @@
 import React from 'react'
 
-interface LandingHeaderProps {
+interface HeroProps {
   mainTitle: string
   subTitle: string
   mainDesc: string
   subDesc: string
 }
 
-const LandingHeader: React.FC<LandingHeaderProps> = ({
-  mainTitle,
-  subTitle,
-  mainDesc,
-  subDesc,
+export const Hero: React.FC<HeroProps> = ({
+  mainTitle = 'The Lab',
+  subTitle = 'Notebook',
+  mainDesc = 'A curated portfolio of engineering writeups and project documentation spanning software, electronics, and mechanical systems.',
+  subDesc = 'A small window into my work — the rest remains confidential or not publicly documented.',
 }) => {
   return (
     <div className='w-full'>
       <div className='mx-auto max-w-6xl mt-7'>
         <div className='relative'>
           {/* Background grid pattern */}
-          <div className='absolute inset-0 bottom-[-70px] bg-[linear-gradient(to_right,#8884_1px,transparent_1px),linear-gradient(to_bottom,#8884_1px,transparent_1px)] bg-[size:24px_24px] bg-[position:center] opacity-30 [mask-image:linear-gradient(to_bottom,transparent_0%,black_16%,black_80%,transparent_100%),linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)] [mask-composite:intersect]' />
+          <div className='absolute inset-0 -bottom-17.5 bg-[linear-gradient(to_right,#8884_1px,transparent_1px),linear-gradient(to_bottom,#8884_1px,transparent_1px)] bg-size-[24px_24px] bg-center opacity-30 mask-[linear-gradient(to_bottom,transparent_0%,black_16%,black_80%,transparent_100%),linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)] mask-intersect' />
 
           <div className='relative'>
             {/* Header badge */}
@@ -42,19 +42,9 @@ const LandingHeader: React.FC<LandingHeaderProps> = ({
                 {subDesc}
               </p>
             </div>
-
-            {/* Decorative line */}
-            {/* <div className='mt-8 flex items-center gap-4'>
-              <div className='h-px w-16 bg-slate-300 dark:bg-slate-600' />
-              <div className='text-xs font-mono text-slate-400 dark:text-slate-500'>
-                {new Date().getFullYear()}
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
     </div>
   )
 }
-
-export default LandingHeader
