@@ -24,7 +24,7 @@ export const ProjectDirectory: ProjectEntry[] = [
   },
   {
     item: 'HomeLink Mirror Retrofit Guide',
-    short: 'Guide for retrofitting HomeLink mirrors in BMW vehicles',
+    short: 'Guide for retrofitting HomeLink mirrors in BMW radios',
     slug: '/homelink-retrofit',
     status: 'active',
     domains: ['Automotive', 'Electronics'],
@@ -42,6 +42,80 @@ export const ProjectDirectory: ProjectEntry[] = [
     slug: '/bmw-analog-line-in-retrofit',
     status: 'active',
     domains: ['Automotive', 'Electronics'],
+  },
+  {
+    item: 'CoreXY FDM 3D Printer',
+    short: 'Engineering a custom large-format 3D printer with a fully modular architecture',
+    slug: '/corexy-fdm-3d-printer',
+    status: 'active',
+    domains: ['Electronics', 'Mechanical', 'Embedded'],
+  },
+  {
+    item: 'The Lab Notebook',
+    short:
+      'Curated documentation platform showcasing engineering projects with structured writeups',
+    slug: '/the-lab-notebook',
+    status: 'active',
+    domains: ['Software'],
+  },
+  {
+    item: 'SmartHub Usage Downloader',
+    short:
+      "Fork of tedpearson's electric-usage-downloader, without the dependency on external databases",
+    slug: '/smarthub-usage-downloader',
+    status: 'active',
+    domains: ['Software'],
+  },
+  {
+    item: 'Kindle Battery Mod',
+    short: 'Fitting an iPhone battery cell achieving more than double the original capacity',
+    slug: '/kindle-battery-mod',
+    status: 'active',
+    domains: ['Electronics'],
+  },
+  {
+    item: 'Model-O Cable Repair',
+    short: 'Repairing a Model-O mouse using a braided donor cord from a Logitech G502',
+    slug: '/model-o-cable-repair',
+    status: 'active',
+    domains: ['Electronics'],
+  },
+  {
+    item: 'iPod Classic Bluetooth Mod',
+    short:
+      'A1238 Bluetooth retrofit leveraging a logic gate to interface with the original click wheel controls',
+    slug: '/ipod-classic-bluetooth-mod',
+    status: 'active',
+    domains: ['Electronics'],
+  },
+  {
+    item: 'Infiniti Track Mode Switch',
+    short: 'Implementing a hardware interlock to fully disable ABS and traction control systems',
+    slug: '/infiniti-track-mode-switch',
+    status: 'active',
+    domains: ['Automotive', 'Electronics'],
+  },
+  {
+    item: 'Mirror Potentiometer Repair',
+    short: 'Tearing down and repairing a faulty mirror potentiometer in an E83',
+    slug: '/mirror-potentiometer-repair',
+    status: 'active',
+    domains: ['Automotive', 'Electronics'],
+  },
+  {
+    item: 'BMW Radio Potentiometer Swap',
+    short: 'Swapping a faulty potentiometer in an E46-era BMW radio',
+    slug: '/bmw-radio-potentiometer-swap',
+    status: 'active',
+    domains: ['Automotive', 'Electronics'],
+  },
+  {
+    item: 'Nintendo Switch Battery Mod',
+    short:
+      'Dual-cell stack (XT1955 + H1511) delivering 8,450 mAh in place of the original 4,310mAh cell',
+    slug: '/nintendo-switch-battery-mod',
+    status: 'active',
+    domains: ['Electronics'],
   },
 ]
 

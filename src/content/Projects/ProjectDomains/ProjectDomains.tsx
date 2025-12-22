@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { ProjectDirectory } from './project-directory'
 import type { ProjectDomain, ProjectEntry } from './project-record'
 import { StatusLink } from './StatusLink'
