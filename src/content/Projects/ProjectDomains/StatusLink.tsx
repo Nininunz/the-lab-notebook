@@ -1,12 +1,7 @@
 import React from 'react'
+import { StatusLinkProps } from './status-link'
 
-interface StatusLinkProps {
-  name: string
-  href: string
-  status: string
-}
-
-const StatusLink: React.FC<StatusLinkProps> = ({ name, href, status }) => {
+export const StatusLink: React.FC<StatusLinkProps> = ({ name, href, status }) => {
   return (
     <a
       href={href}
@@ -34,15 +29,8 @@ const StatusLink: React.FC<StatusLinkProps> = ({ name, href, status }) => {
         stroke='currentColor'
         viewBox='0 0 24 24'
       >
-        <path
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth={2}
-          d='M9 5l7 7-7 7'
-        />
+        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
       </svg>
     </a>
   )
 }
-
-export default StatusLink

@@ -67,9 +67,7 @@ class LinkVerifier {
       this.existingPages.add(urlPath)
     }
 
-    console.log(
-      `${colors.blue}Found ${this.existingPages.size} content pages${colors.reset}`
-    )
+    console.log(`${colors.blue}Found ${this.existingPages.size} content pages${colors.reset}`)
   }
 
   // Scan public directory for assets
@@ -85,13 +83,9 @@ class LinkVerifier {
         this.existingAssets.add(urlPath)
       }
 
-      console.log(
-        `${colors.blue}Found ${this.existingAssets.size} static assets${colors.reset}`
-      )
+      console.log(`${colors.blue}Found ${this.existingAssets.size} static assets${colors.reset}`)
     } catch {
-      console.warn(
-        `${colors.yellow}Warning: Could not scan public directory${colors.reset}`
-      )
+      console.warn(`${colors.yellow}Warning: Could not scan public directory${colors.reset}`)
     }
   }
 
@@ -105,9 +99,7 @@ class LinkVerifier {
 
     // First, resolve any DOC_DIR and IMAGE_DIR variables defined in the file
     const docDirMatch = content.match(/export const DOC_DIR = ['"]([^'"]+)['"]/)
-    const imageDirMatch = content.match(
-      /export const IMAGE_DIR = ['"]([^'"]+)['"]/
-    )
+    const imageDirMatch = content.match(/export const IMAGE_DIR = ['"]([^'"]+)['"]/)
     const docDir = docDirMatch ? docDirMatch[1] : null
     const imageDir = imageDirMatch ? imageDirMatch[1] : null
 
@@ -162,8 +154,7 @@ class LinkVerifier {
     })
 
     // Template literal largeSrc attributes: largeSrc={`${VAR}/path`}
-    const templateLargeSrcs =
-      cleanContent.match(/largeSrc\s*=\s*\{`([^`]+)`\}/g) || []
+    const templateLargeSrcs = cleanContent.match(/largeSrc\s*=\s*\{`([^`]+)`\}/g) || []
     templateLargeSrcs.forEach(match => {
       let url = match.match(/\{`([^`]+)`\}/)[1]
       url = this.resolveTemplateUrl(url, docDir, imageDir)
@@ -203,8 +194,7 @@ class LinkVerifier {
     })
 
     // Object property largeSrc: largeSrc: '/path' or largeSrc: "/path"
-    const objLargeSrcs =
-      cleanContent.match(/largeSrc\s*:\s*["']([^"']+)["']/g) || []
+    const objLargeSrcs = cleanContent.match(/largeSrc\s*:\s*["']([^"']+)["']/g) || []
     objLargeSrcs.forEach(match => {
       let url = match.match(/["']([^"']+)["']/)[1]
       url = this.resolveTemplateUrl(url, docDir, imageDir)
@@ -277,24 +267,13 @@ class LinkVerifier {
   isInternalLink(url) {
     return (
       url.startsWith('/') ||
-      (!url.startsWith('http') &&
-        !url.startsWith('mailto:') &&
-        !url.startsWith('#'))
+      (!url.startsWith('http') && !url.startsWith('mailto:') && !url.startsWith('#'))
     )
   }
 
   // Check if path is likely an asset
   isAssetPath(url) {
-    const assetExtensions = [
-      '.png',
-      '.jpg',
-      '.jpeg',
-      '.gif',
-      '.svg',
-      '.webp',
-      '.pdf',
-      '.ico',
-    ]
+    const assetExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.pdf', '.ico']
     return assetExtensions.some(ext => url.toLowerCase().endsWith(ext))
   }
 
@@ -340,9 +319,7 @@ class LinkVerifier {
       })
 
       if (links.length > 0) {
-        console.log(
-          `${colors.blue}Checked ${links.length} links in ${filePath}${colors.reset}`
-        )
+        console.log(`${colors.blue}Checked ${links.length} links in ${filePath}${colors.reset}`)
       }
     } catch (error) {
       this.errors.push({
@@ -379,9 +356,7 @@ class LinkVerifier {
       allFiles.push(...files)
     }
 
-    console.log(
-      `${colors.blue}Scanning ${allFiles.length} files for links...${colors.reset}\n`
-    )
+    console.log(`${colors.blue}Scanning ${allFiles.length} files for links...${colors.reset}\n`)
 
     // Process each file
     for (const file of allFiles) {
@@ -418,9 +393,7 @@ class LinkVerifier {
     }
 
     if (this.errors.length === 0 && this.warnings.length === 0) {
-      console.log(
-        `\n${colors.green}${colors.bold}All links verified successfully!${colors.reset}`
-      )
+      console.log(`\n${colors.green}${colors.bold}All links verified successfully!${colors.reset}`)
     }
 
     console.log(`\n${colors.bold}Link Verification Results${colors.reset}`)

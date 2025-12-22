@@ -1,17 +1,6 @@
-export type ProjectDomain =
-  | 'Software'
-  | 'Automotive'
-  | 'Embedded'
-  | 'Electronics'
-  | 'Mechanical'
+export type ProjectDomain = 'Software' | 'Automotive' | 'Embedded' | 'Electronics' | 'Mechanical'
 
-export type ProjectStatus =
-  | 'completed'
-  | 'active'
-  | 'planning'
-  | 'archived'
-  | 'paused'
-  | 'idea'
+export type ProjectStatus = 'completed' | 'active' | 'planning' | 'archived' | 'paused' | 'idea'
 
 export interface Feature {
   title: string
