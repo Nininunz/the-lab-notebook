@@ -76,6 +76,7 @@ export function ProjectDomains() {
               name={project.item}
               href={project.slug}
               status={project.status}
+              short={project.short}
             />
           ))}
         </div>

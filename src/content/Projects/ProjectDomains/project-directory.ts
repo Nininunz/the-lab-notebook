@@ -15,4 +15,19 @@ export const ProjectDirectory: ProjectEntry[] = [
     status: 'active',
     domains: ['Software'],
   },
+  {
+    item: 'CAS3 Retrofit & Comfort Access',
+    short: 'Push-button start and keyless entry retrofit with full OEM integration.',
+    slug: '/e83-cas3-retrofit',
+    status: 'active',
+    domains: ['Automotive', 'Embedded', 'Electronics'],
+  },
 ]
+
+//   {
+//     item: 'abcdef',
+//     short: 'abcdef',
+//     slug: 'abcdef',
+//     status: 'abcdef',
+//     domains: ['abcdef'],
+//   },
