@@ -11,12 +11,6 @@ const withNextra = nextra({})
 // Export the final Next.js config with Nextra included
 export default withBundleAnalyzer(
   withNextra({
-    eslint: {
-      // Warning: This allows production builds to successfully complete even if
-      // your project has ESLint errors.
-      ignoreDuringBuilds: false,
-    },
-
     // Fix workspace root warning
     outputFileTracingRoot: process.cwd(),
 
