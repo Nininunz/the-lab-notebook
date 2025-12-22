@@ -26,7 +26,7 @@ export const StatusLink: React.FC<StatusLinkProps> = ({ name, href, status, shor
         <div className='flex items-center ml-2 leading-none'>
           <div className='text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
             {name}
-            {short && <div className='ml-3 text-xs text-gray-500 dark:text-gray-400'>{short}</div>}
+            {short && <div className='text-xs text-gray-500 dark:text-gray-400'>{short}</div>}
           </div>
         </div>
       </div>

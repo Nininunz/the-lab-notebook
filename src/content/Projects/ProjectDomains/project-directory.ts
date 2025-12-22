@@ -17,10 +17,31 @@ export const ProjectDirectory: ProjectEntry[] = [
   },
   {
     item: 'CAS3 Retrofit & Comfort Access',
-    short: 'Push-button start and keyless entry retrofit with full OEM integration.',
+    short: 'Push-button start and keyless entry retrofit with full OEM integration',
     slug: '/e83-cas3-retrofit',
     status: 'active',
     domains: ['Automotive', 'Embedded', 'Electronics'],
+  },
+  {
+    item: 'HomeLink Mirror Retrofit Guide',
+    short: 'Guide for retrofitting HomeLink mirrors in BMW vehicles',
+    slug: '/homelink-retrofit',
+    status: 'active',
+    domains: ['Automotive', 'Electronics'],
+  },
+  {
+    item: 'Engine Carbon Valve Failure Analysis',
+    short: 'Investigating the mysterious failure (and rebuild) of an N52 engine',
+    slug: '/n52-diagnostic-rebuild',
+    status: 'active',
+    domains: ['Automotive', 'Mechanical'],
+  },
+  {
+    item: 'BMW Analog Line-In Retrofit',
+    short: 'Retrofit guide for adding an analog line-in to E46-era BMW vehicles',
+    slug: '/bmw-analog-line-in-retrofit',
+    status: 'active',
+    domains: ['Automotive', 'Electronics'],
   },
 ]
 
