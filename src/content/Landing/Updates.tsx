@@ -1,18 +1,8 @@
 import React from 'react'
 import { SectionTitle, UpdateCard } from './components'
+import { UpdateEntryItems } from './data/update-entries'
 
-const updates = [
-  {
-    date: '2025-09-11',
-    text: 'Published v1.1.0 — first source release of The Lab Notebook.',
-  },
-  {
-    date: '2025-09-06',
-    text: 'Completed N52 engine teardown and cylinder head inspection analysis.',
-  },
-]
-
-const sortedUpdates = [...updates].sort(
+const sortedUpdates = [...UpdateEntryItems].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 )
 
