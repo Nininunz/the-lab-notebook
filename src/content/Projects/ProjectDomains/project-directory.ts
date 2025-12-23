@@ -32,7 +32,7 @@ export const ProjectDirectory: ProjectEntry[] = [
   {
     item: 'Engine Carbon Valve Failure Analysis',
     short: 'Investigating the mysterious failure (and rebuild) of an N52 engine',
-    // slug: '/n52-diagnostic-rebuild',
+    slug: '/documentation/n52-failure-analysis',
     status: 'active',
     domains: ['Automotive', 'Mechanical'],
   },
@@ -54,7 +54,7 @@ export const ProjectDirectory: ProjectEntry[] = [
     item: 'The Lab Notebook',
     short:
       'Curated documentation platform showcasing engineering projects with structured writeups',
-    // slug: '/the-lab-notebook',
+    slug: '/documentation/the-lab-notebook',
     status: 'active',
     domains: ['Software'],
   },
