@@ -56,7 +56,7 @@ export function StatusLink({ name, href, status, short }: StatusLinkProps) {
         >
           {name}
         </div>
-        {short && <div className='text-xs text-gray-500 dark:text-gray-400 truncate'>{short}</div>}
+        {short && <div className='text-xs text-gray-500 dark:text-gray-400'>{short}</div>}
       </div>
 
       {/* Icon/Text - morphs on hover */}
