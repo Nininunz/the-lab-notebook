@@ -65,14 +65,14 @@ export function StatusLink({ name, href, status, short }: StatusLinkProps) {
           {/* Chevron (default state) */}
           <ChevronRight
             className='absolute right-0 w-4 h-4 text-gray-400
-                       group-hover:opacity-0 group-hover:rotate-90
+                       group-hover:opacity-0 group-hover:rotate-12
                        transition-all duration-300 ease-in-out'
           />
           {/* X icon (hover state) */}
           <X
             className='absolute right-0 w-4 h-4 text-gray-500
-                       opacity-0 rotate-90 scale-50
-                       group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100
+                       opacity-0 -rotate-12 scale-50
+                       group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 group-hover:translate-x-0.5
                        transition-all duration-300 ease-in-out'
           />
         </div>
