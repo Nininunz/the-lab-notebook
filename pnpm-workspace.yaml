@@ -3,4 +3,7 @@ packages:
 
 onlyBuiltDependencies:
   - sharp
+  - tree-sitter
+  - tree-sitter-javascript
+  - tree-sitter-typescript
   - unrs-resolver
