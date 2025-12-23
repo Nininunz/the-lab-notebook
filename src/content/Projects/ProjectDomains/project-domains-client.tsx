@@ -29,7 +29,7 @@ export function ProjectDomainsClient({ domainList }: ProjectDomainsClientProps) 
         <div className='grid gap-3'>
           {activeDomain?.projects.map(project => (
             <StatusLink
-              key={project.slug}
+              key={project.item}
               name={project.item}
               href={project.slug}
               status={project.status}
