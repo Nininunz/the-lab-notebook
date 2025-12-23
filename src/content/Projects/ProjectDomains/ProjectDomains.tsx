@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { ProjectDirectory } from './project-directory'
 import type { ProjectDomain, ProjectEntry } from './project-record'
 import { StatusLink } from './StatusLink'
+import { TabRow } from './TabRow'
 
 interface DomainTab {
   id: string
@@ -40,28 +41,7 @@ export function ProjectDomains() {
 
   return (
     <div className='mt-8'>
-      {/* Tabs */}
-      <div className='border-b border-gray-200 dark:border-gray-700 overflow-x-auto scrollbar-hide'>
-        <nav className='flex space-x-8 min-w-max' aria-label='Domains'>
-          {domainList.map(domain => (
-            <button
-              key={domain.id}
-              data-domain-id={domain.id}
-              onClick={handleTabChange}
-              className={`whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm transition-colors cursor-pointer ${
-                activeTab === domain.id
-                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
-              }`}
-            >
-              {domain.name}
-              <span className='ml-2 text-xs bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded-full'>
-                {domain.projects.length}
-              </span>
-            </button>
-          ))}
-        </nav>
-      </div>
+      <TabRow domains={domainList} activeTab={activeTab} onTabChange={handleTabChange} />
 
       {/* Content */}
       <div className='mt-6'>
