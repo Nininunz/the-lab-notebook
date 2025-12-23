@@ -1,8 +1,5 @@
 @import 'tailwindcss';
 
-/* Optional: import Nextra theme styles */
-@import 'nextra-theme-docs/style.css'; /* or nextra-theme-blog/style.css */
-
 /* Custom responsive h1 font sizes */
 @media (min-width: 768px) and (max-width: 880px) {
   .h1-768-880 {

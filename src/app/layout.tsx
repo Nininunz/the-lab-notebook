@@ -4,8 +4,8 @@ import { getPageMap } from 'nextra/page-map'
 import type { Metadata } from 'next'
 import { Logo } from './Logo'
 import { Analytics } from './Analytics'
-import 'nextra-theme-docs/style.css'
 import './global.css'
+import 'nextra-theme-docs/style.css'
 
 export const metadata: Metadata = {
   // Define your metadata here
