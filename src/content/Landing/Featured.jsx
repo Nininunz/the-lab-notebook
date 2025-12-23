@@ -1,4 +1,3 @@
-import { projects } from '@lib/project-directory'
 import { SectionTitle, FeatureCard } from './components'
 
 export function Featured() {
