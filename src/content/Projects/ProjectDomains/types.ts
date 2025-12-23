@@ -1,3 +1,4 @@
+// Project types
 export interface ProjectEntry {
   item: string
   short: string
@@ -16,3 +17,19 @@ export type ProjectStatus =
   | 'archived'
   | 'paused'
   | 'idea'
+
+// Domain tab type
+export interface DomainTab {
+  id: string
+  name: ProjectDomain | 'All'
+  projects: ProjectEntry[]
+  description?: string
+}
+
+// StatusLink component props
+export interface StatusLinkProps {
+  name: string
+  href: string
+  status: string
+  short?: string
+}

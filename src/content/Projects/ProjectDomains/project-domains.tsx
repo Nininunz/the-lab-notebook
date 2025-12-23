@@ -1,6 +1,6 @@
 import { ProjectDirectory } from './project-directory'
-import { computeDomainTabs } from './utils'
-import { ProjectDomainsClient } from './ProjectDomainsClient'
+import { computeDomainTabs } from './domain-utils'
+import { ProjectDomainsClient } from './project-domains-client'
 
 export function ProjectDomains() {
   const domainList = computeDomainTabs(ProjectDirectory)

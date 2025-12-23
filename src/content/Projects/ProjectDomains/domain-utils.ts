@@ -1,10 +1,4 @@
-import type { ProjectDomain, ProjectEntry } from './project-record'
-
-export interface DomainTab {
-  id: string
-  name: ProjectDomain | 'All'
-  projects: ProjectEntry[]
-}
+import type { ProjectEntry, ProjectDomain, DomainTab } from './types'
 
 export function computeDomainTabs(projects: ProjectEntry[]): DomainTab[] {
   const uniqueDomains: ProjectDomain[] = Array.from(

@@ -1,4 +1,4 @@
-import type { DomainTab } from './utils'
+import type { DomainTab } from './types'
 
 interface TabRowProps {
   domains: DomainTab[]

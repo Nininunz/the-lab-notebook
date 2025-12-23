@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusLinkProps } from './status-link'
+import type { StatusLinkProps } from './types'
 
 const getDotStyle = (status: string): React.CSSProperties => {
   let backgroundColor = '#9ca3af' // gray-400
@@ -23,7 +23,7 @@ const getDotStyle = (status: string): React.CSSProperties => {
   }
 }
 
-export const StatusLink: React.FC<StatusLinkProps> = ({ name, href, status, short }) => {
+export function StatusLink({ name, href, status, short }: StatusLinkProps) {
   return (
     <a
       href={href}

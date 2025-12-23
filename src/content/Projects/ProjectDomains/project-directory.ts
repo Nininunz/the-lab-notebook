@@ -1,4 +1,4 @@
-import { ProjectEntry } from './project-record'
+import type { ProjectEntry } from './types'
 
 export const ProjectDirectory: ProjectEntry[] = [
   {
@@ -133,11 +133,3 @@ export const ProjectDirectory: ProjectEntry[] = [
     domains: ['Electronics'],
   },
 ]
-
-//   {
-//     item: 'abcdef',
-//     short: 'abcdef',
-//     slug: 'abcdef',
-//     status: 'abcdef',
-//     domains: ['abcdef'],
-//   },

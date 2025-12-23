@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import type { DomainTab } from './utils'
-import { StatusLink } from './StatusLink'
-import { TabRow } from './TabRow'
+import type { DomainTab } from './types'
+import { StatusLink } from './status-link'
+import { TabRow } from './tab-row'
 
 interface ProjectDomainsClientProps {
   domainList: DomainTab[]
