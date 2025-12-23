@@ -7,7 +7,7 @@ const meta = {
   // docs: { title: 'Technical Documentation' },
   // playground: { title: 'Playground', display: 'hidden' },
   // project: { title: 'Project Directory' },
-  // changelog: { title: 'Changelog' },
+  changelog: { title: 'Changelog' },
 }
 
 export default enrichMetaWithDrafts(meta, import.meta.url)
