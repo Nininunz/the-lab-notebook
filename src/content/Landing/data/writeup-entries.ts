@@ -8,7 +8,7 @@ export const WriteupEntryItems: WriteupEntry[] = [
   {
     title: 'The Mysterious BMW N52 Engine Failure',
     date: '2025-09-06',
-    href: '/documentation/mysterious-n52-carbon-valves',
+    href: '/documentation/n52-failure-analysis',
   },
   {
     title: 'BMW Electrochromic Mirror Retrofit',
