@@ -3,7 +3,7 @@ import type { DomainTab } from './types'
 interface TabRowProps {
   domains: DomainTab[]
   activeTab: string
-  onTabChange: (event: React.MouseEvent<HTMLButtonElement>) => void
+  onTabChange: (_event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export function TabRow({ domains, activeTab, onTabChange }: TabRowProps) {

@@ -10,13 +10,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin'
 
 const eslintConfig = [
   {
-    ignores: [
-      '.next/**/*',
-      'node_modules/**/*',
-      'out/**/*',
-      'public/**/*',
-      '*.config.js',
-    ],
+    ignores: ['.next/**/*', 'node_modules/**/*', 'out/**/*', 'public/**/*', '*.config.js'],
   },
   {
     files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
@@ -69,7 +63,7 @@ const eslintConfig = [
       // General code quality
       'no-console': 'warn',
       'no-debugger': 'error',
-      'no-unused-vars': 'warn',
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'prefer-const': 'warn',
       'no-var': 'error',
 
@@ -77,14 +71,7 @@ const eslintConfig = [
       'import/order': [
         'warn',
         {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            'parent',
-            'sibling',
-            'index',
-          ],
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
           'newlines-between': 'never',
         },
       ],
