@@ -64,13 +64,13 @@ export function StatusLink({ name, href, status, short }: StatusLinkProps) {
         <div className='relative w-16 h-4 shrink-0 flex items-center justify-end overflow-hidden'>
           {/* Chevron (default state) */}
           <ChevronRight
-            className='absolute right-0 w-4 h-4 text-gray-400
+            className='absolute right-0 w-4 h-4 text-gray-400 dark:text-gray-500
                        group-hover:opacity-0 group-hover:rotate-12
                        transition-all duration-300 ease-in-out'
           />
           {/* X icon (hover state) */}
           <X
-            className='absolute right-0 w-4 h-4 text-gray-500
+            className='absolute right-0 w-4 h-4 text-gray-400 dark:text-gray-400
                        opacity-0 -rotate-12 scale-50
                        group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 group-hover:translate-x-0.5
                        transition-all duration-300 ease-in-out'
@@ -80,20 +80,20 @@ export function StatusLink({ name, href, status, short }: StatusLinkProps) {
         <div className='relative w-16 h-4 shrink-0 flex items-center justify-end overflow-hidden'>
           {/* Chevron (default state) */}
           <ChevronRight
-            className='absolute right-0 w-4 h-4 text-gray-400
+            className='absolute right-0 w-4 h-4 text-gray-400 dark:text-gray-500
                        group-hover:opacity-0 group-hover:translate-x-2
                        transition-all duration-300 ease-in-out'
           />
           {/* Arrow icon (hover state) */}
           <ArrowUpRight
-            className='absolute right-0 w-4 h-4 text-purple-600
+            className='absolute right-0 w-4 h-4 text-cyan-600 dark:text-cyan-400
                        opacity-0 rotate-45 scale-50
                        group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 group-hover:translate-x-0.5
                        transition-all duration-300 ease-in-out'
           />
         </div>
       ) : (
-        <ChevronRight className='w-4 h-4 text-gray-400 group-hover:translate-x-1 group-hover:text-blue-800 transition-all shrink-0' />
+        <ChevronRight className='w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:translate-x-1 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-all shrink-0' />
       )}
     </a>
   )
