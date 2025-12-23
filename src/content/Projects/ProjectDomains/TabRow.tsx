@@ -1,11 +1,4 @@
-import type { ProjectDomain, ProjectEntry } from './project-record'
-
-interface DomainTab {
-  id: string
-  name: ProjectDomain | 'All'
-  projects: ProjectEntry[]
-  description?: string
-}
+import type { DomainTab } from './utils'
 
 interface TabRowProps {
   domains: DomainTab[]

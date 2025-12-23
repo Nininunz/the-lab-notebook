@@ -117,6 +117,21 @@ export const ProjectDirectory: ProjectEntry[] = [
     status: 'active',
     domains: ['Electronics'],
   },
+  {
+    item: 'TI-84 USB-C Mod',
+    short: 'Modifying a TI-84 calculator to use a USB-C charging port',
+    slug: '/ti-84-usb-c-mod',
+    status: 'active',
+    domains: ['Electronics'],
+  },
+  {
+    item: 'Magic Mouse DSi Mod',
+    short:
+      'Modifying a Nintendo DSi to charge like a Magic Mouse for absolutely zero practical purpose',
+    slug: '/magic-mouse-dsi-mod',
+    status: 'active',
+    domains: ['Electronics'],
+  },
 ]
 
 //   {
