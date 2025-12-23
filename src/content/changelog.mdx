@@ -1,5 +1,53 @@
 # Changelog
 
+## 1.2.0 — 2025-12-23
+
+**Massive Project Restructure, TypeScript Expansion, and Content Overhaul**
+
+**Project Structure & Migration**
+- Migrated all content, components, and features from root-level folders to `src/` for improved organization and scalability
+- Deleted legacy files and directories, including old `content/`, `components/`, and `features` folders
+- Adopted a new, modular structure for landing page, project directory, and documentation
+- All major React components are now in TypeScript (`.tsx`), with improved type safety and maintainability
+- Updated all imports and path aliases in `tsconfig.json` for new structure
+- Added and updated scripts for link, meta, and project validation
+
+**Configuration & Tooling**
+- Updated `tsconfig.json` for stricter type checking and new path aliases
+- Enhanced `next.config.mjs` with security headers, image optimizations, and Nextra integration
+- Updated `package.json` scripts for new validation and build workflows
+- Switched to `pnpm` for workspace and dependency management; added `pnpm-lock.yaml` and `pnpm-workspace.yaml`
+- Improved ESLint and Prettier configuration for code quality and consistency
+
+**Landing Page & UI**
+- Introduced a new, modular landing page with `Hero`, `Domains`, `Featured`, `Writeups`, `QuickLinks`, and `Updates` components
+- All landing page sections are now TypeScript React components, with improved styling and structure
+- Added new domain cards, featured project grid, and curated write-ups
+
+**Project Directory & Documentation**
+- Rebuilt project directory as a set of TypeScript modules for easier expansion and type safety
+- Added new project and documentation content under `src/content/Projects` and `src/content/documentation`
+- Improved project metadata, status tags, and domain categorization
+- Enhanced documentation for scripts, utilities, and project guides
+
+**Content & Asset Management**
+- Migrated all MDX content to `src/content/`, with new and reorganized guides, changelogs, and project write-ups
+- Improved image and asset management, with optimized images and consistent naming
+- Updated and expanded shortcuts, quick links, and reference content
+
+**Validation & Scripts**
+- Enhanced and refactored scripts for verifying links, meta files, and project directory consistency
+- Improved error reporting and validation output for development workflows
+
+**Dependency Updates**
+- Upgraded to Next.js 16, React 19, Nextra 4.6, and latest versions of all major dependencies
+- Added and updated dev dependencies for TypeScript, ESLint, Prettier, and related tooling
+
+**General Improvements**
+- Improved accessibility, performance, and SEO via config and code updates
+- Refined theme, sidebar, and navigation structure
+- Updated README and documentation for new structure and usage
+
 ## 1.1.2 — 2025-09-12
 
 **TypeScript Migration & Refactoring**
