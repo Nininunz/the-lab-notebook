@@ -11,14 +11,14 @@ export const ProjectDirectory: ProjectEntry[] = [
   {
     item: 'SmartHub Integration',
     short: 'Integrating SmartHub with Home Assistant for enhanced automation',
-    slug: '/home-assistant-smarthub-integration',
+    slug: 'http://home-assistant-smarthub-integration',
     status: 'active',
     domains: ['Software'],
   },
   {
     item: 'CAS3 Retrofit & Comfort Access',
     short: 'Push-button start and keyless entry retrofit with full OEM integration',
-    slug: '/e83-cas3-retrofit',
+    // slug: '/e83-cas3-retrofit',
     status: 'active',
     domains: ['Automotive', 'Embedded', 'Electronics'],
   },

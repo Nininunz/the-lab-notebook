@@ -1,4 +1,5 @@
 import React from 'react'
+import { ArrowUpRight, ChevronRight, X } from 'lucide-react'
 import type { StatusLinkProps } from './types'
 
 const getDotStyle = (status: string): React.CSSProperties => {
@@ -24,11 +25,15 @@ const getDotStyle = (status: string): React.CSSProperties => {
 }
 
 export function StatusLink({ name, href, status, short }: StatusLinkProps) {
+  const isExternal = href?.startsWith('http://') || href?.startsWith('https://')
+  const hasLink = !!href
+
   return (
     <a
       href={href}
       className='group flex items-center gap-2 p-3 rounded-lg border border-gray-200 dark:border-gray-700
                  hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-sm transition-all'
+      {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
     >
       {/* Status dot */}
       <span
@@ -54,26 +59,42 @@ export function StatusLink({ name, href, status, short }: StatusLinkProps) {
         {short && <div className='text-xs text-gray-500 dark:text-gray-400 truncate'>{short}</div>}
       </div>
 
-      {/* Chevron */}
-      <svg
-        className='w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors shrink-0'
-        fill='none'
-        stroke='currentColor'
-        viewBox='0 0 24 24'
-      >
-        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
-      </svg>
-
-      {/* Inline keyframes */}
-      <style>
-        {`
-          @keyframes status-pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
-          }
-        `}
-      </style>
+      {/* Icon/Text - morphs on hover */}
+      {!hasLink ? (
+        <div className='relative w-16 h-4 shrink-0 flex items-center justify-end overflow-hidden'>
+          {/* Chevron (default state) */}
+          <ChevronRight
+            className='absolute right-0 w-4 h-4 text-gray-400
+                       group-hover:opacity-0 group-hover:rotate-90
+                       transition-all duration-300 ease-in-out'
+          />
+          {/* X icon (hover state) */}
+          <X
+            className='absolute right-0 w-4 h-4 text-gray-500
+                       opacity-0 rotate-90 scale-50
+                       group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100
+                       transition-all duration-300 ease-in-out'
+          />
+        </div>
+      ) : isExternal ? (
+        <div className='relative w-16 h-4 shrink-0 flex items-center justify-end overflow-hidden'>
+          {/* Chevron (default state) */}
+          <ChevronRight
+            className='absolute right-0 w-4 h-4 text-gray-400
+                       group-hover:opacity-0 group-hover:translate-x-2
+                       transition-all duration-300 ease-in-out'
+          />
+          {/* Arrow icon (hover state) */}
+          <ArrowUpRight
+            className='absolute right-0 w-4 h-4 text-purple-600
+                       opacity-0 rotate-45 scale-50
+                       group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 group-hover:translate-x-0.5
+                       transition-all duration-300 ease-in-out'
+          />
+        </div>
+      ) : (
+        <ChevronRight className='w-4 h-4 text-gray-400 group-hover:translate-x-1 group-hover:text-blue-800 transition-all shrink-0' />
+      )}
     </a>
   )
 }

@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@source '../**/*.{js,jsx,ts,tsx,mdx}';
+
 /* Custom responsive h1 font sizes */
 @media (min-width: 768px) and (max-width: 880px) {
   .h1-768-880 {
@@ -72,5 +74,18 @@
 
 .animate-sparkle {
   animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Status pulse animation for project status dots */
+@keyframes status-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 

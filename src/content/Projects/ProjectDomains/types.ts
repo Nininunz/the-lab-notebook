@@ -2,7 +2,7 @@
 export interface ProjectEntry {
   item: string
   short: string
-  slug: string
+  slug?: string
   status: ProjectStatus
   domains: ProjectDomain[]
 }
@@ -29,7 +29,7 @@ export interface DomainTab {
 // StatusLink component props
 export interface StatusLinkProps {
   name: string
-  href: string
+  href?: string
   status: string
   short?: string
 }
