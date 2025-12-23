@@ -1,0 +1,41 @@
+import { Callout } from 'nextra/components'
+
+# meta-utils.js Documentation
+
+The `meta-utils.js` file provides utility functions for working with project metadata files in the lab notebook. These utilities help enrich metadata objects with additional information based on the presence of related files.
+
+## Functions
+
+### enrichMetaWithDrafts(meta, metaFilePath)
+
+Adds `todos` and `zero_draft` properties to the metadata object if corresponding files exist in the same directory as the metadata file.
+
+#### Parameters
+
+- `meta`: The metadata object to enrich
+- `metaFilePath`: The path to the metadata file (used to locate related files)
+
+#### Behavior
+
+- If `todos.md` exists in the same directory, adds `todos: { display: 'hidden' }` to the metadata.
+- If `zero_draft.md` exists, adds `zero_draft: { display: 'hidden' }` to the metadata.
+- Returns the enriched metadata object.
+
+#### Example
+
+```js
+import { enrichMetaWithDrafts } from '@lib/meta-utils'
+
+const meta = { title: 'Project Title' }
+const enrichedMeta = enrichMetaWithDrafts(meta, import.meta.url)
+```
+
+---
+
+This utility is useful for conditionally including metadata fields based on the presence of draft or todo files in your project structure.
+
+<Callout type='warning'>
+  **Note:** Files marked with `display: 'hidden'` are still accessible by direct
+  URL but are hidden from the sidebar navigation. These files should be removed
+  for production releases to prevent public access to internal notes and drafts.
+</Callout>

@@ -1,0 +1,123 @@
+# verify-meta
+
+Validates that all MDX files in the content directory are properly listed in their corresponding `_meta.js` files for navigation.
+
+## Purpose
+
+The `verify-meta` script ensures documentation structure integrity by:
+
+- **Finding orphaned files**: MDX files that exist but aren't listed in navigation
+- **Detecting missing references**: Meta keys that don't correspond to files or directories
+- **Validating navigation structure**: Ensures consistent documentation organization
+
+## Usage
+
+```bash
+# Run the verification
+npm run verify-meta
+
+# Include in comprehensive checks
+npm run check
+```
+
+## How It Works
+
+### File Discovery
+1. **Finds all `_meta.js` files** in the content directory tree
+2. **Locates all `.mdx` files** in the same locations
+3. **Groups files by directory** for validation
+
+### Meta File Parsing
+- **Extracts object keys** from `const meta = { ... }` declarations
+- **Handles both quoted and unquoted keys**: `'key':` and `key:`
+- **Supports complex values**: Objects, strings, and nested structures
+- **Ignores JavaScript comments**: `// commented: lines` are filtered out
+- **Filters configuration keys**: Excludes `title`, `theme`, `breadcrumb`, etc.
+
+### Validation Logic
+For each directory with MDX files:
+- ✅ **Check file coverage**: Every `.mdx` file should have a corresponding meta key
+- ✅ **Check reference validity**: Every meta key should reference a file or directory
+- ✅ **Handle special cases**: `index.mdx` maps to `index` key
+
+## Output Format
+
+### Success Cases
+```
+✓ shortcuts.mdx          # File properly listed
+✓ project/ (directory)   # Directory reference
+```
+
+### Error Cases
+```
+ERROR: changelog.mdx not listed in _meta.js (missing key: "changelog")
+```
+
+### Warnings
+```
+WARNING: _meta.js has key "playground" but playground.mdx doesn't exist
+```
+
+## Integration
+
+### Build Process
+- **Pre-build validation**: Runs via `prebuild` script (`npm run verify-projects && npm run verify-meta`) before deployment
+- **Pre-commit hooks**: Validates when `**/_meta.js` files change via lint-staged
+- **Comprehensive checks**: Part of `npm run check` command
+
+### Exit Codes
+- **0**: All validations passed (warnings allowed)
+- **1**: Errors found (missing file references)
+
+## Configuration
+
+### Excluded Configuration Keys
+The script filters out common Nextra configuration keys:
+```js
+const configKeys = ['title', 'theme', 'breadcrumb', 'type', 'display', 'collapsed', 'sidebar', 'navbar', 'footer', 'toc']
+```
+
+### File Mapping
+- `index.mdx` → `index` key
+- `other-file.mdx` → `other-file` key
+- Directory references → folder name key
+
+## Common Issues
+
+### Missing Index Files
+```
+ERROR: index.mdx not listed in _meta.js (missing key: "index")
+```
+**Solution**: Add `index: 'Title'` to the `_meta.js` file
+
+### Orphaned Documentation
+```
+ERROR: getting-started.mdx not listed in _meta.js (missing key: "getting-started")
+```
+**Solution**: Add the file key to the meta object or remove the unused file
+
+### Hidden Files
+For intentionally hidden files, add to meta with display configuration:
+```js
+const meta = {
+  playground: { title: 'Playground', display: 'hidden' }
+}
+```
+
+### Temporarily Disabling Navigation Entries
+Comment out entries to temporarily remove them from validation:
+```js
+const meta = {
+  index: { title: 'Home' },
+  // playground: { title: 'Playground' },  // Temporarily disabled
+  docs: { title: 'Documentation' }
+}
+```
+The script ignores commented lines, preventing false warnings.
+
+## Benefits
+
+- **Prevents broken navigation**: Catches missing file references before deployment
+- **Maintains consistency**: Ensures all documentation is accessible
+- **Development workflow**: Integrates with build and commit processes
+- **Clear feedback**: Provides actionable error messages and file locations

@@ -25,7 +25,7 @@ export const ProjectDirectory: ProjectEntry[] = [
   {
     item: 'HomeLink Mirror Retrofit Guide',
     short: 'Guide for retrofitting HomeLink mirrors in BMW radios',
-    // slug: '/homelink-retrofit',
+    slug: '/documentation/homelink-retrofit',
     status: 'active',
     domains: ['Automotive', 'Electronics'],
   },
