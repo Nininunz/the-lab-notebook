@@ -1,1 +1,1 @@
-export { FocusProjects } from './FocusProjects'
+export { FocusProjects } from './focus-projects'

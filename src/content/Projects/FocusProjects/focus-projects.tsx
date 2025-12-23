@@ -1,6 +1,6 @@
 import React from 'react'
-import { FocusCard } from './FocusCard'
-import { FocusProjectItems } from './focus-projects'
+import { FocusCard } from './focus-card'
+import { FocusProjectItems } from './focus-projects-data'
 
 export const FocusProjects: React.FC = () => {
   return (

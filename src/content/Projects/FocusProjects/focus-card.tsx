@@ -1,5 +1,5 @@
 import React from 'react'
-import { FocusCardProps } from './focus-card'
+import { FocusCardProps } from './types'
 import { colorSchemes } from './color-schemes'
 
 export const FocusCard: React.FC<FocusCardProps> = ({

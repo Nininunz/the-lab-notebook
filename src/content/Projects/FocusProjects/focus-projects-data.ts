@@ -1,4 +1,4 @@
-import { FocusCardProps } from './focus-card'
+import { FocusCardProps } from './types'
 
 export const FocusProjectItems: FocusCardProps[] = [
   {
