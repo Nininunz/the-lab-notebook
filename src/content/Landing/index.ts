@@ -1,0 +1,6 @@
+export { Hero } from './Hero'
+export { Domains } from './Domains'
+export { Featured } from './Featured'
+export { Writeups } from './Writeups'
+export { QuickLinks } from './QuickLinks'
+export { Updates } from './Updates'
