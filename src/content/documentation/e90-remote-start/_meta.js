@@ -1,4 +1,4 @@
-import { enrichMetaWithDrafts } from '@lib/meta-utils.js'
+import { enrichMetaWithDrafts } from '@/src/app/meta-utils.js'
 
 const meta = {
   index: 'The Concept',
