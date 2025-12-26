@@ -1,0 +1,86 @@
+# Using `fuckai.sh`
+
+Detects emoji usage in your project files so you can decide whether it's intentional, stylistic, or accidental.
+
+
+## Usage
+
+### 1. Install the script
+
+Place `fuckai.sh` in your `scripts/` directory (or anywhere you prefer—just adjust paths accordingly), then make it executable:
+
+```bash
+chmod +x scripts/fuckai.sh
+```
+
+### 2. Configure ignored files (optional)
+
+Create a `.fuckai` file in your project root to ignore specific files or glob patterns.
+
+Example:
+
+```txt
+node_modules
+dist
+*.lock
+```
+
+### 3. Run the script
+
+From your project root:
+
+```bash
+./scripts/fuckai.sh
+```
+
+---
+
+## Node / `package.json` Integration (Optional)
+
+If this is a Node-based project, you can wire the script into `package.json` for convenience:
+
+```json
+{
+  "scripts": {
+    "fuckai": "./scripts/fuckai.sh"
+  }
+}
+```
+
+Then run it using your package manager:
+
+```bash
+npm run fuckai
+# or
+pnpm fuckai
+# or
+yarn fuckai
+```
+
+You can also hook this into **lint-staged**, **pre-commit hooks**, or **CI** if you want enforcement instead of advisory checks.
+
+---
+
+## Example Output
+
+```bash
+Searching for emojis in project files...
+========================================
+
+File: ./src/content/example.mdx
+----------------------------------------
+./src/content/example.mdx:12: 🚀 Launching soon!
+
+========================================
+Search complete.
+Files with emojis: 1
+Total emoji occurrences: 1
+```
+
+---
+
+## Notes
+
+* Designed to be minimal, fast, and dependency-free.
+* Never modifies files, only scans and reports findings.
+* Best suited for documentation-heavy codebases in solo workflows, where AI-assisted drafting is used without sacrificing consistency.

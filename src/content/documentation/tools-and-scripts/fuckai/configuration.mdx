@@ -1,0 +1,63 @@
+# Configuration File (`.fuckai`)
+
+You can create a `.fuckai` file in your project root to configure emoji scanning behavior. The file supports:
+
+## File Type Configuration
+
+Control which file types to search:
+
+**Include Mode** — Search only specific file types:
+```bash
+# Only search TypeScript and JavaScript files
+type: *.ts, *.tsx, *.js, *.jsx
+```
+
+**Exclude Mode** — Search all files except specific types:
+```bash
+# Search everything except JSON and YAML files
+exclude: *.json, *.yml, *.yaml
+```
+
+**Default file types** (when no `type:` or `exclude:` is specified):
+- `*.ts`, `*.tsx`, `*.js`, `*.jsx`
+- `*.json`, `*.md`, `*.yml`, `*.yaml`
+- `*.sh`, `*.mjs`
+
+## File/Pattern Ignoring
+
+Ignore specific files or patterns (one per line):
+
+```bash
+# Ignore all test files
+**/*.test.*
+
+# Ignore a specific file
+src/content/notes/emoji-allowed.mdx
+
+# Ignore everything in a folder
+src/legacy/**
+
+# Ignore the script itself
+scripts/fuckai.sh
+```
+
+## Complete Example
+
+```bash
+# Files and patterns to ignore when searching for emojis
+# One pattern per line, supports basic wildcards
+
+# File type configuration (optional):
+# Use "type:" to include only specific file types (overrides defaults)
+# Use "exclude:" to search all files EXCEPT the specified types
+# Default: *.ts, *.tsx, *.js, *.jsx, *.json, *.md, *.yml, *.yaml, *.sh, *.mjs
+
+# Only search TypeScript files
+type: *.ts, *.tsx
+
+# Ignore specific files
+scripts/fuckai.sh
+**/*.test.*
+```
+
+**Note:** Blank lines and lines starting with `#` are treated as comments.
