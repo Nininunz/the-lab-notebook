@@ -13,7 +13,6 @@ export const FocusCard: React.FC<FocusCardProps> = ({
   completedDate,
   color = 'blue',
   action = 'View Progress',
-  disabled = false,
 }) => {
   // Color mappings for different project statuses/types
 
@@ -81,24 +80,37 @@ export const FocusCard: React.FC<FocusCardProps> = ({
       )}
 
       {/* Action link */}
-      {href && !disabled && (
-        <a
-          href={href}
-          className={`inline-flex items-center gap-1 text-sm font-medium ${colors.link}`}
-        >
-          {action}
-          <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
-          </svg>
-        </a>
-      )}
-      {href && disabled && (
-        <span className='inline-flex items-center gap-1 text-sm font-medium text-gray-400 cursor-not-allowed'>
-          {status === 'completed' ? 'Case Study' : 'View Progress'}
-          <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
-          </svg>
-        </span>
+      {href !== undefined && (
+        <>
+          {href ? (
+            <a
+              href={href}
+              className={`inline-flex items-center gap-1 text-sm font-medium ${colors.link}`}
+            >
+              {action}
+              <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M9 5l7 7-7 7'
+                />
+              </svg>
+            </a>
+          ) : (
+            <span className='inline-flex items-center gap-1 text-sm font-medium text-gray-400 dark:text-gray-500 cursor-not-allowed'>
+              {action}
+              <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M9 5l7 7-7 7'
+                />
+              </svg>
+            </span>
+          )}
+        </>
       )}
     </div>
   )

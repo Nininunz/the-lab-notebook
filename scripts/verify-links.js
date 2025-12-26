@@ -342,7 +342,7 @@ class LinkVerifier {
 
     // Find all files to check
     const patterns = [
-      `${CONTENT_DIR}/**/*.{mdx,md}`,
+      `${CONTENT_DIR}/**/*.{mdx,md,js,jsx,ts,tsx}`,
       `${COMPONENTS_DIR}/**/*.{js,jsx,ts,tsx}`,
       `${TEMPLATES_DIR}/**/*.{mdx,md}`,
       `${FEATURES_DIR}/**/*.{js,jsx,ts,tsx}`,

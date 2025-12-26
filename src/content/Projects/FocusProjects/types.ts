@@ -9,5 +9,4 @@ export interface FocusCardProps {
   completedDate?: string
   color?: string
   action?: string
-  disabled?: boolean
 }
