@@ -1,0 +1,220 @@
+# Changelog
+
+## 1.2.2 — 2025-12-26
+
+**Tools & Script Enhancements**
+
+- Added `fuckai.sh` emoji linting script with configurable file type filtering
+- Enhanced verify-links script to scan TypeScript files in content directories
+- Improved focus card component with conditional button rendering based on href state
+- Updated project directory and tools documentation
+- Added support for `type:` (include) and `exclude:` modes in `.fuckai` configuration
+
+## 1.2.1 — 2025-12-26
+
+**Incremental Improvements & Cleanup**
+
+- Removed additional legacy and duplicate files left over from migration
+- Added/expanded MDX content: `src/content/index.mdx`, `src/content/projects.mdx`, `src/content/shortcuts.mdx`
+- Added new landing page sections and project directory modules
+- Improved and reorganized documentation and project write-ups
+- Refined scripts for link, meta, and project validation
+- Updated config files for consistency and maintainability
+
+## 1.2.0 — 2025-12-23
+
+**Massive Project Restructure, TypeScript Expansion, and Content Overhaul**
+
+**Project Structure & Migration**
+- Migrated all content, components, and features from root-level folders to `src/` for improved organization and scalability
+- Deleted legacy files and directories, including old `content/`, `components/`, and `features` folders
+- Adopted a new, modular structure for landing page, project directory, and documentation
+- All major React components are now in TypeScript (`.tsx`), with improved type safety and maintainability
+- Updated all imports and path aliases in `tsconfig.json` for new structure
+- Added and updated scripts for link, meta, and project validation
+
+**Configuration & Tooling**
+- Updated `tsconfig.json` for stricter type checking and new path aliases
+- Enhanced `next.config.mjs` with security headers, image optimizations, and Nextra integration
+- Updated `package.json` scripts for new validation and build workflows
+- Switched to `pnpm` for workspace and dependency management; added `pnpm-lock.yaml` and `pnpm-workspace.yaml`
+- Improved ESLint and Prettier configuration for code quality and consistency
+
+**Landing Page & UI**
+- Introduced a new, modular landing page with `Hero`, `Domains`, `Featured`, `Writeups`, `QuickLinks`, and `Updates` components
+- All landing page sections are now TypeScript React components, with improved styling and structure
+- Added new domain cards, featured project grid, and curated write-ups
+
+**Project Directory & Documentation**
+- Rebuilt project directory as a set of TypeScript modules for easier expansion and type safety
+- Added new project and documentation content under `src/content/Projects` and `src/content/documentation`
+- Improved project metadata, status tags, and domain categorization
+- Enhanced documentation for scripts, utilities, and project guides
+
+**Content & Asset Management**
+- Migrated all MDX content to `src/content/`, with new and reorganized guides, changelogs, and project write-ups
+- Improved image and asset management, with optimized images and consistent naming
+- Updated and expanded shortcuts, quick links, and reference content
+
+**Validation & Scripts**
+- Enhanced and refactored scripts for verifying links, meta files, and project directory consistency
+- Improved error reporting and validation output for development workflows
+
+**Dependency Updates**
+- Upgraded to Next.js 16, React 19, Nextra 4.6, and latest versions of all major dependencies
+- Added and updated dev dependencies for TypeScript, ESLint, Prettier, and related tooling
+
+**General Improvements**
+- Improved accessibility, performance, and SEO via config and code updates
+- Refined theme, sidebar, and navigation structure
+- Updated README and documentation for new structure and usage
+
+## 1.1.2 — 2025-09-12
+
+**TypeScript Migration & Refactoring**
+
+- Migrated all major React components from .jsx to .tsx for improved type safety and maintainability
+- Updated component props with TypeScript interfaces
+- Refactored project structure for better clarity and consistency
+- Improved linting and formatting across the codebase
+- Fixed minor bugs and improved code readability
+
+**General Improvements**
+
+- Enhanced development workflow and documentation
+- Updated changelog to reflect migration progress
+- Updated header to make portfolio and GitHub links more prominent on the main page and/or navigation.
+
+## 1.1.1 — 2025-09-11
+
+**Content Update**
+
+- Updated an UpdateCard to reflect the public release announcement.
+
+## 1.1.0 — 2025-09-11
+
+**Major development infrastructure overhaul with TypeScript migration and comprehensive documentation.**
+
+**TypeScript Migration & Configuration**
+
+- Convert app/layout.jsx to layout.tsx with proper Next.js Metadata typing
+- TypeScript conversion of ProjectCardSmall and ProjectDomainTabs components with full type definitions
+- Update tsconfig.json moduleResolution to 'bundler' for Next.js/Nextra compatibility and resolve import issues
+- Add comprehensive TypeScript type definitions for project directory structure
+- Convert project-directory.js to project-directory.ts with strict typing
+
+**Component Architecture Improvements**
+
+- Rename DomainCard → InfoCard for better semantic clarity
+- Rename ProjectListCard → StatusLink for consistent naming conventions
+- Enhanced ProjectCardSmall with TypeScript interfaces and improved responsive layout
+- Update ProjectDomainTabs with TypeScript support and better type safety
+- Improved component imports and module resolution across the codebase
+- Update global CSS with sidebar width optimizations and smoother transition speeds
+
+**Production Infrastructure**
+
+- Add Analytics component with Umami integration (production-ready with environment detection)
+- Add .env.example with production environment variable documentation
+- Include MIT LICENSE with content restriction notice
+- Add README.md with project overview
+
+**Development Tooling & Validation**
+
+- Create verify-projects.js script for comprehensive project data validation
+- Create verify-meta.js script to ensure all MDX files are listed in navigation (\_meta.js files)
+- Enhanced build scripts and project validation workflow with prebuild integration
+- Add comprehensive pre-commit hooks for \_meta.js file validation
+- Improved development documentation structure with complete script documentation
+- Add zero_draft.md placeholders for project organization
+- Refactor meta utilities from `withTodos` to `enrichMetaWithDrafts` across all \_meta.js files
+
+**Content & Documentation System**
+
+- Create comprehensive project documentation system under content/documentation/the-lab-notebook/
+- Add component documentation with usage examples and guides
+- Create development and getting-started guides
+- Add script documentation for verify-links, create-placeholders, and verify-projects
+- Organize utilities documentation including meta-utils and project-directory
+
+**Image & Asset Management**
+
+- Add optimized HomeLink retrofit project images with 16:9 aspect ratios
+- Include WebP compressed versions and full-size PNG/JPG fallbacks
+- Organize image assets with consistent naming schema
+- Update image references throughout HomeLink project documentation
+
+**Project Content Updates**
+
+- Enhanced HomeLink retrofit documentation with updated imagery
+- Improved project metadata and organization
+- Better project showcase with refined metadata handling
+- Update project navigation titles (e.g., "ChatGPT Electron App" instead of generic "Introduction")
+
+## 1.0.3 — 2025-09-10
+
+**Update Open Graph image meta tag.**
+
+- Add og:image meta tag to theme.config.jsx pointing to meta.png
+- Include blank.png and meta.png image assets in public/images/
+
+## 1.0.2 — 2025-09-10
+
+**Refactor content metadata formatting and add frontmatter to home page.**
+
+- Compress index metadata object in \_meta.js to single line for consistency
+- Add YAML frontmatter with title to content/index.mdx for proper page metadata
+- Improves content structure and ensures consistent page title handling
+
+## 1.0.1 — 2025-09-10
+
+**Cleanup.**
+
+- **Navigation updates** — Changelog and shortcuts now visible in main navigation.
+- **Content cleanup** — Streamlined formatting and cleaned minor typos.
+
+## 1.0.0 — 2025-09-10
+
+**Initial public release.**
+
+**Stack**
+
+- Next.js 15.5.2 (React 19), Nextra 4.4.0, Tailwind 4.1.13.
+
+**UX**
+
+- Responsive layout, dark/light (prefers-color-scheme).
+- Project filters: Software / Automotive / Embedded / Electronics.
+
+**Content**
+
+- Unified project structure + metadata.
+- MDX with code highlighting, image galleries (lazy-load/lightbox), responsive grids.
+- Featured projects on home; status tags (Active/Completed/Planning).
+
+**Tooling / QA**
+
+- ESLint + Prettier; Husky + lint-staged.
+- **Link verifier**: scans MDX/JSX/template literals; validates routes, anchors, and assets; CI fails on hard breaks.
+- Static builds, Pagefind search, asset/image optimization, error boundaries.
+
+**Projects**
+
+- E83 CAS3 Retrofit & Comfort Access — OEM-clean retrofit (_case study_).
+- BMW HomeLink Mirror Retrofit — **complete**.
+- N52 Valve Failure Analysis — **complete**.
+- ha-smarthub (SmartHub → HA) — **released**.
+- gpt-electron (ChatGPT for Intel Macs) — **released**.
+- Junkyard Intelligence Platform — **in progress**.
+
+**Media**
+
+- WebP + originals, multiple aspect ratios, lightbox.
+
+**Roadmap**
+
+- Project RSS, public API, advanced multi-filter search.
+
+**Stats**
+
+- 6 projects (4 completed, 1 active, 1 planning); 4 domains; 3 featured.

@@ -23,12 +23,12 @@ const colors = {
 }
 
 async function getMetaFiles() {
-  const pattern = path.join(projectRoot, 'content', '**', '_meta.js')
+  const pattern = path.join(projectRoot, 'src', 'content', '**', '_meta.js')
   return await glob(pattern.replace(/\\/g, '/'))
 }
 
 async function getMdxFiles() {
-  const pattern = path.join(projectRoot, 'content', '**', '*.mdx')
+  const pattern = path.join(projectRoot, 'src', 'content', '**', '*.mdx')
   return await glob(pattern.replace(/\\/g, '/'))
 }
 
@@ -47,14 +47,12 @@ async function loadMetaFile(metaPath) {
       metaContent = metaContent.replace(/\/\/.*$/gm, '')
 
       // Match quoted keys: 'key': or "key":
-      const quotedKeys = [...metaContent.matchAll(/['"]([\w-]+)['"]\s*:/g)].map(
-        match => match[1]
-      )
+      const quotedKeys = [...metaContent.matchAll(/['"]([\w-]+)['"]\s*:/g)].map(match => match[1])
 
       // Match unquoted keys: key: (both with objects and simple values)
-      const unquotedKeys = [
-        ...metaContent.matchAll(/(\w[\w-]*)\s*:\s*[\{\'\"\w]/gm),
-      ].map(match => match[1])
+      const unquotedKeys = [...metaContent.matchAll(/(\w[\w-]*)\s*:\s*[\{\'\"\w]/gm)].map(
+        match => match[1]
+      )
 
       // Combine both types of keys and filter out common configuration keys
       const configKeys = new Set([
@@ -106,12 +104,8 @@ async function main() {
   const metaFiles = await getMetaFiles()
   const mdxFiles = await getMdxFiles()
 
-  console.log(
-    `${colors.blue}Found ${metaFiles.length} _meta.js files${colors.reset}`
-  )
-  console.log(
-    `${colors.blue}Found ${mdxFiles.length} .mdx files${colors.reset}\n`
-  )
+  console.log(`${colors.blue}Found ${metaFiles.length} _meta.js files${colors.reset}`)
+  console.log(`${colors.blue}Found ${mdxFiles.length} .mdx files${colors.reset}\n`)
 
   let totalErrors = 0
   let totalWarnings = 0
@@ -168,13 +162,8 @@ async function main() {
 
       if (!fs.existsSync(expectedFilePath)) {
         // Check if it's a directory instead
-        if (
-          fs.existsSync(expectedFolderPath) &&
-          fs.statSync(expectedFolderPath).isDirectory()
-        ) {
-          console.log(
-            `  ${colors.green}✓ ${metaKey}/ (directory)${colors.reset}`
-          )
+        if (fs.existsSync(expectedFolderPath) && fs.statSync(expectedFolderPath).isDirectory()) {
+          console.log(`  ${colors.green}✓ ${metaKey}/ (directory)${colors.reset}`)
         } else {
           console.log(
             `  ${colors.yellow}WARNING: _meta.js has key "${metaKey}" but ${expectedFile} doesn't exist (and no ${metaKey}/ directory found)${colors.reset}`
@@ -191,15 +180,11 @@ async function main() {
   console.log(`${colors.magenta}Summary:${colors.reset}`)
 
   if (totalErrors > 0) {
-    console.log(
-      `${colors.red}${colors.bold}${totalErrors} errors found${colors.reset}`
-    )
+    console.log(`${colors.red}${colors.bold}${totalErrors} errors found${colors.reset}`)
   }
 
   if (totalWarnings > 0) {
-    console.log(
-      `${colors.yellow}${colors.bold}${totalWarnings} warnings found${colors.reset}`
-    )
+    console.log(`${colors.yellow}${colors.bold}${totalWarnings} warnings found${colors.reset}`)
   }
 
   if (totalErrors === 0 && totalWarnings === 0) {

@@ -18,5 +18,6 @@
     "*.jsx": "javascriptreact",
     "*.tsx": "typescriptreact"
   },
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+  "npm.packageManager": "pnpm"
 }

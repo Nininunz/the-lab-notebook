@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@source '../**/*.{js,jsx,ts,tsx,mdx}';
+
+@variant dark (&:where(.dark *));
+
+/* Custom responsive h1 font sizes */
+@media (min-width: 768px) and (max-width: 880px) {
+  .h1-768-880 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .h1-400-600 {
+    font-size: 2.625rem;
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .h1-601-767 {
+    font-size: 2.825rem;
+    line-height: 1.1;
+  }
+}
+
+/* Make the whole sidebar wider */
+.nextra-sidebar {
+  width: 18rem !important; /* default is 16rem (64 * 4px = 256px), yours shows ~324px */
+}
+
+/* Normalize transition speed (override inline 500ms) */
+.nextra-sidebar .x\:transform-gpu {
+  transition-duration: 300ms !important;
+}
+
+/* Hide scrollbar while keeping scrolling functional */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+/* Active Initiatives heading animations */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2) rotate(10deg);
+  }
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Status pulse animation for project status dots */
+@keyframes status-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

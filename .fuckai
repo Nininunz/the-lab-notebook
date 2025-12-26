@@ -1,0 +1,18 @@
+# Files and patterns to ignore when searching for emojis
+# One pattern per line, supports basic wildcards
+#
+# Note: Common directories (node_modules, .git, dist, .next, coverage, .pnpm-store)
+# are already excluded in the script for performance. Use this file for additional
+# custom exclusions.
+#
+# File type configuration (optional):
+# Use "type:" to include only specific file types (overrides defaults)
+# Use "exclude:" to search all files EXCEPT the specified types
+# Default: *.ts, *.tsx, *.js, *.jsx, *.json, *.md, *.yml, *.yaml, *.sh, *.mjs
+#
+# Examples:
+# type: *.ts, *.tsx, *.js, *.jsx
+# exclude: *.json, *.yml, *.yaml
+
+# Ignore the emoji search script itself
+scripts/fuckai.sh
