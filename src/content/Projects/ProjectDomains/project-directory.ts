@@ -2,14 +2,14 @@ import type { ProjectEntry } from './types'
 
 export const ProjectDirectory: ProjectEntry[] = [
   {
-    item: 'ChatGPT for Intel Macs',
+    item: 'gpt-electron',
     short: 'A lightweight Electron wrapper for ChatGPT',
     slug: 'https://nininunz.dev/gpt-electron',
     status: 'active',
     domains: ['Software'],
   },
   {
-    item: 'SmartHub Integration',
+    item: 'ha-smarthub',
     short: 'Integrating SmartHub with Home Assistant for enhanced automation',
     slug: 'https://github.com/Nininunz/ha-smarthub',
     status: 'active',
@@ -59,7 +59,14 @@ export const ProjectDirectory: ProjectEntry[] = [
     domains: ['Software'],
   },
   {
-    item: 'SmartHub Usage Downloader',
+    item: 'fuckai.sh',
+    short: 'Lightweight emoji linting script for detecting emoji usage in project files',
+    slug: '/documentation/tools-and-scripts/fuckai',
+    status: 'active',
+    domains: ['Software'],
+  },
+  {
+    item: 'electric-usage-downloader',
     short:
       "Fork of tedpearson's electric-usage-downloader, without the dependency on external databases",
     slug: 'https://github.com/Nininunz/electric-usage-downloader',
