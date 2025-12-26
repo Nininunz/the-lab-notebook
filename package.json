@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "fuckai": "bash scripts/fuckai.sh",
     "verify-links": "node scripts/verify-links.js",
     "verify-projects": "node scripts/verify-projects.js",
     "verify-meta": "node scripts/verify-meta.js",
