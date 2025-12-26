@@ -16,8 +16,8 @@ const colors = {
   bold: '\x1b[1m',
 }
 
-const PROJECTS_PATH = path.resolve('lib/project-directory.ts')
-const TYPE_PATH = path.resolve('lib/project-directory.d.ts')
+const PROJECTS_PATH = path.resolve('src/content/Projects/ProjectDomains/project-directory.ts')
+const TYPE_PATH = path.resolve('src/content/Projects/ProjectDomains/types.ts')
 
 function getTypeKeys(typePath, typeName) {
   const project = new Project()
@@ -63,7 +63,7 @@ function getUnionTypeValues(typePath, typeName) {
 function getProjectEntries(projectsPath) {
   const project = new Project()
   const sourceFile = project.addSourceFileAtPath(projectsPath)
-  const exportVar = sourceFile.getVariableDeclaration('projects')
+  const exportVar = sourceFile.getVariableDeclaration('ProjectDirectory')
   if (!exportVar) return []
   const arr = exportVar.getInitializer()
   if (!arr || !arr.getKindName || arr.getKindName() !== 'ArrayLiteralExpression') return []
@@ -81,8 +81,7 @@ function getProjectEntries(projectsPath) {
 }
 
 function main() {
-  const typeKeys = getTypeKeys(TYPE_PATH, 'Project')
-  const featureKeys = new Set(getTypeKeys(TYPE_PATH, 'Feature'))
+  const typeKeys = getTypeKeys(TYPE_PATH, 'ProjectEntry')
   const validStatuses = new Set(getUnionTypeValues(TYPE_PATH, 'ProjectStatus'))
   const validDomains = new Set(getUnionTypeValues(TYPE_PATH, 'ProjectDomain'))
   const entries = getProjectEntries(PROJECTS_PATH)
@@ -101,7 +100,7 @@ function main() {
     `${colors.blue}Valid domains:${colors.reset} ${Array.from(validDomains).join(', ')}\n`
   )
 
-  const criticalKeys = new Set(['id', 'name', 'href', 'domains'])
+  const criticalKeys = new Set(['item', 'short', 'status', 'domains'])
   const missingCritical = {}
   const missingWarning = {}
   const extraByKey = {}
@@ -116,7 +115,7 @@ function main() {
     const missing = typeKeys.filter(k => !(k in entry))
     const extra = entryKeys.filter(k => !typeKeys.includes(k))
 
-    let missingCriticalKeys = missing.filter(k => criticalKeys.has(k))
+    const missingCriticalKeys = missing.filter(k => criticalKeys.has(k))
     const missingWarningKeys = missing.filter(k => !criticalKeys.has(k))
 
     // Validate status field if present
@@ -125,8 +124,8 @@ function main() {
       if (!invalidValues[statusKey]) invalidValues[statusKey] = []
       invalidValues[statusKey].push({
         index: idx + 1,
-        name: entry.name || 'Unnamed',
-        id: entry.id || 'missing',
+        name: entry.item || 'Unnamed',
+        id: entry.slug || 'missing',
         value: entry.status,
       })
     }
@@ -139,8 +138,8 @@ function main() {
           if (!invalidValues[domainKey]) invalidValues[domainKey] = []
           invalidValues[domainKey].push({
             index: idx + 1,
-            name: entry.name || 'Unnamed',
-            id: entry.id || 'missing',
+            name: entry.item || 'Unnamed',
+            id: entry.slug || 'missing',
             value: domain,
             arrayIndex: domainIdx,
           })
@@ -148,29 +147,7 @@ function main() {
       })
     }
 
-    // If project has features, treat feature fields as critical
-    if (entry.feature && Array.isArray(entry.feature) && entry.feature.length > 0) {
-      entry.feature.forEach((feature, featureIdx) => {
-        if (feature && typeof feature === 'object') {
-          const featureMissing = Array.from(featureKeys).filter(k => !(k in feature))
-          featureMissing.forEach(key => {
-            const featureKey = `feature[${featureIdx}].${key}`
-            if (!missingCritical[featureKey]) missingCritical[featureKey] = []
-            missingCritical[featureKey].push({
-              index: idx + 1,
-              name: entry.name || 'Unnamed',
-              id: entry.id || 'missing',
-            })
-          })
-          if (featureMissing.length > 0) {
-            missingCriticalKeys = [
-              ...missingCriticalKeys,
-              ...featureMissing.map(k => `feature[${featureIdx}].${k}`),
-            ]
-          }
-        }
-      })
-    }
+    // Feature validation removed - new schema doesn't have features
 
     const hasInvalidStatus = entry.status && !validStatuses.has(entry.status)
     const hasInvalidDomain =
@@ -203,8 +180,8 @@ function main() {
         if (!missingCritical[key]) missingCritical[key] = []
         missingCritical[key].push({
           index: idx + 1,
-          name: entry.name || 'Unnamed',
-          id: entry.id || 'missing',
+          name: entry.item || 'Unnamed',
+          id: entry.slug || 'missing',
         })
       })
 
@@ -212,8 +189,8 @@ function main() {
       if (!missingWarning[key]) missingWarning[key] = []
       missingWarning[key].push({
         index: idx + 1,
-        name: entry.name || 'Unnamed',
-        id: entry.id || 'missing',
+        name: entry.item || 'Unnamed',
+        id: entry.slug || 'missing',
       })
     })
 
@@ -221,8 +198,8 @@ function main() {
       if (!extraByKey[key]) extraByKey[key] = []
       extraByKey[key].push({
         index: idx + 1,
-        name: entry.name || 'Unnamed',
-        id: entry.id || 'missing',
+        name: entry.item || 'Unnamed',
+        id: entry.slug || 'missing',
       })
     })
   })

@@ -23,12 +23,12 @@ const colors = {
 }
 
 async function getMetaFiles() {
-  const pattern = path.join(projectRoot, 'content', '**', '_meta.js')
+  const pattern = path.join(projectRoot, 'src', 'content', '**', '_meta.js')
   return await glob(pattern.replace(/\\/g, '/'))
 }
 
 async function getMdxFiles() {
-  const pattern = path.join(projectRoot, 'content', '**', '*.mdx')
+  const pattern = path.join(projectRoot, 'src', 'content', '**', '*.mdx')
   return await glob(pattern.replace(/\\/g, '/'))
 }
 
