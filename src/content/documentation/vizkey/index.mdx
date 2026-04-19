@@ -1,0 +1,68 @@
+---
+title: VizKey - Repurposing the Vizio XRT500
+---
+
+import { Callout } from 'nextra/components'
+
+# VizKey - Repurposing the Vizio XRT500 as a Programmable BLE HID Device
+
+<Callout type='important'>
+  **Concept project:** This is a proposed build, not a completed implementation.
+  Hardware integration and firmware are still in planning.
+</Callout>
+
+The Vizio XRT500, along with its sibling the XRT300, is a dual-sided, backlit QWERTY remote that shipped with mid-2010s Vizio Smart TVs, particularly the M- and P-Series. They're surprisingly decent pieces of hardware and far better than the HTPC remote junk flooding Amazon. They're genuinely neat, but they never really caught on. The industry pivoted hard toward voice input instead, which is fine if you like talking to your TV in front of guests or sending your voice data to some cloud service.
+
+The thing is, a good couch input device is still an unsolved problem. Keyboards are too big. Phone apps are annoying. Cheap mini keyboards with trackpads feel like toys. What you actually want is something handheld, backlit, with real keys that work with anything. The XRT500 is already most of the way there. It just needs different brains.
+
+## Project Summary
+
+VizKey proposes replacing the original MCU in an XRT500 with an ESP32 to expose the remote as a programmable BLE HID keyboard. The intent is to keep the membrane matrix, backlight, and IR blaster intact while swapping control logic. If implemented, the device should present itself as a BLE HID input device with configurable key mappings, profiles, and macros stored on-device. Configuration is planned through a browser UI (no drivers).
+
+## Goals
+- Replace the stock MCU with an ESP32 while preserving the keyboard matrix, backlight control, and IR blaster.
+- Implement a BLE HID keyboard that supports: remapping, layers/profiles, macros, and per-profile settings.
+- Store profiles on-device and provide a zero-install browser configuration interface (Web BLE or a local AP + web UI).
+- Preserve IR functionality for TV control and make it optionally trigger BLE macros.
+
+## Why this device?
+- Compact, full QWERTY layout with dedicated media keys.
+- Backlit keys for low-light use.
+- Dual-sided design offers more inputs in a handheld form factor.
+- Common and inexpensive on the used market, and robust hardware compared to cheap mini-keyboards.
+- Official reference: [Vizio XRT500 Remote Information](https://support.vizio.com/s/article/XRT500-Remote-Information?language=en_US)
+
+## Hardware
+
+- Donor device: Vizio XRT500 (or XRT300 with similar matrix).
+- Replacement MCU: ESP32 (recommend one with ample GPIO and BLE support; e.g., ESP32-WROOM or ESP32-S3 for native USB/BT improvements).
+- Intended to keep: membrane key matrix, LEDs/backlight, IR LED and associated transistor/driver, battery/contact assembly.
+- Expected needs: header pins for flashing and a board to connect to the matrix (or custom PCB).
+- Voltage and power-rail details will be finalized after teardown measurements.
+- Teardown reference: [Vizio XRT500 teardown video](https://www.youtube.com/watch?v=uhpyRSl8vug)
+
+## Firmware & Software
+
+- BLE HID stack on ESP32 to advertise as keyboard and send key events.
+- Matrix scanner firmware with debouncing, rollover/ghosting handling, and backlight control.
+- Profile manager with persistent storage (SPIFFS, LittleFS, or NVS) to store mappings and macros.
+- Web-based configurator: either configuration over Web BLE or a fallback local AP hosting a small UI to edit profiles and upload them to the device.
+
+## Planned Features
+
+- Any-key remapping and layer switching.
+- Macros (multi-key sequences, delays, media controls).
+- Per-profile backlight presets and timeouts.
+- IR passthrough and programmable IR macro triggers.
+- OTA firmware updates where supported.
+
+## Plan / Roadmap
+1. Reverse-engineer the XRT500 keyboard matrix and identify connector pinout.
+2. Build a breakout or custom PCB to interface the ESP32 with the matrix and peripherals.
+3. Prototype firmware: matrix scanning + BLE HID basics.
+4. Implement profile storage and simple web configurator.
+5. Iterate on ergonomics, power management, and IR integration.
+
+## License
+
+MIT-licensed.

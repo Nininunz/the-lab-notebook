@@ -6,6 +6,7 @@ const meta = {
   'n52-failure-analysis': 'N52 Failure Analysis',
   'the-lab-notebook': 'The Lab Notebook',
   'tools-and-scripts': 'Tools & Scripts',
+  vizkey: 'VizKey',
 }
 
 export default enrichMetaWithDrafts(meta, import.meta.url)
